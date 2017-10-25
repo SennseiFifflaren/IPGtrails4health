@@ -1,0 +1,2 @@
+25-10-2017 22:00 - descrição de caso de uso "Criar Trilho"
+25-10-2017 23:50 - fim de descriçao de caso de uso
