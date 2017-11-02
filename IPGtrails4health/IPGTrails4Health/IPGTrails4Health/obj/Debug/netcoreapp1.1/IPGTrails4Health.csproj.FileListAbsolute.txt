@@ -1,0 +1,11 @@
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\bin\Debug\netcoreapp1.1\IPGTrails4Health.deps.json
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\bin\Debug\netcoreapp1.1\IPGTrails4Health.runtimeconfig.json
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\bin\Debug\netcoreapp1.1\IPGTrails4Health.runtimeconfig.dev.json
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\bin\Debug\netcoreapp1.1\IPGTrails4Health.dll
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\bin\Debug\netcoreapp1.1\IPGTrails4Health.pdb
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\obj\Debug\netcoreapp1.1\IPGTrails4Health.csprojResolveAssemblyReference.cache
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\obj\Debug\netcoreapp1.1\IPGTrails4Health.csproj.CoreCompileInputs.cache
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\obj\Debug\netcoreapp1.1\IPGTrails4Health.AssemblyInfoInputs.cache
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\obj\Debug\netcoreapp1.1\IPGTrails4Health.AssemblyInfo.cs
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\obj\Debug\netcoreapp1.1\IPGTrails4Health.dll
+C:\Users\Rui Araújo\Desktop\ESII_PA\IPGtrails4health\IPGtrails4health\IPGTrails4Health\IPGTrails4Health\obj\Debug\netcoreapp1.1\IPGTrails4Health.pdb
