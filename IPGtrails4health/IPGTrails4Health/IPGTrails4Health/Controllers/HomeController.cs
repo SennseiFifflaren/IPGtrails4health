@@ -15,18 +15,23 @@ namespace IPGTrails4Health.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+          //  ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+          //  ViewData["Message"] = "Your contact page.";
 
             return View();
         }
+        public IActionResult HowToStart()
+        {
+              ViewData["Message"] = "Como começar a aventura.";
 
+            return View();
+        }
         public IActionResult Error()
         {
             return View();
