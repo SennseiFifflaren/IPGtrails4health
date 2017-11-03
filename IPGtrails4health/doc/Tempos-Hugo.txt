@@ -8,5 +8,6 @@ Entrega 4
 
 ---------//--------
 Prog. para Internet
-DIA		DURAÇÃO	|	DESCRIÇÃO				|
-02-10-2017 	5h	|	Site - Página Inicial e Outras Páginas	|
+(Data, duração, descrição, nome do commit, hora do commit)
+02-10-2017 - 5h - Desenvolvimento website - Página Inicial e Outras Páginas - "pag principal e outras paginas"
+03-10-2017 - 1h - Adicionadas páginas relativas ao trabalho específico do grupo: Inserir Pontos de Interesse, Inserir Alojamento, e uma página do utilizador com acesso a estas funcionalidades; corrigidas outras páginas - commit1-3Nov - 19h40m
