@@ -18,5 +18,10 @@ namespace IPGTrails4Health.Controllers
             ViewData["Message"] = "Página para criar Trilhos.";
             return View();
         }
+        public IActionResult Feedback()
+        {
+            ViewData["Message"] = "Página para avaliar Trilhos.";
+            return View();
+        }
     }
 }

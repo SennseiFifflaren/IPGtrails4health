@@ -19,5 +19,9 @@ namespace IPGTrails4Health.Controllers
             ViewData["Message"] = "Página de Registo.";
             return View();
         }
+        public IActionResult Evaluation()
+        {
+            return View();
+        }
     }
 }
