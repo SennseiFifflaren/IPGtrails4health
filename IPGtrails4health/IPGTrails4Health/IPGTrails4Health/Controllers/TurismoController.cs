@@ -13,7 +13,7 @@ namespace IPGTrails4Health.Controllers
             ViewData["Message"] = "Página para adicionar pontos de interesse (fauna, flora, históricos, monumentos) tendo em conta a sazonalidade.";
             return View();
         }
-        public IActionResult Alojamento()
+        public IActionResult Extras()
         {
             ViewData["Message"] = "Página para inserir alojamento, restaurantes, áreas de descanso, WC ao longo do percurso.";
             return View();
