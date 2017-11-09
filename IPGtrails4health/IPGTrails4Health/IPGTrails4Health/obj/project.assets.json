@@ -5806,7 +5806,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "/uI+0rPwlsnLnSQ8jkgepKwcc39aBPuFUcrVZaOaGoRvZ8X5cXOVEY9QpU+hBUSDkIZ4QoxJ5u87puOEW+z/Yw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -9904,13 +9904,8 @@
         "system.text.encoding.nuspec"
       ]
     },
-<<<<<<< HEAD
-    "System.Text.Encoding.CodePages/4.0.1": {
-      "sha512": "FB//bCc5vRTG499y+xD6c9IbWzBiQINqhQxY6LstNIfjeOR14jkD/Miu38b20LPR2PXLo/hYtEJMvbNUEwzBCg==",
-=======
     "System.Text.Encoding.CodePages/4.3.0": {
-      "sha512": "IRiEFUa5b/Gs5Egg8oqBVoywhtOeaO2KOx3j0RfcYY/raxqBuEK7NXRDgOwtYM8qbi+7S4RPXUbNt+ZxyY0/NQ==",
->>>>>>> 539204013e334b5a18837febc34f8ae5bd47d888
+      "sha512": "KXPFDwgpc44DaKZR8fbhpjjeJbNewYBPoeOSaugtl1vEsE+vI91UArPYi7soboyG04NAWLFsA7x3EsN/2IXMIQ==",
       "type": "package",
       "path": "system.text.encoding.codepages/4.3.0",
       "files": [
@@ -10848,5 +10843,13 @@
         ]
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Rui Araújo\\Desktop\\ESII_PA\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\obj\\IPGTrails4Health.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -4115,7 +4115,7 @@
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "sha512-/uI+0rPwlsnLnSQ8jkgepKwcc39aBPuFUcrVZaOaGoRvZ8X5cXOVEY9QpU+hBUSDkIZ4QoxJ5u87puOEW+z/Yw==",
       "path": "remotion.linq/2.1.1",
       "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
     },
@@ -4234,7 +4234,7 @@
     "System.Text.Encoding.CodePages/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IRiEFUa5b/Gs5Egg8oqBVoywhtOeaO2KOx3j0RfcYY/raxqBuEK7NXRDgOwtYM8qbi+7S4RPXUbNt+ZxyY0/NQ==",
+      "sha512": "sha512-KXPFDwgpc44DaKZR8fbhpjjeJbNewYBPoeOSaugtl1vEsE+vI91UArPYi7soboyG04NAWLFsA7x3EsN/2IXMIQ==",
       "path": "system.text.encoding.codepages/4.3.0",
       "hashPath": "system.text.encoding.codepages.4.3.0.nupkg.sha512"
     },
@@ -4980,16 +4980,6 @@
       "path": "system.text.encoding/4.3.0",
       "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-    "System.Text.Encoding.CodePages/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FB//bCc5vRTG499y+xD6c9IbWzBiQINqhQxY6LstNIfjeOR14jkD/Miu38b20LPR2PXLo/hYtEJMvbNUEwzBCg==",
-      "path": "system.text.encoding.codepages/4.0.1",
-      "hashPath": "system.text.encoding.codepages.4.0.1.nupkg.sha512"
-    },
-=======
->>>>>>> 539204013e334b5a18837febc34f8ae5bd47d888
     "System.Text.Encoding.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
