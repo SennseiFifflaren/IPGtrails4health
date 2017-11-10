@@ -5,9 +5,10 @@ Entrega 4
 25-10-2017 23:50 - fim de descriçao de caso de uso "Criar Trilho"
 30-10-2017 22:10 - correção de caso de uso "Criar Trilho"
 30-10-2017 22:40 - fim de correção de caso de uso "Criar Trilho"
-
+10-11-2017 10:23 - adicionadas classes "Trilho" e "HistoricoEstadosTrilho"
 ---------//--------
 Prog. para Internet
 (Data, duração, descrição, nome do commit, hora do commit)
 02-10-2017 - 5h - Desenvolvimento website - Página Inicial e Outras Páginas - "pag principal e outras paginas"
 03-10-2017 - 1h - Adicionadas páginas relativas ao trabalho específico do grupo: Inserir Pontos de Interesse, Inserir Alojamento, e uma página do utilizador com acesso a estas funcionalidades; corrigidas outras páginas - commit1-3Nov - 19h40m
+09-11-2017 - 30min - adicionado models relativos a pontos de interesse e alojamento/areas de descanso- commit1-9Nov,commit2-9Nov - 23h50m,23h55m
