@@ -5,7 +5,7 @@ Entrega 4
 25-10-2017 23:50 - fim de descriçao de caso de uso "Criar Trilho"
 30-10-2017 22:10 - correção de caso de uso "Criar Trilho"
 30-10-2017 22:40 - fim de correção de caso de uso "Criar Trilho"
-
+10-11-2017 10:23 - adicionadas classes "Trilho" e "HistoricoEstadosTrilho"
 ---------//--------
 Prog. para Internet
 (Data, duração, descrição, nome do commit, hora do commit)
