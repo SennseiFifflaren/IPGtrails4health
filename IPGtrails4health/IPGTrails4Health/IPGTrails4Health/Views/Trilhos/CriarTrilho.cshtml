@@ -1,1 +1,59 @@
-﻿
+﻿@model IPGTrails4Health.Models.TrilhosViewModels.CriarTrilhoViewModel
+
+    @{ 
+
+    }
+
+<form asp-action="CriarTrilho" method="post">
+    <div class="panel panel-primary" style="margin-top:2ex;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Criar Trilho</h3>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                <label asp-for="Nome">Nome do Trilho:</label>
+                <input asp-for="Nome" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Partida">Partida do trilho:</label>
+                <input asp-for="Partida" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Chegada">Fim do trilho:</label>
+                <input asp-for="Chegada" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Distancia">Distancia:</label>
+                <input asp-for="Distancia" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dificuldade">Dificuldade</label>
+                <select asp-for="Dificuldade" class="form-control">
+                    <option value="">Escolha uma opção </option>
+                    <option value="">Alta</option>
+                    <option value="">Baixa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Percurso">Percurso</label>
+                <select asp-for="Percurso" class="form-control">
+                    <option value="">Escolha uma opção </option>
+                    <option value="">Linear</option>
+                    <option value="">Circular</option>
+                </select>
+            </div>
+
+            <div asp-validation-summary="All"></div>
+        </div>
+
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary">Criar Trilho</button>
+        </div>
+    </div>
+</form>
