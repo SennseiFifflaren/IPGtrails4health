@@ -3,6 +3,14 @@
 @{
     ViewData["Title"] = "Inserir Ponto de Interesse";
 }
+
+<head> 
+    <meta name="viewport" content="width=device-width" /> 
+    <title>Inserir Ponto de Interesse</title> 
+    <link rel="stylesheet" href="/css/valErros.css" /> 
+
+</head> 
+ 
 <h3>@ViewData["Message"]</h3>
 
 <form asp-action="PontosInteresse" method="post">
@@ -44,6 +52,12 @@
                     <option value="5">Todo o Ano</option>
                 </select>
             </div>
+            
+            <div class="form-group">
+                <label asp-for="Observacoes">Observações:</label>
+                <textarea rows="5" asp-for="Observacoes" class="form-control"></textarea>
+            </div>
+
             <div asp-validation-summary="All"></div>
         </div>
 
