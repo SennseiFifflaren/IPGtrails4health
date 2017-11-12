@@ -13,3 +13,4 @@ Prog. para Internet
 03-10-2017 - 1h - Adicionadas páginas relativas ao trabalho específico do grupo: Inserir Pontos de Interesse, Inserir Alojamento, e uma página do utilizador com acesso a estas funcionalidades; corrigidas outras páginas - commit1-3Nov - 19h40m
 09-11-2017 - 30min - adicionado models relativos a pontos de interesse e alojamento/areas de descanso- commit1-9Nov,commit2-9Nov - 23h50m,23h55m
 10-11-2017 - 2h - criada página e formulário "Inserir Extras" relativo a alojamento, áreas de descanso, restaurantes,... - commit2-10Nov - 12h50m
+11-11-2017 - 3h - Tutorial EF Core (https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro) 3/10
