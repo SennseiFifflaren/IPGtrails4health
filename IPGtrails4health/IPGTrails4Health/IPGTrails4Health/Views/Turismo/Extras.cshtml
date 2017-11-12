@@ -1,6 +1,53 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<h3>@ViewData["Message"]</h3>
+﻿@model IPGTrails4Health.Models.TurismoViewModels.ExtrasViewModel
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inserir Extras</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Inserir Extras</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="Extras" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label>Tipo de extra?</label>
+                    <select class="form-control" asp-for="TipoExtra">
+                        <option value="alojamento">Alojamento</option>
+                        <option value="restaurante">Restaurante</option>
+                        <option value="pCampismo">Parque Campismo</option>
+                        <option value="areaDescanso">Área de Descanso</option>
+                        <option value="wc">Casa de banho</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nome">Nome:</label>
+                    <input class="form-control" asp-for="Nome" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Descricao">Descrição:</label>
+                    <input class="form-control" asp-for="Descricao" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Local">Local:</label>
+                    <input class="form-control" asp-for="Local" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="HorarioInicio">Horário Funcionamento (inicio,fim):</label>
+                    <input class="form-control" type="time" asp-for="HorarioFim" />
+                    <input class="form-control" type="time" asp-for="HorarioInicio" />
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">
+                        Submeter Extra
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
