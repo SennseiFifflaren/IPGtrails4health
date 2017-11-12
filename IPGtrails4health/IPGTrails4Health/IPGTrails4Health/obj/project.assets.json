@@ -10748,7 +10748,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MBP de Rui Windows\\.nuget\\packages\\": {}
+    "C:\\Users\\Hugo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10756,14 +10756,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\MBP de Rui Windows\\Desktop\\PI_ESII_Git\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\IPGTrails4Health.csproj",
+      "projectUniqueName": "C:\\Users\\Hugo\\Documents\\GitHub\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\IPGTrails4Health.csproj",
       "projectName": "IPGTrails4Health",
-      "projectPath": "C:\\Users\\MBP de Rui Windows\\Desktop\\PI_ESII_Git\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\IPGTrails4Health.csproj",
-      "packagesPath": "C:\\Users\\MBP de Rui Windows\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MBP de Rui Windows\\Desktop\\PI_ESII_Git\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\obj\\",
+      "projectPath": "C:\\Users\\Hugo\\Documents\\GitHub\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\IPGTrails4Health.csproj",
+      "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hugo\\Documents\\GitHub\\IPGtrails4health\\IPGtrails4health\\IPGTrails4Health\\IPGTrails4Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MBP de Rui Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -16,13 +16,53 @@ namespace IPGTrails4Health.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Extras()
+        public IActionResult Alojamento()
         {
-            ViewData["Message"] = "Página para inserir alojamento, restaurantes, áreas de descanso, WC ao longo do percurso.";
+            ViewData["Message"] = "Página para inserir alojamentos.";
             return View();
         }
         [HttpPost]
-        public ViewResult Extras(ExtrasViewModel extrasviewmodel)
+        public ViewResult Alojamento(AlojamentoViewModel alojamento)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                // guardar dados do extra inserido
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Restaurante()
+        {
+            ViewData["Message"] = "Página para inserir restaurantes.";
+            return View();
+        }
+        [HttpPost]
+        public ViewResult Restaurante(AlojamentoViewModel restaurante)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                // guardar dados do extra inserido
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult AreasDescanso()
+        {
+            ViewData["Message"] = "Página para inserir áreas de descanso (WC).";
+            return View();
+        }
+        [HttpPost]
+        public ViewResult AreasDescanso(AlojamentoViewModel descanso)
         {
             if (ModelState.IsValid)
             {
