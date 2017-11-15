@@ -1,0 +1,9 @@
+Dígito de controlo do NIF
+O 9º dígito é o dígito de controlo, calculado através do algoritmo módulo 11.
+
+Algoritmo:
+1) Multiplicar o 8º dígito por 2, o 7º dígito por 3, o 6º dígito por 4, o 5º dígito por 5, o 4º dígito por 6, o 3º dígito por 7, o 2º dígito por 8 e o 1º dígito por 9.
+2) Somar os resultados.
+3) Calcular o resto da divisão do resultado obtido em 2) por 11.
+4) Se o resto da divisão for 0 ou 1, o dígito de controlo será 0.
+5) Se o resto da divisão for qualquer outro algarismo x, o dígito de controlo será o resultado de 11-x.
