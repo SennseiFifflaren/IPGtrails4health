@@ -14,5 +14,7 @@ namespace IPGTrails4Health.Models.TurismoViewModels
         public string Descricao { get; set; }
         [Required(ErrorMessage = "Por favor introduza o local")]
         public string Local { get; set; }
+
+        public ICollection<RestauranteViewModel> Restaurante { get; set; }
     }
 }

@@ -6,10 +6,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace IPGTrails4Health.Models.TurismoViewModels
 {
+    public enum TipoAloj
+    {
+        Hotel,Pensao,Pousada,Rural
+    }
     public class AlojamentoViewModel
     {
+
         [Required(ErrorMessage = "Por favor introduza o tipo de alojamento")]
-        public string Tipo { get; set; }
+        public TipoAloj Tipo { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome do alojamento")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza a descrição")]
@@ -21,6 +26,6 @@ namespace IPGTrails4Health.Models.TurismoViewModels
         [Required(ErrorMessage = "Por favor introduza o preço máximo")]
         public int PrecoMax { get; set; }
 
-
+        public ICollection<AlojamentoViewModel> Alojamento { get; set; }
     }
 }
