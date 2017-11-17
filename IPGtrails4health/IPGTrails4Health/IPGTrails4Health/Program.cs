@@ -43,7 +43,7 @@ namespace IPGTrails4Health
                 {
                     // delete all default configuration providers
                     config.Sources.Clear();
-                    config.AddJsonFile("myconfig.json", optional: true);
+                    config.AddJsonFile("appsettings.json", optional: true);
                 })
                 .Build();
     }

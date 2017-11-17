@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using IPGTrails4Health.Models;
-using IPGTrails4Health.Models.TurismoViewModels;
 
 namespace IPGTrails4Health.Data
 {
@@ -14,15 +13,15 @@ namespace IPGTrails4Health.Data
         {
         }
 
-        public DbSet<AlojamentoViewModel> Alojamento { get; set; }
-        public DbSet<RestauranteViewModel> Restaurante { get; set; }
-        public DbSet<AreasDescansoViewModel> AreasDescanso { get; set; }
+        public DbSet<Alojamento> Alojamento { get; set; }
+        public DbSet<Restaurante> Restaurante { get; set; }
+        public DbSet<AreaDescanso> AreasDescanso { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AlojamentoViewModel>().ToTable("Alojamento");
-            modelBuilder.Entity<RestauranteViewModel>().ToTable("Restaurante");
-            modelBuilder.Entity<AreasDescansoViewModel>().ToTable("AreasDescanso");
+            modelBuilder.Entity<Alojamento>().ToTable("Alojamento");
+            modelBuilder.Entity<Restaurante>().ToTable("Restaurante");
+            modelBuilder.Entity<AreaDescanso>().ToTable("AreasDescanso");
         }
     }
 }

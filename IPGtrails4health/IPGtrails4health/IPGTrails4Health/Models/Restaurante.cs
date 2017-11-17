@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IPGTrails4Health.Models.TurismoViewModels
+namespace IPGTrails4Health.Models
 {
-    public class RestauranteViewModel
+    public class Restaurante
     {
+        public int ID { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome do restaurante")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza a descrição")]
@@ -15,6 +16,6 @@ namespace IPGTrails4Health.Models.TurismoViewModels
         [Required(ErrorMessage = "Por favor introduza o local")]
         public string Local { get; set; }
 
-        public ICollection<RestauranteViewModel> Restaurante { get; set; }
+        public ICollection<Restaurante> Restaurantes { get; set; }
     }
 }

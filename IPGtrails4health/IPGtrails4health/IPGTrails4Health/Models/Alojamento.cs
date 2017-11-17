@@ -4,15 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace IPGTrails4Health.Models.TurismoViewModels
+namespace IPGTrails4Health.Models
 {
     public enum TipoAloj
     {
         Hotel,Pensao,Pousada,Rural
     }
-    public class AlojamentoViewModel
+    public class Alojamento
     {
-
+        public int ID { get; set; }
         [Required(ErrorMessage = "Por favor introduza o tipo de alojamento")]
         public TipoAloj Tipo { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome do alojamento")]
@@ -26,6 +26,6 @@ namespace IPGTrails4Health.Models.TurismoViewModels
         [Required(ErrorMessage = "Por favor introduza o preço máximo")]
         public int PrecoMax { get; set; }
 
-        public ICollection<AlojamentoViewModel> Alojamento { get; set; }
+        public ICollection<Alojamento> Alojamentos { get; set; }
     }
 }
