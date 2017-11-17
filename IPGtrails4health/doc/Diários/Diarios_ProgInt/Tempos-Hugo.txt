@@ -15,5 +15,6 @@ Prog. para Internet
 10-11-2017 - 2h - criada página e formulário "Inserir Extras" relativo a alojamento, áreas de descanso, restaurantes,... - commit2-10Nov - 12h50m
 11-11-2017 - 3h - Tutorial EF Core (https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro) 3/10
 12-11-2017 - 1h - Removida funcionalidade relativa à inserção de "Extras", sendo esta substituída por três funcionalidades para inserir alojamento ou restaurantes ou áreas de descanso isoladamente, "Criados modelos e views relativos à inserção de Alojamento, Restaurante e Áreas de descanso", 3h32m
-15-11-2017 - 2h - Upgrade do projeto para MVC Core 2.0, "migração para core 2.0", 23:19
-16-11-2017 - 2h - Atualização das classes; implementação da Entity Framework com criação de um inicializador de base dados (nao terminado), "implementaçao EF", 01:55
+15-11-2017 - 2h - Upgrade do projeto para MVC Core 2.0, "migração para core 2.0", 23h19m
+16-11-2017 - 2h - Atualização das classes; implementação da Entity Framework com criação de um inicializador de base dados (nao terminado), "implementaçao EF", 01h55m
+17-11-2017 - 2h - Alteração das classes e Criação de scaffolded views e controladores para implementar CRUD (incompleto), "Scaffolded Views/Controllers", 12h51m
