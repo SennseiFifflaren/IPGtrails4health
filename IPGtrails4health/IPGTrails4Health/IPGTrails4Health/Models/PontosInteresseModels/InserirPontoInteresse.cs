@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IPGTrails4Health.Models.TurismoViewModels
+namespace IPGTrails4Health.Models.PontosInteresseModels
 {
-    public class PontosInteresseViewModel
+    public class InserirPontoInteresse
     {
         [Required(ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
         [RegularExpression("[1-9]+", ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]

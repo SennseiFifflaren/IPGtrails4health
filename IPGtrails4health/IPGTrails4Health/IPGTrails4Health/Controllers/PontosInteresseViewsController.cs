@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IPGTrails4Health.Models.TurismoViewModels;
+using IPGTrails4Health.Models.PontosInteresseModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class TurismoController : Controller
+    public class PontosInteresseViewsController : Controller
     {
         [HttpGet]
 
-        public ViewResult PontosInteresse()
+        public ViewResult InserirPontosInteresse()
         {
             ViewData["Message"] = "Página para adicionar pontos de interesse (fauna, flora, históricos, monumentos) tendo em conta a sazonalidade.";
             return View();
@@ -19,12 +19,12 @@ namespace IPGTrails4Health.Controllers
 
         [HttpPost]
 
-        public ViewResult PontosInteresse(PontosInteresseViewModel dados)
+        public ViewResult InserirPontosInteresse(InserirPontoInteresse dados)
         {
             if (ModelState.IsValid)
             {
                 //Repository.AddGuestResponse(response);
-                return View("Inserido", dados);
+                return View("PontoInteresseInserido", dados);
             }
             else
             {
@@ -33,10 +33,5 @@ namespace IPGTrails4Health.Controllers
         }
 
 
-        public IActionResult Extras()
-        {
-            ViewData["Message"] = "Página para inserir alojamento, restaurantes, áreas de descanso, WC ao longo do percurso.";
-            return View();
-        }
     }
 }

@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\AccountViewModels\**" />
+    <Compile Remove="Models\TrilhosViewModels\**" />
+    <Content Remove="Models\AccountViewModels\**" />
+    <Content Remove="Models\TrilhosViewModels\**" />
+    <EmbeddedResource Remove="Models\AccountViewModels\**" />
+    <EmbeddedResource Remove="Models\TrilhosViewModels\**" />
+    <None Remove="Models\AccountViewModels\**" />
+    <None Remove="Models\TrilhosViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Home\Login.cshtml" />
   </ItemGroup>
 
@@ -28,10 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Data\" />
-    <Folder Include="Models\AccountViewModels\" />
-    <Folder Include="Models\TrilhosViewModels\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
