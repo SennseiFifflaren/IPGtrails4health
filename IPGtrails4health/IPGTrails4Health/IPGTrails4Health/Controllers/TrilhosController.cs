@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using IPGTrails4Health.Models.TrilhosViewModels;
 
 namespace IPGTrails4Health.Controllers
 {
@@ -19,15 +20,30 @@ namespace IPGTrails4Health.Controllers
             ViewData["Message"] = "Página que mostra os Trilhos.";
             return View();
         }
+        [HttpGet]
         public IActionResult CriarTrilho()
         {
-            ViewData["Message"] = "Página para criar Trilhos.";
             return View();
+        }
+
+        [HttpPost]
+        public ViewResult CriarTrilho(CriarTrilhoViewModel criartrilho)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("TrilhoCSucesso");
+            }
+            else
+            {
+                // There are validation errors
+                return View();
+            }
         }
         public IActionResult Feedback()
         {
             ViewData["Message"] = "Página para avaliar Trilhos.";
             return View();
         }
+
     }
 }
