@@ -1,3 +1,47 @@
-﻿@{
-    ViewData["Message"] = "VerTrilhos.";
+﻿@model 
+@{
+    ViewData["Message"] = "VerTrilhos";
+}
+
+<h2>Lista de Trilhos</h2>
+
+@if (Model.Count() == 0)
+{
+    <p>
+       Ainda não existe nenhum trilho!!!
+    </p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Partida</th>
+                <th>Chegada</th>
+                <th>Distancia</th>
+                <th>Duracao</th>
+                <th>Dificuldade</th>
+                <th>Percurso</th>
+                <th>Sazonalidade</th>
+                <th>Estado do Trilho</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>@r.Nome</td>
+                    <td>@r.Partida</td>
+                    <td>@r.Chegada</td>
+                    <td>@r.Distancia</td>
+                    <td>@r.Duracao</td>
+                    <td>@r.Dificuldade</td>
+                    <td>@r.Percurso</td>
+                    <td>@r.Sazonalidade</td>
+                    <td>@r.EstadoTrilho</td>
+                 </tr>
+            }
+        </tbody>
+    </table>
 }

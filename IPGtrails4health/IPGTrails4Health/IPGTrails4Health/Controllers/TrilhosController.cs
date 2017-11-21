@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using IPGTrails4Health.Models.TrilhosViewModels;
+using IPGTrails4Health.Models.TrilhosModels;
 
 namespace IPGTrails4Health.Controllers
 {
@@ -27,7 +27,7 @@ namespace IPGTrails4Health.Controllers
         }
 
         [HttpPost]
-        public ViewResult CriarTrilho(CriarTrilhoViewModel criartrilho)
+        public ViewResult CriarTrilho(CriarTrilhoModel criartrilho)
         {
             if (ModelState.IsValid)
             {
