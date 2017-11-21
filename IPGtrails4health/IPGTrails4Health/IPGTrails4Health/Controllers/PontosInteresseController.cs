@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IPGTrails4Health.Models.PontosInteresseModels;
+using IPGTrails4Health.Models.PontosInteresse;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class PontosInteresseViewsController : Controller
+    public class PontosInteresseController : Controller
     {
         [HttpGet]
 
@@ -19,12 +19,12 @@ namespace IPGTrails4Health.Controllers
 
         [HttpPost]
 
-        public ViewResult InserirPontosInteresse(InserirPontoInteresse dados)
+        public ViewResult InserirPontosInteresse(InserirPontoInteresseModel dados)
         {
             if (ModelState.IsValid)
             {
                 //Repository.AddGuestResponse(response);
-                return View("PontoInteresseInserido", dados);
+                return View("PontoInteresseInserido");
             }
             else
             {
