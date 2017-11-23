@@ -34,7 +34,7 @@ namespace IPGTrails4Health.Controllers
             }
 
             var areaDescanso = await _context.AreasDescanso
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.AreaDescansoId == id);
             if (areaDescanso == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var areaDescanso = await _context.AreasDescanso.SingleOrDefaultAsync(m => m.ID == id);
+            var areaDescanso = await _context.AreasDescanso.SingleOrDefaultAsync(m => m.AreaDescansoId == id);
             if (areaDescanso == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Nome,Descricao,Local")] AreaDescanso areaDescanso)
         {
-            if (id != areaDescanso.ID)
+            if (id != areaDescanso.AreaDescansoId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace IPGTrails4Health.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AreaDescansoExists(areaDescanso.ID))
+                    if (!AreaDescansoExists(areaDescanso.AreaDescansoId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace IPGTrails4Health.Controllers
             }
 
             var areaDescanso = await _context.AreasDescanso
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.AreaDescansoId == id);
             if (areaDescanso == null)
             {
                 return NotFound();
@@ -139,7 +139,7 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var areaDescanso = await _context.AreasDescanso.SingleOrDefaultAsync(m => m.ID == id);
+            var areaDescanso = await _context.AreasDescanso.SingleOrDefaultAsync(m => m.AreaDescansoId == id);
             _context.AreasDescanso.Remove(areaDescanso);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -147,7 +147,7 @@ namespace IPGTrails4Health.Controllers
 
         private bool AreaDescansoExists(int id)
         {
-            return _context.AreasDescanso.Any(e => e.ID == id);
+            return _context.AreasDescanso.Any(e => e.AreaDescansoId == id);
         }
     }
 }

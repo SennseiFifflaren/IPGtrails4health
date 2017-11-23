@@ -12,7 +12,7 @@ namespace IPGTrails4Health.Models
     }
     public class AreaDescanso
     {
-        public int ID { get; set; }
+        public int AreaDescansoId { get; set; }
         [Required(ErrorMessage = "Por favor introduza o tipo de area")]
         public TipoArea Tipo { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome da area")]

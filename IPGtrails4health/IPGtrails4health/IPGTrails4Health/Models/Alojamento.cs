@@ -12,7 +12,7 @@ namespace IPGTrails4Health.Models
     }
     public class Alojamento
     {
-        public int ID { get; set; }
+        public int AlojamentoId { get; set; }
         [Required(ErrorMessage = "Por favor introduza o tipo de alojamento")]
         public TipoAloj Tipo { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome do alojamento")]

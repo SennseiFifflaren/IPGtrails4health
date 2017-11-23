@@ -8,7 +8,7 @@ namespace IPGTrails4Health.Models
 {
     public class Restaurante
     {
-        public int ID { get; set; }
+        public int RestauranteId { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome do restaurante")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza a descrição")]

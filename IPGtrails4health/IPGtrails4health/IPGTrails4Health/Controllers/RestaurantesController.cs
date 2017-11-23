@@ -34,7 +34,7 @@ namespace IPGTrails4Health.Controllers
             }
 
             var restaurante = await _context.Restaurante
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.RestauranteId == id);
             if (restaurante == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var restaurante = await _context.Restaurante.SingleOrDefaultAsync(m => m.ID == id);
+            var restaurante = await _context.Restaurante.SingleOrDefaultAsync(m => m.RestauranteId == id);
             if (restaurante == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,Descricao,Local")] Restaurante restaurante)
         {
-            if (id != restaurante.ID)
+            if (id != restaurante.RestauranteId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace IPGTrails4Health.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RestauranteExists(restaurante.ID))
+                    if (!RestauranteExists(restaurante.RestauranteId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace IPGTrails4Health.Controllers
             }
 
             var restaurante = await _context.Restaurante
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.RestauranteId == id);
             if (restaurante == null)
             {
                 return NotFound();
@@ -139,7 +139,7 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var restaurante = await _context.Restaurante.SingleOrDefaultAsync(m => m.ID == id);
+            var restaurante = await _context.Restaurante.SingleOrDefaultAsync(m => m.RestauranteId == id);
             _context.Restaurante.Remove(restaurante);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -147,7 +147,7 @@ namespace IPGTrails4Health.Controllers
 
         private bool RestauranteExists(int id)
         {
-            return _context.Restaurante.Any(e => e.ID == id);
+            return _context.Restaurante.Any(e => e.RestauranteId == id);
         }
     }
 }

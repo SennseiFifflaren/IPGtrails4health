@@ -34,7 +34,7 @@ namespace IPGTrails4Health.Controllers
             }
 
             var alojamento = await _context.Alojamento
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.AlojamentoId == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamento.SingleOrDefaultAsync(m => m.ID == id);
+            var alojamento = await _context.Alojamento.SingleOrDefaultAsync(m => m.AlojamentoId == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Nome,Descricao,Local,PrecoMin,PrecoMax")] Alojamento alojamento)
         {
-            if (id != alojamento.ID)
+            if (id != alojamento.AlojamentoId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace IPGTrails4Health.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlojamentoExists(alojamento.ID))
+                    if (!AlojamentoExists(alojamento.AlojamentoId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace IPGTrails4Health.Controllers
             }
 
             var alojamento = await _context.Alojamento
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.AlojamentoId == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -139,7 +139,7 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var alojamento = await _context.Alojamento.SingleOrDefaultAsync(m => m.ID == id);
+            var alojamento = await _context.Alojamento.SingleOrDefaultAsync(m => m.AlojamentoId == id);
             _context.Alojamento.Remove(alojamento);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -147,7 +147,7 @@ namespace IPGTrails4Health.Controllers
 
         private bool AlojamentoExists(int id)
         {
-            return _context.Alojamento.Any(e => e.ID == id);
+            return _context.Alojamento.Any(e => e.AlojamentoId == id);
         }
     }
 }
