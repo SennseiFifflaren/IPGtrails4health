@@ -56,17 +56,16 @@ namespace IPGTrails4Health.Data
             }
             context.SaveChanges();
 
-            var trilhos = new Restaurante[]
-            {
-            new Restaurante{Nome="Manjar dos Reis",Descricao="Simplesmente delicioso",Local="Serra"},
-            new Restaurante{Nome="Manjar da Rainha",Descricao="Os melhores preços",Local="Montanha"},
-            new Restaurante{Nome="O Cantinho",Descricao="Simplesmente delicioso",Local="Vale"},
-            };
+            var trilhos = new Trilho[]
+           {
+            new Trilho{Nome="Trilho do Leandro", Partida="Guarda", Chegada="Seia", Distancia=1,Duracao=2,Dificuldade="Alta",Percurso="Em frente", Sazonalidade="Calor", EstadoTrilho="aberto"},
+           };
             foreach (Restaurante r in restaurantes)
             {
                 context.Restaurante.Add(r);
             }
             context.SaveChanges();
+
         }
     }
 }

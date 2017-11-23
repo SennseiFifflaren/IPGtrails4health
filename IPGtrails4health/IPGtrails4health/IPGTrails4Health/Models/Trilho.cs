@@ -37,5 +37,8 @@ namespace IPGTrails4Health.Models
 
         [Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
         public string EstadoTrilho { get; set; }
+
+
+        public List<RestauranteTrilho> RestaurantesTrilhos { get; set; }
     }
 }

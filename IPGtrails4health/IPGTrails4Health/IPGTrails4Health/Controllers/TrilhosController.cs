@@ -19,13 +19,13 @@ namespace IPGTrails4Health.Controllers
             _context = context;
         }
 
-        // GET: Trilhoes
+        // GET: Trilhos
         public async Task<IActionResult> Index()
         {
             return View(await _context.Trilhos.ToListAsync());
         }
 
-        // GET: Trilhoes/Details/5
+        // GET: Trilhos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // GET: Trilhoes/Create
+        // GET: Trilhos/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Trilhoes/Create
+        // POST: Trilhos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // GET: Trilhoes/Edit/5
+        // GET: Trilhos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // POST: Trilhoes/Edit/5
+        // POST: Trilhos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +116,7 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // GET: Trilhoes/Delete/5
+        // GET: Trilhos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // POST: Trilhoes/Delete/5
+        // POST: Trilhos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
