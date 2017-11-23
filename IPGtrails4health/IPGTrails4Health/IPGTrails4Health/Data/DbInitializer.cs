@@ -107,9 +107,9 @@ namespace IPGTrails4Health.Data
                 },
 
             };
-            foreach (Alojamento a in alojamentos)
+            foreach (PontoInteresse a in pontosinteresse)
             {
-                context.Alojamento.Add(a);
+                context.PontosInteresse.Add(a);
             }
             context.SaveChanges();
         }
