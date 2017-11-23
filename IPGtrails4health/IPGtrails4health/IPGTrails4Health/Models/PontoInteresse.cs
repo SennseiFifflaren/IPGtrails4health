@@ -6,13 +6,32 @@ using System.Threading.Tasks;
 
 namespace IPGTrails4Health.Models
 {
+
+    public enum TipoPI
+    {
+        Fauna,
+        Flora,
+        Monumento,
+        Historico,
+        Paisagem
+    }
+
+    public enum TipoSazonalidade
+    {
+        Primavera,
+        Verão,
+        Outono,
+        Inverno,
+        TodoAno
+    }
+
     public class PontoInteresse
     {
         public int PontoInteresseId { get; set; }
 
         [Required(ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
         [RegularExpression("[1-9]+", ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
-        public string TipoPontoInteresse { get; set; }
+        public TipoPI TipoPontoInteresse { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o nome do ponto de interesse")]
         [RegularExpression(@"[a-zA-Z\s]+", ErrorMessage = "Nome do ponto de interesse inválido")]
@@ -24,7 +43,7 @@ namespace IPGTrails4Health.Models
 
         [Required(ErrorMessage = "Por favor escolha a sazonalidade")]
         [RegularExpression("[1-9]", ErrorMessage = "Por favor escolha a sazonalidade")]
-        public int Sazonalidade { get; set; }
+        public TipoSazonalidade Sazonalidade { get; set; }
 
         public string Observacoes { get; set; }
     }

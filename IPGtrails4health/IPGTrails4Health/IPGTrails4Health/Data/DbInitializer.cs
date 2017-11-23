@@ -66,6 +66,51 @@ namespace IPGTrails4Health.Data
             }
             context.SaveChanges();
 
+            var pontosinteresse = new PontoInteresse[]
+            {
+                new PontoInteresse
+                {
+                    TipoPontoInteresse = TipoPI.Paisagem,
+                    Nome = "Covão da Ametade",
+                    Local = "Vale Glaciário do Zêzere",
+                    Sazonalidade = TipoSazonalidade.TodoAno,
+                    Observacoes = "Apesar do local estar a uma quota perto dos 1500 metros de altitude, só não está acessível nos dias de inverno mais rigoroso em que as estradas não permitem passagem devido à queda de neve."
+                },
+
+                new PontoInteresse
+                {
+                    TipoPontoInteresse = TipoPI.Monumento,
+                    Nome = "Linhares da Beira",
+                    Local = "Linhares da Beira",
+                    Sazonalidade = TipoSazonalidade.TodoAno,
+                    Observacoes = ""
+                },
+
+                new PontoInteresse
+                {
+                    TipoPontoInteresse = TipoPI.Monumento,
+                    Nome = "Museu do Pão",
+                    Local = "Seia na Quinta Fonte do Marrão",
+                    Sazonalidade = TipoSazonalidade.TodoAno,
+                    Observacoes = ""
+                },
+
+                new PontoInteresse
+                {
+                    TipoPontoInteresse = TipoPI.Paisagem,
+                    Nome = "Vale do Rossim",
+                    Local = "Penhas Douradas",
+                    Sazonalidade = TipoSazonalidade.TodoAno,
+                    Observacoes = ""
+                },
+
+            };
+            foreach (PontoInteresse a in pontosinteresse)
+            {
+                context.PontosInteresse.Add(a);
+            }
+            context.SaveChanges();
+
         }
     }
 }
