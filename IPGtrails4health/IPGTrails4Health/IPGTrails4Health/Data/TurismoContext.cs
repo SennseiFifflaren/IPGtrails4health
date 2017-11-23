@@ -17,6 +17,7 @@ namespace IPGTrails4Health.Data
         public DbSet<Restaurante> Restaurante { get; set; }
         public DbSet<AreaDescanso> AreasDescanso { get; set; }
         public DbSet<Trilho> Trilhos { get; set; }
+        public DbSet<PontoInteresse> PontosInteresse { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,7 @@ namespace IPGTrails4Health.Data
             modelBuilder.Entity<Restaurante>().ToTable("Restaurante");
             modelBuilder.Entity<AreaDescanso>().ToTable("AreasDescanso");
             modelBuilder.Entity<Trilho>().ToTable("Trilhos");
+            modelBuilder.Entity<PontoInteresse>().ToTable("PontosInteresse");
 
         }
     }

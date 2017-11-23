@@ -15,10 +15,10 @@ namespace IPGTrails4Health.Models
         public String Nome { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um local de partida do Trilho")]
-        public int Partida { get; set; }
+        public string Partida { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um local de chegada do Trilho")]
-        public int Chegada { get; set; }
+        public string Chegada { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza uma distância do Trilho")]
         public decimal Distancia { get; set; }
@@ -27,15 +27,15 @@ namespace IPGTrails4Health.Models
         public decimal Duracao { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza a dificuldade do Trilho")]
-        public int Dificuldade { get; set; }
+        public string Dificuldade { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o tipo de percurso do Trilho")]
-        public int Percurso { get; set; }
+        public string Percurso { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza a sazonalidade do Trilho")]
-        public int Sazonalidade { get; set; }
+        public string Sazonalidade { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
-        public int EstadoTrilho { get; set; }
+        public string EstadoTrilho { get; set; }
     }
 }

@@ -4,13 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IPGTrails4Health.Models.PontosInteresse
+namespace IPGTrails4Health.Models
 {
-    public class InserirPontoInteresseModel
+    public class PontoInteresse
     {
+        public int PontoInteresseId { get; set; }
+
         [Required(ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
         [RegularExpression("[1-9]+", ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
-        public int PontoInteresse { get; set; }
+        public string TipoPontoInteresse { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o nome do ponto de interesse")]
         [RegularExpression(@"[a-zA-Z\s]+", ErrorMessage = "Nome do ponto de interesse inválido")]
