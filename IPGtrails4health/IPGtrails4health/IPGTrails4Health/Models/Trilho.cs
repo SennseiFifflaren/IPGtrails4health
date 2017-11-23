@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IPGTrails4Health.Models.TrilhosModels
+namespace IPGTrails4Health.Models
 {
-    public class CriarTrilhoModel
+    public class Trilho
     {
-        public int ID_Trilho { get; set; }
+        public int TrilhoId { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o nome do Trilho")]
         [RegularExpression(@"[A-Za-z\s]+",  ErrorMessage = "Nome Inválido")]

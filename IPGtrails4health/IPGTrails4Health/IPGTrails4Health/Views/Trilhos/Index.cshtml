@@ -1,19 +1,83 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<IPGTrails4Health.Models.Trilho>
+
 @{
+    ViewData["Title"] = "Index";
 }
-<h1>Página de acesso às funcionalidades do sistema</h1>
-<br/><br /><br />
-<div class="row">
-    <div class="col-md-6" align="center">
-        <h2>Inserir Pontos de Interesse</h2>
-            <a class="btn btn-default" asp-controller="Turismo" asp-action="PontosInteresse"> Adicionar </a>
 
-    </div>
-    <div class="col-md-6" align="center">
-        <h2>Inserir Alojamento, Restaurantes, Áreas de Descanso durante o percurso</h2>
-          <a class="btn btn-default" asp-controller="Turismo" asp-action="Extras"> Adicionar </a>
+<h2>Index</h2>
 
-    </div>
-</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Partida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Chegada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Distancia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duracao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dificuldade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Percurso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sazonalidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoTrilho)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dificuldade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sazonalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoTrilho)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TrilhoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TrilhoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TrilhoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

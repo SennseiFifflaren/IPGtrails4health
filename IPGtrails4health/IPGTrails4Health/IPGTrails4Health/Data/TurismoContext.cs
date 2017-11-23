@@ -16,12 +16,15 @@ namespace IPGTrails4Health.Data
         public DbSet<Alojamento> Alojamento { get; set; }
         public DbSet<Restaurante> Restaurante { get; set; }
         public DbSet<AreaDescanso> AreasDescanso { get; set; }
+        public DbSet<Trilho> Trilhos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Alojamento>().ToTable("Alojamento");
             modelBuilder.Entity<Restaurante>().ToTable("Restaurante");
             modelBuilder.Entity<AreaDescanso>().ToTable("AreasDescanso");
+            modelBuilder.Entity<Trilho>().ToTable("Trilhos");
+
         }
     }
 }

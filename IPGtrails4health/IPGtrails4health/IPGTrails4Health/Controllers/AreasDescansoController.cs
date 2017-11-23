@@ -10,22 +10,22 @@ using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class TrilhosController : Controller
+    public class AreasDescansoController : Controller
     {
         private readonly TurismoContext _context;
 
-        public TrilhosController(TurismoContext context)
+        public AreasDescansoController(TurismoContext context)
         {
             _context = context;
         }
 
-        // GET: Trilhoes
+        // GET: AreasDescanso
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Trilhos.ToListAsync());
+            return View(await _context.AreasDescanso.ToListAsync());
         }
 
-        // GET: Trilhoes/Details/5
+        // GET: AreasDescanso/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos
-                .SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (trilho == null)
+            var areaDescanso = await _context.AreasDescanso
+                .SingleOrDefaultAsync(m => m.ID == id);
+            if (areaDescanso == null)
             {
                 return NotFound();
             }
 
-            return View(trilho);
+            return View(areaDescanso);
         }
 
-        // GET: Trilhoes/Create
+        // GET: AreasDescanso/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Trilhoes/Create
+        // POST: AreasDescanso/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,EstadoTrilho")] Trilho trilho)
+        public async Task<IActionResult> Create([Bind("ID,Tipo,Nome,Descricao,Local")] AreaDescanso areaDescanso)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(trilho);
+                _context.Add(areaDescanso);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(trilho);
+            return View(areaDescanso);
         }
 
-        // GET: Trilhoes/Edit/5
+        // GET: AreasDescanso/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (trilho == null)
+            var areaDescanso = await _context.AreasDescanso.SingleOrDefaultAsync(m => m.ID == id);
+            if (areaDescanso == null)
             {
                 return NotFound();
             }
-            return View(trilho);
+            return View(areaDescanso);
         }
 
-        // POST: Trilhoes/Edit/5
+        // POST: AreasDescanso/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,EstadoTrilho")] Trilho trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Nome,Descricao,Local")] AreaDescanso areaDescanso)
         {
-            if (id != trilho.TrilhoId)
+            if (id != areaDescanso.ID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace IPGTrails4Health.Controllers
             {
                 try
                 {
-                    _context.Update(trilho);
+                    _context.Update(areaDescanso);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TrilhoExists(trilho.TrilhoId))
+                    if (!AreaDescansoExists(areaDescanso.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(trilho);
+            return View(areaDescanso);
         }
 
-        // GET: Trilhoes/Delete/5
+        // GET: AreasDescanso/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos
-                .SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (trilho == null)
+            var areaDescanso = await _context.AreasDescanso
+                .SingleOrDefaultAsync(m => m.ID == id);
+            if (areaDescanso == null)
             {
                 return NotFound();
             }
 
-            return View(trilho);
+            return View(areaDescanso);
         }
 
-        // POST: Trilhoes/Delete/5
+        // POST: AreasDescanso/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoId == id);
-            _context.Trilhos.Remove(trilho);
+            var areaDescanso = await _context.AreasDescanso.SingleOrDefaultAsync(m => m.ID == id);
+            _context.AreasDescanso.Remove(areaDescanso);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TrilhoExists(int id)
+        private bool AreaDescansoExists(int id)
         {
-            return _context.Trilhos.Any(e => e.TrilhoId == id);
+            return _context.AreasDescanso.Any(e => e.ID == id);
         }
     }
 }
