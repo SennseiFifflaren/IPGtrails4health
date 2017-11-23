@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using IPGTrails4Health.Models;
-using IPGTrails4Health.Models.TurismoViewModels;
 
 namespace IPGTrails4Health.Controllers
 {
@@ -22,7 +21,7 @@ namespace IPGTrails4Health.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult Alojamento(AlojamentoViewModel alojamento)
+        public ViewResult Alojamento(Alojamento alojamento)
         {
             if (ModelState.IsValid)
             {
@@ -42,7 +41,7 @@ namespace IPGTrails4Health.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult Restaurante(AlojamentoViewModel restaurante)
+        public ViewResult Restaurante(Alojamento restaurante)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +61,7 @@ namespace IPGTrails4Health.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult AreasDescanso(AlojamentoViewModel descanso)
+        public ViewResult AreasDescanso(Alojamento descanso)
         {
             if (ModelState.IsValid)
             {
