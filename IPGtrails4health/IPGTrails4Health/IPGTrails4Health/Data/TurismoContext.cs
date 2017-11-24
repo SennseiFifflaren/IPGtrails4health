@@ -36,20 +36,20 @@ namespace IPGTrails4Health.Data
                 .HasForeignKey(trilho => trilho.RestauranteId); ;
             modelBuilder.Entity<PontoInteresse>().ToTable("PontosInteresse");
 
-            modelBuilder.Entity<Trilho>()
-                .HasOne(trilho => trilho.AreaDescanso)
-                .WithMany(areadescanso => areadescanso.Trilhos)
-                .HasForeignKey(trilho => trilho.AreaDescansoId);
+            //modelBuilder.Entity<Trilho>()
+            //    .HasOne(trilho => trilho.AreaDescanso)
+            //    .WithMany(areadescanso => areadescanso.Trilhos)
+            //    .HasForeignKey(trilho => trilho.AreaDescansoId);
 
-            modelBuilder.Entity<Trilho>()
-                .HasOne(trilho => trilho.Alojamento)
-                .WithMany(alojamento => alojamento.Trilhos)
-                .HasForeignKey(trilho => trilho.AlojamentoId);
+            //modelBuilder.Entity<Trilho>()
+            //    .HasOne(trilho => trilho.Alojamento)
+            //    .WithMany(alojamento => alojamento.Trilhos)
+            //    .HasForeignKey(trilho => trilho.AlojamentoId);
 
-            modelBuilder.Entity<Trilho>()
-                .HasOne(trilho => trilho.PontoInteresse)
-                .WithMany(pontointeresse => pontointeresse.Trilhos)
-                .HasForeignKey(trilho => trilho.PontoInteresseId);
+            //modelBuilder.Entity<Trilho>()
+            //    .HasOne(trilho => trilho.PontoInteresse)
+            //    .WithMany(pontointeresse => pontointeresse.Trilhos)
+            //    .HasForeignKey(trilho => trilho.PontoInteresseId);
 
         }
     }
