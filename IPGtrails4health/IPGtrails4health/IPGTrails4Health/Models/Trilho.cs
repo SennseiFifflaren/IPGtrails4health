@@ -21,9 +21,11 @@ namespace IPGTrails4Health.Models
         public string Chegada { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza uma distância do Trilho")]
+        [Display(Name = "Distância")]
         public decimal Distancia { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza a duração prevista do Trilho")]
+        [Display(Name = "Duração")]
         public decimal Duracao { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza a dificuldade do Trilho")]

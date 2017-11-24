@@ -12,6 +12,7 @@ namespace IPGTrails4Health.Models
         [Required(ErrorMessage = "Por favor introduza o nome do restaurante")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza a descrição")]
+        [Display(Name = "Descrição")]
         public string Descricao { get; set; }
         [Required(ErrorMessage = "Por favor introduza o local")]
         public string Local { get; set; }
