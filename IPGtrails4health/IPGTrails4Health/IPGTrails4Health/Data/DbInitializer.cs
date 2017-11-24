@@ -11,10 +11,10 @@ namespace IPGTrails4Health.Data
             context.Database.EnsureCreated();
 
            
-            //if (context.Alojamentos.Any())
-            //{
-            //    return;   // DB has been seeded
-            //}
+            if (context.Alojamentos.Any())
+            {
+                return;   // DB has been seeded
+            }
 
             var alojamentos = new Alojamento[]
             {
@@ -57,9 +57,9 @@ namespace IPGTrails4Health.Data
             context.SaveChanges();
 
             var trilhos = new Trilho[]
-           {
-            new Trilho{Nome="Trilho do Leandro", Partida="Guarda", Chegada="Seia", Distancia=1,Duracao=2,Dificuldade="Alta",Percurso="Em frente", Sazonalidade="Calor", EstadoTrilho="aberto"},
-           };
+            {
+                new Trilho(){RestauranteId = 1, Nome="Trilho1",Partida="Go",Chegada = "Stop",Distancia = 2,Duracao = 30,Dificuldade = "Alta",Percurso = "Rapido",Sazonalidade = "Neve",EstadoTrilho = "aberto"},
+            };
             foreach (Trilho t in trilhos)
             {
                 context.Trilhos.Add(t);

@@ -27,7 +27,12 @@ namespace IPGTrails4Health.Data
             modelBuilder.Entity<Alojamento>().ToTable("Alojamento");
             modelBuilder.Entity<Restaurante>().ToTable("Restaurante");
             modelBuilder.Entity<AreaDescanso>().ToTable("AreasDescanso");
-            modelBuilder.Entity<Trilho>().ToTable("Trilhos");
+            modelBuilder.Entity<Trilho>()
+                .ToTable("Trilhos")
+                .HasOne(bc => bc.Restaurante)
+                .WithMany(b => b.Trilhos)
+                .HasForeignKey(bc => bc.RestauranteId); 
+
             modelBuilder.Entity<PontoInteresse>().ToTable("PontosInteresse");
 
             modelBuilder.Entity<RestauranteTrilho>()
@@ -36,14 +41,14 @@ namespace IPGTrails4Health.Data
             modelBuilder.Entity<RestauranteTrilho>()
                 .HasOne(bc => bc.Trilho)
                 .WithMany(b => b.RestaurantesTrilhos)
-                .HasForeignKey(bc => bc.TrilhoId);  
+                .HasForeignKey(bc => bc.TrilhoId);
 
             modelBuilder.Entity<RestauranteTrilho>()
                 .HasOne(bc => bc.Restaurante)
                 .WithMany(c => c.RestaurantesTrilhos)
                 .HasForeignKey(bc => bc.RestauranteId);
-            
-           
+
+
         }
     }
 }
