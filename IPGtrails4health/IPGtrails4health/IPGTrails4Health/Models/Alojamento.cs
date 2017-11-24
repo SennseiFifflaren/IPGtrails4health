@@ -22,10 +22,8 @@ namespace IPGTrails4Health.Models
         [Required(ErrorMessage = "Por favor introduza o local")]
         public string Local { get; set; }
         [Required(ErrorMessage = "Por favor introduza o preço mínimo")]
-        public int PrecoMin { get; set; }
-        [Required(ErrorMessage = "Por favor introduza o preço máximo")]
-        public int PrecoMax { get; set; }
 
-        public ICollection<Alojamento> Alojamentos { get; set; }
+        public ICollection<Trilho> Trilhos { get; set; }
+        public ICollection<AlojamentoTrilho> AlojamentosTrilhos { get; set; }
     }
 }
