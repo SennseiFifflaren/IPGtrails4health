@@ -65,6 +65,12 @@
         <dd>
             @Html.DisplayFor(model => model.EstadoTrilho)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurante)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Restaurante.Descricao)
+        </dd>
     </dl>
     
     <form asp-action="Delete">
