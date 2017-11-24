@@ -33,13 +33,13 @@
             @Html.DisplayNameFor(model => model.Distancia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Distancia)
+            @Html.DisplayFor(model => model.Distancia) Km
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Duracao)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Duracao)
+            @Html.DisplayFor(model => model.Duracao) Horas
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Dificuldade)
@@ -69,13 +69,13 @@
             @Html.DisplayNameFor(model => model.Restaurante)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Restaurante.Descricao)
+            @Html.DisplayFor(model => model.Restaurante.Nome)
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="TrilhoId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
 </div>

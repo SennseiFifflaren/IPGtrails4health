@@ -76,11 +76,11 @@
                 @Html.DisplayFor(modelItem => item.EstadoTrilho)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Restaurante.Descricao)
+                @Html.DisplayFor(modelItem => item.Restaurante.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TrilhoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TrilhoId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.TrilhoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.TrilhoId">Detalhes</a> |
                 <a asp-action="Delete" asp-route-id="@item.TrilhoId">Delete</a>
             </td>
         </tr>

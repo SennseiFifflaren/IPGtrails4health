@@ -24,7 +24,7 @@ namespace IPGTrails4Health.Models
 
         [Required(ErrorMessage = "Por favor escolha a sazonalidade")]
         [RegularExpression("[1-9]", ErrorMessage = "Por favor escolha a sazonalidade")]
-        public int Sazonalidade { get; set; }
+        public string Sazonalidade { get; set; }
 
         public string Observacoes { get; set; }
     }

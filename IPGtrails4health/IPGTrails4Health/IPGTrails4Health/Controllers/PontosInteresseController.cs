@@ -10,23 +10,22 @@ using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class TrilhosController : Controller
+    public class PontosInteresseController : Controller
     {
         private readonly TurismoContext _context;
 
-        public TrilhosController(TurismoContext context)
+        public PontosInteresseController(TurismoContext context)
         {
             _context = context;
         }
 
-        // GET: Trilhos
+        // GET: PontosInteresse
         public async Task<IActionResult> Index()
         {
-            var turismoContext = _context.Trilhos.Include(t => t.Restaurante);
-            return View(await turismoContext.ToListAsync());
+            return View(await _context.PontosInteresse.ToListAsync());
         }
 
-        // GET: Trilhos/Details/5
+        // GET: PontosInteresse/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos
-                .Include(t => t.Restaurante)
-                .SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (trilho == null)
+            var pontoInteresse = await _context.PontosInteresse
+                .SingleOrDefaultAsync(m => m.PontoInteresseId == id);
+            if (pontoInteresse == null)
             {
                 return NotFound();
             }
 
-            return View(trilho);
+            return View(pontoInteresse);
         }
 
-        // GET: Trilhos/Create
+        // GET: PontosInteresse/Create
         public IActionResult Create()
         {
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome");
             return View();
         }
 
-        // POST: Trilhos/Create
+        // POST: PontosInteresse/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,RestauranteId,EstadoTrilho")] Trilho trilho)
+        public async Task<IActionResult> Create([Bind("PontoInteresseId,TipoPontoInteresse,Nome,Local,Sazonalidade,Observacoes")] PontoInteresse pontoInteresse)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(trilho);
+                _context.Add(pontoInteresse);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
-            return View(trilho);
+            return View(pontoInteresse);
         }
 
-        // GET: Trilhos/Edit/5
+        // GET: PontosInteresse/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (trilho == null)
+            var pontoInteresse = await _context.PontosInteresse.SingleOrDefaultAsync(m => m.PontoInteresseId == id);
+            if (pontoInteresse == null)
             {
                 return NotFound();
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
-            return View(trilho);
+            return View(pontoInteresse);
         }
 
-        // POST: Trilhos/Edit/5
+        // POST: PontosInteresse/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,RestauranteId,EstadoTrilho")] Trilho trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("PontoInteresseId,TipoPontoInteresse,Nome,Local,Sazonalidade,Observacoes")] PontoInteresse pontoInteresse)
         {
-            if (id != trilho.TrilhoId)
+            if (id != pontoInteresse.PontoInteresseId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace IPGTrails4Health.Controllers
             {
                 try
                 {
-                    _context.Update(trilho);
+                    _context.Update(pontoInteresse);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TrilhoExists(trilho.TrilhoId))
+                    if (!PontoInteresseExists(pontoInteresse.PontoInteresseId))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
-            return View(trilho);
+            return View(pontoInteresse);
         }
 
-        // GET: Trilhos/Delete/5
+        // GET: PontosInteresse/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos
-                .Include(t => t.Restaurante)
-                .SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (trilho == null)
+            var pontoInteresse = await _context.PontosInteresse
+                .SingleOrDefaultAsync(m => m.PontoInteresseId == id);
+            if (pontoInteresse == null)
             {
                 return NotFound();
             }
 
-            return View(trilho);
+            return View(pontoInteresse);
         }
 
-        // POST: Trilhos/Delete/5
+        // POST: PontosInteresse/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoId == id);
-            _context.Trilhos.Remove(trilho);
+            var pontoInteresse = await _context.PontosInteresse.SingleOrDefaultAsync(m => m.PontoInteresseId == id);
+            _context.PontosInteresse.Remove(pontoInteresse);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TrilhoExists(int id)
+        private bool PontoInteresseExists(int id)
         {
-            return _context.Trilhos.Any(e => e.TrilhoId == id);
+            return _context.PontosInteresse.Any(e => e.PontoInteresseId == id);
         }
     }
 }
