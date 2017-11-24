@@ -18,3 +18,6 @@ Prog. para Internet
 15-11-2017 - 2h - Upgrade do projeto para MVC Core 2.0, "migração para core 2.0", 23h19m
 16-11-2017 - 2h - Atualização das classes; implementação da Entity Framework com criação de um inicializador de base dados (nao terminado), "implementaçao EF", 01h55m
 17-11-2017 - 2h - Alteração das classes e Criação de scaffolded views e controladores para implementar CRUD (incompleto), "Scaffolded Views/Controllers", 12h51m
+23-11-2017 - 
+23-11-2017 - 4h - Criação e formatação de views e controladores "scaffolded" para os Alojamentos, Áreas de Descanso, Restaurantes e pontos de interesse - "scaffolded para areas descanso, restaurantes e alojamentos - feito"/"scaffolded para areasdescanso e pontos interesse - feito" - 12h40min e 12h59min [no branch scaffolded]
+24-11-2017 - 4h - Recuperação e correção de erros no projeto, scaffolding a funcionar novamente (com Criar Trilho) - "progresso" - 05h29min [no branch newscaff]
