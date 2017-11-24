@@ -27,27 +27,9 @@ namespace IPGTrails4Health.Data
             modelBuilder.Entity<Alojamento>().ToTable("Alojamento");
             modelBuilder.Entity<Restaurante>().ToTable("Restaurante");
             modelBuilder.Entity<AreaDescanso>().ToTable("AreasDescanso");
-            modelBuilder.Entity<Trilho>()
-                .ToTable("Trilhos")
-                .HasOne(bc => bc.Restaurante)
-                .WithMany(b => b.Trilhos)
-                .HasForeignKey(bc => bc.RestauranteId); 
-
+            modelBuilder.Entity<Trilho>().ToTable("Trilhos");
             modelBuilder.Entity<PontoInteresse>().ToTable("PontosInteresse");
-
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasKey(bc => new { bc.TrilhoId, bc.RestauranteId });
-
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasOne(bc => bc.Trilho)
-                .WithMany(b => b.RestaurantesTrilhos)
-                .HasForeignKey(bc => bc.TrilhoId);
-
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasOne(bc => bc.Restaurante)
-                .WithMany(c => c.RestaurantesTrilhos)
-                .HasForeignKey(bc => bc.RestauranteId);
-
+        
 
         }
     }
