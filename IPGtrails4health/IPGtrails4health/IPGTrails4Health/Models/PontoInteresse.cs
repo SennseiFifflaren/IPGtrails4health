@@ -11,7 +11,7 @@ namespace IPGTrails4Health.Models
         public int PontoInteresseId { get; set; }
 
         [Required(ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
-        [RegularExpression("[1-9]+", ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
+        //[RegularExpression("[1-9]+", ErrorMessage = "Por favor escolha a categoria do ponto de interesse")]
         public string TipoPontoInteresse { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o nome do ponto de interesse")]
@@ -24,7 +24,7 @@ namespace IPGTrails4Health.Models
 
         [Required(ErrorMessage = "Por favor escolha a sazonalidade")]
         [RegularExpression("[1-9]", ErrorMessage = "Por favor escolha a sazonalidade")]
-        public string Sazonalidade { get; set; }
+        public int Sazonalidade { get; set; }
 
         public string Observacoes { get; set; }
     }

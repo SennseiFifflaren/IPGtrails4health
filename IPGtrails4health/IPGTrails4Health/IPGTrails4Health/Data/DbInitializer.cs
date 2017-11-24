@@ -143,7 +143,7 @@ namespace IPGTrails4Health.Data
                     TipoPontoInteresse = "Paisagem",
                     Nome = "Covão da Ametade",
                     Local = "Vale Glaciário do Zêzere",
-                    Sazonalidade = "Todo Ano",
+                    Sazonalidade = 1,
                     Observacoes = "Apesar do local estar a uma quota perto dos 1500 metros de altitude, só não está acessível nos dias de inverno mais rigoroso em que as estradas não permitem passagem devido à queda de neve."
                 },
 
@@ -152,7 +152,7 @@ namespace IPGTrails4Health.Data
                     TipoPontoInteresse = "Monumento",
                     Nome = "Linhares da Beira",
                     Local = "Linhares da Beira",
-                    Sazonalidade = "Outono",
+                    Sazonalidade = 2,
                     Observacoes = ""
                 },
 
@@ -161,7 +161,7 @@ namespace IPGTrails4Health.Data
                     TipoPontoInteresse = "Monumento",
                     Nome = "Museu do Pão",
                     Local = "Seia na Quinta Fonte do Marrão",
-                    Sazonalidade = "Neve",
+                    Sazonalidade = 3,
                     Observacoes = ""
                 },
 

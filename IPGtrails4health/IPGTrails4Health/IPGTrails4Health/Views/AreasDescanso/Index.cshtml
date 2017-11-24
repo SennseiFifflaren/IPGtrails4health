@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar um novo</a>
 </p>
 <table class="table">
     <thead>
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Local)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AreaDescansoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AreaDescansoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AreaDescansoId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.AreaDescansoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.AreaDescansoId">Todos os detalhes</a> |
+                <a  asp-action="Delete" asp-route-id="@item.AreaDescansoId" class="text-warning">Eliminar</a>
             </td>
         </tr>
 }

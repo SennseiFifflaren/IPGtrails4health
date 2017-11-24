@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar um novo</a>
 </p>
 <table class="table">
     <thead>
@@ -21,27 +21,27 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Chegada)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Distancia)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Duracao)
-                </th>
-                <th>
+                </th>*@
+                @*<th>
                     @Html.DisplayNameFor(model => model.Dificuldade)
-                </th>
-                <th>
+                </th>*@
+                @*<th>
                     @Html.DisplayNameFor(model => model.Percurso)
-                </th>
-                <th>
+                </th>*@
+                @*<th>
                     @Html.DisplayNameFor(model => model.Sazonalidade)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.EstadoTrilho)
                 </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Restaurante)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -57,31 +57,31 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Chegada)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Distancia)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Duracao)
-            </td>
-            <td>
+            </td>*@
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Dificuldade)
-            </td>
-            <td>
+            </td>*@
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Percurso)
-            </td>
-            <td>
+            </td>*@
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Sazonalidade)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.EstadoTrilho)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Restaurante.Nome)
-            </td>
+            </td>*@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TrilhoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.TrilhoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.TrilhoId">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.TrilhoId">Todos os detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.TrilhoId" class="text-warning">Eliminar</a>
             </td>
         </tr>
 }
