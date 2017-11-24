@@ -58,7 +58,7 @@ namespace IPGTrails4Health.Data
 
             var trilhos = new Trilho[]
             {
-                new Trilho(){RestauranteId = 1, Nome="Trilho1",Partida="Go",Chegada = "Stop",Distancia = 2,Duracao = 30,Dificuldade = "Alta",Percurso = "Rapido",Sazonalidade = "Neve",EstadoTrilho = "aberto"},
+                new Trilho(){Nome="Trilho1",Partida="Go",Chegada = "Stop",Distancia = 2,Duracao = 30,Dificuldade = "Alta",Percurso = "Rapido",Sazonalidade = "Neve",EstadoTrilho = "aberto"},
             };
             foreach (Trilho t in trilhos)
             {

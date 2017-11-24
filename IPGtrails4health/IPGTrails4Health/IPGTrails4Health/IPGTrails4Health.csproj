@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\TrilhosController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Remove="Views\Home\Login.cshtml" />
   </ItemGroup>
 
