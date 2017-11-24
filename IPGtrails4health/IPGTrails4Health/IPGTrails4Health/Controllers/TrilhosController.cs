@@ -22,8 +22,7 @@ namespace IPGTrails4Health.Controllers
         // GET: Trilhos
         public async Task<IActionResult> Index()
         {
-            var turismoContext = _context.Trilhos.Include(t => t.Restaurante);
-            return View(await turismoContext.ToListAsync());
+            return View(await _context.Trilhos.ToListAsync());
         }
 
         // GET: Trilhos/Details/5
@@ -35,7 +34,6 @@ namespace IPGTrails4Health.Controllers
             }
 
             var trilho = await _context.Trilhos
-                .Include(t => t.Restaurante)
                 .SingleOrDefaultAsync(m => m.TrilhoId == id);
             if (trilho == null)
             {
@@ -48,7 +46,6 @@ namespace IPGTrails4Health.Controllers
         // GET: Trilhos/Create
         public IActionResult Create()
         {
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace IPGTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,RestauranteId,EstadoTrilho")] Trilho trilho)
+        public async Task<IActionResult> Create([Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,EstadoTrilho")] Trilho trilho)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace IPGTrails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", trilho.RestauranteId);
             return View(trilho);
         }
 
@@ -82,7 +78,6 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
             return View(trilho);
         }
 
@@ -91,7 +86,7 @@ namespace IPGTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,RestauranteId,EstadoTrilho")] Trilho trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,Nome,Partida,Chegada,Distancia,Duracao,Dificuldade,Percurso,Sazonalidade,EstadoTrilho")] Trilho trilho)
         {
             if (id != trilho.TrilhoId)
             {
@@ -118,7 +113,6 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", trilho.RestauranteId);
             return View(trilho);
         }
 
@@ -131,7 +125,6 @@ namespace IPGTrails4Health.Controllers
             }
 
             var trilho = await _context.Trilhos
-                .Include(t => t.Restaurante)
                 .SingleOrDefaultAsync(m => m.TrilhoId == id);
             if (trilho == null)
             {
