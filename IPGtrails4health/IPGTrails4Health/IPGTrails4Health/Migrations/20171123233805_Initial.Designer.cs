@@ -12,8 +12,8 @@ using System;
 namespace IPGTrails4Health.Migrations
 {
     [DbContext(typeof(TurismoContext))]
-    [Migration("20171123151817_initial")]
-    partial class initial
+    [Migration("20171123233805_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -120,20 +120,15 @@ namespace IPGTrails4Health.Migrations
 
             modelBuilder.Entity("IPGTrails4Health.Models.RestauranteTrilho", b =>
                 {
-                    b.Property<int>("RestauranteTrilhoId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("TrilhoId");
 
                     b.Property<int>("RestauranteId");
 
-                    b.Property<int>("TrilhoId");
-
-                    b.HasKey("RestauranteTrilhoId");
+                    b.HasKey("TrilhoId", "RestauranteId");
 
                     b.HasIndex("RestauranteId");
 
-                    b.HasIndex("TrilhoId");
-
-                    b.ToTable("RestauranteTrilho");
+                    b.ToTable("RestaurantesTrilhos");
                 });
 
             modelBuilder.Entity("IPGTrails4Health.Models.Trilho", b =>
@@ -163,10 +158,14 @@ namespace IPGTrails4Health.Migrations
                     b.Property<string>("Percurso")
                         .IsRequired();
 
+                    b.Property<int>("RestauranteId");
+
                     b.Property<string>("Sazonalidade")
                         .IsRequired();
 
                     b.HasKey("TrilhoId");
+
+                    b.HasIndex("RestauranteId");
 
                     b.ToTable("Trilhos");
                 });
@@ -187,14 +186,22 @@ namespace IPGTrails4Health.Migrations
 
             modelBuilder.Entity("IPGTrails4Health.Models.RestauranteTrilho", b =>
                 {
-                    b.HasOne("IPGTrails4Health.Models.Restaurante")
+                    b.HasOne("IPGTrails4Health.Models.Restaurante", "Restaurante")
                         .WithMany("RestaurantesTrilhos")
                         .HasForeignKey("RestauranteId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("IPGTrails4Health.Models.Trilho")
+                    b.HasOne("IPGTrails4Health.Models.Trilho", "Trilho")
                         .WithMany("RestaurantesTrilhos")
                         .HasForeignKey("TrilhoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("IPGTrails4Health.Models.Trilho", b =>
+                {
+                    b.HasOne("IPGTrails4Health.Models.Restaurante", "Restaurante")
+                        .WithMany()
+                        .HasForeignKey("RestauranteId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace IPGTrails4Health.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -103,33 +103,38 @@ namespace IPGTrails4Health.Migrations
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Partida = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Percurso = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RestauranteId = table.Column<int>(type: "int", nullable: false),
                     Sazonalidade = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Trilhos", x => x.TrilhoId);
+                    table.ForeignKey(
+                        name: "FK_Trilhos_Restaurante_RestauranteId",
+                        column: x => x.RestauranteId,
+                        principalTable: "Restaurante",
+                        principalColumn: "RestauranteId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RestauranteTrilho",
+                name: "RestaurantesTrilhos",
                 columns: table => new
                 {
-                    RestauranteTrilhoId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    RestauranteId = table.Column<int>(type: "int", nullable: false),
-                    TrilhoId = table.Column<int>(type: "int", nullable: false)
+                    TrilhoId = table.Column<int>(type: "int", nullable: false),
+                    RestauranteId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RestauranteTrilho", x => x.RestauranteTrilhoId);
+                    table.PrimaryKey("PK_RestaurantesTrilhos", x => new { x.TrilhoId, x.RestauranteId });
                     table.ForeignKey(
-                        name: "FK_RestauranteTrilho_Restaurante_RestauranteId",
+                        name: "FK_RestaurantesTrilhos_Restaurante_RestauranteId",
                         column: x => x.RestauranteId,
                         principalTable: "Restaurante",
                         principalColumn: "RestauranteId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RestauranteTrilho_Trilhos_TrilhoId",
+                        name: "FK_RestaurantesTrilhos_Trilhos_TrilhoId",
                         column: x => x.TrilhoId,
                         principalTable: "Trilhos",
                         principalColumn: "TrilhoId",
@@ -147,14 +152,14 @@ namespace IPGTrails4Health.Migrations
                 column: "AreaDescansoId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RestauranteTrilho_RestauranteId",
-                table: "RestauranteTrilho",
+                name: "IX_RestaurantesTrilhos_RestauranteId",
+                table: "RestaurantesTrilhos",
                 column: "RestauranteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RestauranteTrilho_TrilhoId",
-                table: "RestauranteTrilho",
-                column: "TrilhoId");
+                name: "IX_Trilhos_RestauranteId",
+                table: "Trilhos",
+                column: "RestauranteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -169,13 +174,13 @@ namespace IPGTrails4Health.Migrations
                 name: "PontosInteresse");
 
             migrationBuilder.DropTable(
-                name: "RestauranteTrilho");
-
-            migrationBuilder.DropTable(
-                name: "Restaurante");
+                name: "RestaurantesTrilhos");
 
             migrationBuilder.DropTable(
                 name: "Trilhos");
+
+            migrationBuilder.DropTable(
+                name: "Restaurante");
         }
     }
 }

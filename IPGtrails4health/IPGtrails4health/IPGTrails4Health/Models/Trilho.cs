@@ -42,6 +42,6 @@ namespace IPGTrails4Health.Models
         public string EstadoTrilho { get; set; }
 
 
-        public List<RestauranteTrilho> RestaurantesTrilhos { get; set; }
+        public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
     }
 }

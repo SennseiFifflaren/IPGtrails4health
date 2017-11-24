@@ -13,11 +13,14 @@ namespace IPGTrails4Health.Data
         {
         }
 
-        public DbSet<Alojamento> Alojamento { get; set; }
-        public DbSet<Restaurante> Restaurante { get; set; }
+        public DbSet<Alojamento> Alojamentos { get; set; }
+        public DbSet<Restaurante> Restaurantes { get; set; }
         public DbSet<AreaDescanso> AreasDescanso { get; set; }
         public DbSet<Trilho> Trilhos { get; set; }
         public DbSet<PontoInteresse> PontosInteresse { get; set; }
+
+        public DbSet<RestauranteTrilho> RestaurantesTrilhos { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +30,20 @@ namespace IPGTrails4Health.Data
             modelBuilder.Entity<Trilho>().ToTable("Trilhos");
             modelBuilder.Entity<PontoInteresse>().ToTable("PontosInteresse");
 
+            modelBuilder.Entity<RestauranteTrilho>()
+                .HasKey(bc => new { bc.TrilhoId, bc.RestauranteId });
+
+            modelBuilder.Entity<RestauranteTrilho>()
+                .HasOne(bc => bc.Trilho)
+                .WithMany(b => b.RestaurantesTrilhos)
+                .HasForeignKey(bc => bc.TrilhoId);  
+
+            modelBuilder.Entity<RestauranteTrilho>()
+                .HasOne(bc => bc.Restaurante)
+                .WithMany(c => c.RestaurantesTrilhos)
+                .HasForeignKey(bc => bc.RestauranteId);
+            
+           
         }
     }
 }
