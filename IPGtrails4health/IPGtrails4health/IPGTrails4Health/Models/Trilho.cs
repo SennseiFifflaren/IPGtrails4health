@@ -38,22 +38,10 @@ namespace IPGTrails4Health.Models
         public int RestauranteId { get; set; }
         public Restaurante Restaurante { get; set; }
 
-        public int AreaDescansoId { get; set; }
-        public AreaDescanso AreaDescanso { get; set; }
-
-        public int AlojamentoId { get; set; }
-        public Alojamento Alojamento { get; set; }
-
-        public int PontoInteresseId { get; set; }
-        public PontoInteresse PontoInteresse { get; set; }
-
         [Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
         public string EstadoTrilho { get; set; }
 
 
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
-        public ICollection<AreaDescansoTrilho> AreaDescansoTrilhos { get; set; }
-        public ICollection<PontoInteresseTrilho> PontosInteresseTrilhos { get; set; }
-        public ICollection<AlojamentoTrilho> AlojamentosTrilhos { get; set; }
     }
 }

@@ -27,8 +27,5 @@ namespace IPGTrails4Health.Models
         public int Sazonalidade { get; set; }
 
         public string Observacoes { get; set; }
-
-        public ICollection<Trilho> Trilhos { get; set; }
-        public ICollection<PontoInteresseTrilho> PontosInteresseTrilhos { get; set; }
     }
 }

@@ -1,0 +1,78 @@
+﻿@model IPGTrails4Health.Models.Trilho
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trilho</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Partida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Partida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Chegada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Chegada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Distancia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Distancia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duracao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dificuldade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dificuldade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Percurso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Percurso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sazonalidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sazonalidade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoTrilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstadoTrilho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurante)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Restaurante.Descricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TrilhoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
