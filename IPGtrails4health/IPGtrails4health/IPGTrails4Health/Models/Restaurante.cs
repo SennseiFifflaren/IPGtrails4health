@@ -16,8 +16,7 @@ namespace IPGTrails4Health.Models
         public string Descricao { get; set; }
         [Required(ErrorMessage = "Por favor introduza o local")]
         public string Local { get; set; }
-
-        public ICollection<Trilho> Trilhos { get; set; }
+        
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
     }
 }
