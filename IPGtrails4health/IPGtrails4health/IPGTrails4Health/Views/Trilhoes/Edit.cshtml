@@ -29,12 +29,12 @@
                 <span asp-validation-for="Chegada" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Distancia" class="control-label">Distância</label>
+                <label asp-for="Distancia" class="control-label"></label>
                 <input asp-for="Distancia" class="form-control" />
                 <span asp-validation-for="Distancia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Duracao" class="control-label">Duração</label>
+                <label asp-for="Duracao" class="control-label"></label>
                 <input asp-for="Duracao" class="form-control" />
                 <span asp-validation-for="Duracao" class="text-danger"></span>
             </div>
@@ -54,24 +54,24 @@
                 <span asp-validation-for="Sazonalidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RestauranteId" class="control-label">Nome do Restaurante</label>
+                <label asp-for="RestauranteId" class="control-label"></label>
                 <select asp-for="RestauranteId" class="form-control" asp-items="ViewBag.RestauranteId"></select>
                 <span asp-validation-for="RestauranteId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EstadoTrilho" class="control-label">Estado do Trilho</label>
+                <label asp-for="EstadoTrilho" class="control-label"></label>
                 <input asp-for="EstadoTrilho" class="form-control" />
                 <span asp-validation-for="EstadoTrilho" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Voltar à lista</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

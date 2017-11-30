@@ -10,23 +10,23 @@ using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class TrilhosController : Controller
+    public class TrilhoesController : Controller
     {
         private readonly TurismoContext _context;
 
-        public TrilhosController(TurismoContext context)
+        public TrilhoesController(TurismoContext context)
         {
             _context = context;
         }
 
-        // GET: Trilhos
+        // GET: Trilhoes
         public async Task<IActionResult> Index()
         {
             var turismoContext = _context.Trilhos.Include(t => t.Restaurante);
             return View(await turismoContext.ToListAsync());
         }
 
-        // GET: Trilhos/Details/5
+        // GET: Trilhoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // GET: Trilhos/Create
+        // GET: Trilhoes/Create
         public IActionResult Create()
         {
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome");
+            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao");
             return View();
         }
 
-        // POST: Trilhos/Create
+        // POST: Trilhoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,11 +65,11 @@ namespace IPGTrails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
+            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", trilho.RestauranteId);
             return View(trilho);
         }
 
-        // GET: Trilhos/Edit/5
+        // GET: Trilhoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,11 +82,11 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
+            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", trilho.RestauranteId);
             return View(trilho);
         }
 
-        // POST: Trilhos/Edit/5
+        // POST: Trilhoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,11 +118,11 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", trilho.RestauranteId);
+            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", trilho.RestauranteId);
             return View(trilho);
         }
 
-        // GET: Trilhos/Delete/5
+        // GET: Trilhoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace IPGTrails4Health.Controllers
             return View(trilho);
         }
 
-        // POST: Trilhos/Delete/5
+        // POST: Trilhoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
