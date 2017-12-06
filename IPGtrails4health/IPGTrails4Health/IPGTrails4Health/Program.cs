@@ -8,6 +8,7 @@ using Microsoft.AspNetCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IPGTrails4Health.Data;
+using IPGTrails4Health.Models;
 using Microsoft.Extensions.Logging;
 
 namespace IPGTrails4Health

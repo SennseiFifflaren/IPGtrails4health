@@ -30,6 +30,7 @@ namespace IPGTrails4Health
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection2")));
             // Add framework services.
             services.AddDbContext<TurismoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
