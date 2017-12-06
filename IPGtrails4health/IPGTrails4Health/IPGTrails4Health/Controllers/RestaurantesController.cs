@@ -10,22 +10,22 @@ using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class AlojamentosController : Controller
+    public class RestaurantesController : Controller
     {
         private readonly TurismoContext _context;
 
-        public AlojamentosController(TurismoContext context)
+        public RestaurantesController(TurismoContext context)
         {
             _context = context;
         }
 
-        // GET: Alojamentos
+        // GET: Restaurantes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Alojamentos.ToListAsync());
+            return View(await _context.Restaurantes.ToListAsync());
         }
 
-        // GET: Alojamentos/Details/5
+        // GET: Restaurantes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos
-                .SingleOrDefaultAsync(m => m.AlojamentoId == id);
-            if (alojamento == null)
+            var restaurante = await _context.Restaurantes
+                .SingleOrDefaultAsync(m => m.RestauranteId == id);
+            if (restaurante == null)
             {
                 return NotFound();
             }
 
-            return View(alojamento);
+            return View(restaurante);
         }
 
-        // GET: Alojamentos/Create
+        // GET: Restaurantes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Alojamentos/Create
+        // POST: Restaurantes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlojamentoId,Tipo,Nome,Descricao,Local")] Alojamento alojamento)
+        public async Task<IActionResult> Create([Bind("RestauranteId,Nome,Descricao,Local")] Restaurante restaurante)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(alojamento);
+                _context.Add(restaurante);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(alojamento);
+            return View(restaurante);
         }
 
-        // GET: Alojamentos/Edit/5
+        // GET: Restaurantes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos.SingleOrDefaultAsync(m => m.AlojamentoId == id);
-            if (alojamento == null)
+            var restaurante = await _context.Restaurantes.SingleOrDefaultAsync(m => m.RestauranteId == id);
+            if (restaurante == null)
             {
                 return NotFound();
             }
-            return View(alojamento);
+            return View(restaurante);
         }
 
-        // POST: Alojamentos/Edit/5
+        // POST: Restaurantes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AlojamentoId,Tipo,Nome,Descricao,Local")] Alojamento alojamento)
+        public async Task<IActionResult> Edit(int id, [Bind("RestauranteId,Nome,Descricao,Local")] Restaurante restaurante)
         {
-            if (id != alojamento.AlojamentoId)
+            if (id != restaurante.RestauranteId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace IPGTrails4Health.Controllers
             {
                 try
                 {
-                    _context.Update(alojamento);
+                    _context.Update(restaurante);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlojamentoExists(alojamento.AlojamentoId))
+                    if (!RestauranteExists(restaurante.RestauranteId))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(alojamento);
+            return View(restaurante);
         }
 
-        // GET: Alojamentos/Delete/5
+        // GET: Restaurantes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos
-                .SingleOrDefaultAsync(m => m.AlojamentoId == id);
-            if (alojamento == null)
+            var restaurante = await _context.Restaurantes
+                .SingleOrDefaultAsync(m => m.RestauranteId == id);
+            if (restaurante == null)
             {
                 return NotFound();
             }
 
-            return View(alojamento);
+            return View(restaurante);
         }
 
-        // POST: Alojamentos/Delete/5
+        // POST: Restaurantes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var alojamento = await _context.Alojamentos.SingleOrDefaultAsync(m => m.AlojamentoId == id);
-            _context.Alojamentos.Remove(alojamento);
+            var restaurante = await _context.Restaurantes.SingleOrDefaultAsync(m => m.RestauranteId == id);
+            _context.Restaurantes.Remove(restaurante);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AlojamentoExists(int id)
+        private bool RestauranteExists(int id)
         {
-            return _context.Alojamentos.Any(e => e.AlojamentoId == id);
+            return _context.Restaurantes.Any(e => e.RestauranteId == id);
         }
     }
 }

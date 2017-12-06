@@ -7,9 +7,13 @@
 
   <ItemGroup>
     <Compile Remove="Models\AccountViewModels\**" />
+    <Compile Remove="Models\TrilhosModels\**" />
     <Content Remove="Models\AccountViewModels\**" />
+    <Content Remove="Models\TrilhosModels\**" />
     <EmbeddedResource Remove="Models\AccountViewModels\**" />
+    <EmbeddedResource Remove="Models\TrilhosModels\**" />
     <None Remove="Models\AccountViewModels\**" />
+    <None Remove="Models\TrilhosModels\**" />
   </ItemGroup>
 
   <ItemGroup>
