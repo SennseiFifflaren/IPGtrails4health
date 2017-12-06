@@ -22,7 +22,7 @@ namespace IPGTrails4Health.Controllers
         // GET: Alojamentos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Alojamentos.ToListAsync());
+            return View(await _context.Alojamento.ToListAsync());
         }
 
         // GET: Alojamentos/Details/5
@@ -33,8 +33,8 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos
-                .SingleOrDefaultAsync(m => m.AlojamentoId == id);
+            var alojamento = await _context.Alojamento
+                .SingleOrDefaultAsync(m => m.ID == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace IPGTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlojamentoId,Tipo,Nome,Descricao,Local")] Alojamento alojamento)
+        public async Task<IActionResult> Create([Bind("ID,Tipo,Nome,Descricao,Local,PrecoMin,PrecoMax")] Alojamento alojamento)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos.SingleOrDefaultAsync(m => m.AlojamentoId == id);
+            var alojamento = await _context.Alojamento.SingleOrDefaultAsync(m => m.ID == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace IPGTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AlojamentoId,Tipo,Nome,Descricao,Local")] Alojamento alojamento)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Nome,Descricao,Local,PrecoMin,PrecoMax")] Alojamento alojamento)
         {
-            if (id != alojamento.AlojamentoId)
+            if (id != alojamento.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace IPGTrails4Health.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlojamentoExists(alojamento.AlojamentoId))
+                    if (!AlojamentoExists(alojamento.ID))
                     {
                         return NotFound();
                     }
@@ -124,8 +124,8 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamento = await _context.Alojamentos
-                .SingleOrDefaultAsync(m => m.AlojamentoId == id);
+            var alojamento = await _context.Alojamento
+                .SingleOrDefaultAsync(m => m.ID == id);
             if (alojamento == null)
             {
                 return NotFound();
@@ -139,15 +139,15 @@ namespace IPGTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var alojamento = await _context.Alojamentos.SingleOrDefaultAsync(m => m.AlojamentoId == id);
-            _context.Alojamentos.Remove(alojamento);
+            var alojamento = await _context.Alojamento.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Alojamento.Remove(alojamento);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AlojamentoExists(int id)
         {
-            return _context.Alojamentos.Any(e => e.AlojamentoId == id);
+            return _context.Alojamento.Any(e => e.ID == id);
         }
     }
 }

@@ -13,38 +13,15 @@ namespace IPGTrails4Health.Data
         {
         }
 
-        public DbSet<Alojamento> Alojamentos { get; set; }
-        public DbSet<Restaurante> Restaurantes { get; set; }
+        public DbSet<Alojamento> Alojamento { get; set; }
+        public DbSet<Restaurante> Restaurante { get; set; }
         public DbSet<AreaDescanso> AreasDescanso { get; set; }
-        public DbSet<Trilho> Trilhos { get; set; }
-        public DbSet<PontoInteresse> PontosInteresse { get; set; }
-        //public DbSet<Estado> Estados { get; set; }
-        public DbSet<RestauranteTrilho> RestaurantesTrilhos { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Alojamento>();
-            modelBuilder.Entity<Restaurante>();
-            modelBuilder.Entity<AreaDescanso>();
-            modelBuilder.Entity<Trilho>();
-            modelBuilder.Entity<PontoInteresse>();
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasKey(rt => new { rt.RestauranteId, rt.TrilhoId });
-
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasOne(rt => rt.Trilho)
-                .WithMany(t => t.RestaurantesTrilhos)
-                .HasForeignKey(rt => rt.TrilhoId);
-
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasOne(rt => rt.Restaurante)
-                .WithMany(r => r.RestaurantesTrilhos)
-                .HasForeignKey(rt => rt.RestauranteId);
-            //modelBuilder.Entity<Trilho>()
-            //    .HasOne(trilho => trilho.TipoEstado)
-            //    .WithMany(estado => estado.Trilhos)
-            //    .HasForeignKey(trilho => trilho.EstadoId);
+            modelBuilder.Entity<Alojamento>().ToTable("Alojamento");
+            modelBuilder.Entity<Restaurante>().ToTable("Restaurante");
+            modelBuilder.Entity<AreaDescanso>().ToTable("AreasDescanso");
         }
     }
 }

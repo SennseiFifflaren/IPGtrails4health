@@ -1,153 +1,37 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IPGTrails4Health.Models.PontosInteresse;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using IPGTrails4Health.Data;
-using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Controllers
 {
     public class PontosInteresseController : Controller
     {
-        private readonly TurismoContext _context;
+        [HttpGet]
 
-        public PontosInteresseController(TurismoContext context)
+        public ViewResult InserirPontosInteresse()
         {
-            _context = context;
-        }
-
-        // GET: PontosInteresse
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.PontosInteresse.ToListAsync());
-        }
-
-        // GET: PontosInteresse/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var pontoInteresse = await _context.PontosInteresse
-                .SingleOrDefaultAsync(m => m.PontoInteresseId == id);
-            if (pontoInteresse == null)
-            {
-                return NotFound();
-            }
-
-            return View(pontoInteresse);
-        }
-
-        // GET: PontosInteresse/Create
-        public IActionResult Create()
-        {
+            ViewData["Message"] = "Página para adicionar pontos de interesse (fauna, flora, históricos, monumentos) tendo em conta a sazonalidade.";
             return View();
         }
 
-        // POST: PontosInteresse/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PontoInteresseId,TipoPontoInteresse,Nome,Local,Sazonalidade,Observacoes")] PontoInteresse pontoInteresse)
+
+        public ViewResult InserirPontosInteresse(InserirPontoInteresseModel dados)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pontoInteresse);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //Repository.AddGuestResponse(response);
+                return View("PontoInteresseInserido");
             }
-            return View(pontoInteresse);
+            else
+            {
+                return View();
+            }
         }
 
-        // GET: PontosInteresse/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var pontoInteresse = await _context.PontosInteresse.SingleOrDefaultAsync(m => m.PontoInteresseId == id);
-            if (pontoInteresse == null)
-            {
-                return NotFound();
-            }
-            return View(pontoInteresse);
-        }
-
-        // POST: PontosInteresse/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PontoInteresseId,TipoPontoInteresse,Nome,Local,Sazonalidade,Observacoes")] PontoInteresse pontoInteresse)
-        {
-            if (id != pontoInteresse.PontoInteresseId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(pontoInteresse);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PontoInteresseExists(pontoInteresse.PontoInteresseId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(pontoInteresse);
-        }
-
-        // GET: PontosInteresse/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var pontoInteresse = await _context.PontosInteresse
-                .SingleOrDefaultAsync(m => m.PontoInteresseId == id);
-            if (pontoInteresse == null)
-            {
-                return NotFound();
-            }
-
-            return View(pontoInteresse);
-        }
-
-        // POST: PontosInteresse/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var pontoInteresse = await _context.PontosInteresse.SingleOrDefaultAsync(m => m.PontoInteresseId == id);
-            _context.PontosInteresse.Remove(pontoInteresse);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool PontoInteresseExists(int id)
-        {
-            return _context.PontosInteresse.Any(e => e.PontoInteresseId == id);
-        }
     }
 }
