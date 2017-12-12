@@ -8,8 +8,8 @@ namespace IPGTrails4Health.Models
 {
     public class EFTurismoRepository : ITurismoRepository
     {
-        private TurismoDbContext context;
-        public EFTurismoRepository(TurismoDbContext context)
+        private ApplicationDbContext context;
+        public EFTurismoRepository(ApplicationDbContext context)
         {
             this.context = context;
         }

@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using IPGTrails4Health.Data;
 using IPGTrails4Health.Models;
 using IPGTrails4Health.Services;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging; 
 
 namespace IPGTrails4Health
 {
@@ -27,11 +27,11 @@ namespace IPGTrails4Health
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TurismoDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<TurismoDbContext>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add application services.
@@ -41,9 +41,10 @@ namespace IPGTrails4Health
 
             services.AddTransient<ITurismoRepository, EFTurismoRepository>();
 
-            services.AddDbContext<TurismoDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringIPGTrails4Health"))
-            );
+            );
+
 
             //services.AddTransient<ITurismoRepository, FakeProductRepository>();
 

@@ -39,7 +39,7 @@ namespace IPGTrails4Health.Data
             );
         }
 
-        private static void EnsureTrilhosPopulated(TurismoDbContext dbContext)
+        private static void EnsureTrilhosPopulated(ApplicationDbContext dbContext)
         {
             dbContext.Trilhos.AddRange(
                            new Trilho

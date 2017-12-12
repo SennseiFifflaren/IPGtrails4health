@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace IPGTrails4Health.Data
 {
-    public class TurismoDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public TurismoDbContext(DbContextOptions<TurismoDbContext> options) : base(options) { }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Trilho> Trilhos { get; set; }
         public DbSet<Restaurante> Restaurantes { get; set; }
         public DbSet<RestauranteTrilho> RestaurantesTrilhos { get; set; }
