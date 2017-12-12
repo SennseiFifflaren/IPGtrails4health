@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using IPGTrails4Health.Data;
 using IPGTrails4Health.Models;
 using IPGTrails4Health.Services;
+using Microsoft.Extensions.Logging;
+using IPGTrails4Health.Data.Migrations;
 
 namespace IPGTrails4Health
 {
@@ -37,10 +39,19 @@ namespace IPGTrails4Health
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddTransient<ITurismoRepository, EFTurismoRepository>();
+
+            services.AddDbContext<TurismoDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringIPGTrails4Health"))
+            );
+
+            //services.AddTransient<ITurismoRepository, FakeProductRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -63,6 +74,8 @@ namespace IPGTrails4Health
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }
