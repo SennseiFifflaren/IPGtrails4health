@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IPGTrails4Health.Data.Migrations
+namespace IPGTrails4Health.Data
 {
     public static class SeedData
     {
 
         public static void EnsurePopulated(IServiceProvider appServices)
         {
-            TurismoDbContext dbContext = (TurismoDbContext)appServices.GetService(typeof(TurismoDbContext));
+            ApplicationDbContext dbContext = (ApplicationDbContext)appServices.GetService(typeof(ApplicationDbContext));
 
             if (!dbContext.Restaurantes.Any())
             {
@@ -26,7 +26,7 @@ namespace IPGTrails4Health.Data.Migrations
             dbContext.SaveChanges();
         }
 
-        private static void EnsureRestaurantesPopulated(TurismoDbContext dbContext)
+        private static void EnsureRestaurantesPopulated(ApplicationDbContext dbContext)
         {
             dbContext.Restaurantes.AddRange(
                            new Restaurante

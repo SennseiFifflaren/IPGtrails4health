@@ -1,26 +1,41 @@
-﻿using System;
+﻿using IPGTrails4Health.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class TurismoDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public TurismoDbContext(DbContextOptions<TurismoDbContext> options) : base(options) { }
+        public DbSet<Trilho> Trilhos { get; set; }
+        public DbSet<Restaurante> Restaurantes { get; set; }
+        public DbSet<RestauranteTrilho> RestaurantesTrilhos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //modelBuilder.Entity<Alojamento>();
+            modelBuilder.Entity<Restaurante>();
+            //modelBuilder.Entity<AreaDescanso>();
+            modelBuilder.Entity<Trilho>();
+            //modelBuilder.Entity<PontoInteresse>();
+            modelBuilder.Entity<RestauranteTrilho>()
+                .HasKey(rt => new { rt.RestauranteId, rt.TrilhoId });
+
+            modelBuilder.Entity<RestauranteTrilho>()
+                .HasOne(rt => rt.Trilho)
+                .WithMany(t => t.RestaurantesTrilhos)
+                .HasForeignKey(rt => rt.TrilhoId);
+
+            modelBuilder.Entity<RestauranteTrilho>()
+                .HasOne(rt => rt.Restaurante)
+                .WithMany(r => r.RestaurantesTrilhos)
+                .HasForeignKey(rt => rt.RestauranteId);
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
-        }
     }
+
 }
+
