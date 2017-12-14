@@ -32,6 +32,8 @@ namespace IPGTrails4Health.Data
             //modelBuilder.Entity<PontoInteresse>();
             modelBuilder.Entity<RestauranteTrilho>()
                 .HasKey(rt => new { rt.RestauranteId, rt.TrilhoId });
+            modelBuilder.Entity<EstadoTrilho>()
+                .HasKey(et => new { et.EstadoId, et.TrilhoId });
 
             modelBuilder.Entity<RestauranteTrilho>()
                 .HasOne(rt => rt.Trilho)
