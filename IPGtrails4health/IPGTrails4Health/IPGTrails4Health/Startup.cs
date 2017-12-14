@@ -27,11 +27,11 @@ namespace IPGTrails4Health
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<TurismoDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<TurismoDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add application services.
@@ -75,7 +75,7 @@ namespace IPGTrails4Health
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            SeedData.EnsurePopulated(app.ApplicationServices);
+            //SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }

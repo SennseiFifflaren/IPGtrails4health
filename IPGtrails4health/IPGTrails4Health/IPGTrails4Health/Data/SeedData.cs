@@ -11,7 +11,7 @@ namespace IPGTrails4Health.Data
 
         public static void EnsurePopulated(IServiceProvider appServices)
         {
-            ApplicationDbContext dbContext = (ApplicationDbContext)appServices.GetService(typeof(ApplicationDbContext));
+            TurismoDbContext dbContext = (TurismoDbContext)appServices.GetService(typeof(TurismoDbContext));
 
             if (!dbContext.Restaurantes.Any())
             {
@@ -26,7 +26,7 @@ namespace IPGTrails4Health.Data
             dbContext.SaveChanges();
         }
 
-        private static void EnsureRestaurantesPopulated(ApplicationDbContext dbContext)
+        private static void EnsureRestaurantesPopulated(TurismoDbContext dbContext)
         {
             dbContext.Restaurantes.AddRange(
                            new Restaurante
@@ -39,7 +39,7 @@ namespace IPGTrails4Health.Data
             );
         }
 
-        private static void EnsureTrilhosPopulated(ApplicationDbContext dbContext)
+        private static void EnsureTrilhosPopulated(TurismoDbContext dbContext)
         {
             dbContext.Trilhos.AddRange(
                            new Trilho
