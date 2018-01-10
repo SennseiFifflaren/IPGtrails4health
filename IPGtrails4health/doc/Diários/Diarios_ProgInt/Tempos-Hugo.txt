@@ -23,3 +23,4 @@ Prog. para Internet
 24-11-2017 - 4h - Recuperação e correção de erros no projeto, scaffolding a funcionar novamente (com Criar Trilho) - "progresso" - 05h29min [no branch newscaff]
 29-11-2017 - 2h - Correção de erros e atualização da relação Restaurante-Trilho - "relationship Restaurante-Trilho" - 10h01m [no branch newscaff]
 30-11-2017 - 2h - Correção de erros e atualização do inicializador de base de dados - "Atualização DbInitializer (novo formato)" - 10h35m [no branch newscaff]
+10-01-2018 - 1h30 - Correção de erros e atualização das classes - "Atualização das classes para corresponder a E.S. II, atualização SeedData, correção de erros" - 10h26min [no branch Leandro]
