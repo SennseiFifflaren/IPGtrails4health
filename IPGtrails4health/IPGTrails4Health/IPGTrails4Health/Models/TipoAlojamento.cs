@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace IPGTrails4Health.Models
 {
-    public class TipoPontoInteresse
+    public class TipoAlojamento
     {
-        public int TipoPontoInteresseId { get; set; }
-        public string Nome { get; set; } 
+        public int TipoAlojamentoId { get; set; }
+        public string Nome { get; set; }
     }
 }

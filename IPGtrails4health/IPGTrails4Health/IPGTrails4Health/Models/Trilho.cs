@@ -28,22 +28,19 @@ namespace IPGTrails4Health.Models
         [Display(Name = "Duração")]
         public decimal Duracao { get; set; }
 
-        [Required(ErrorMessage = "Por favor introduza a dificuldade do Trilho")]
-        public string Dificuldade { get; set; }
+        //[Required(ErrorMessage = "Por favor introduza a dificuldade do Trilho")]
+        //public string Dificuldade { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza o tipo de percurso do Trilho")]
         public string Percurso { get; set; }
-
-        [Required(ErrorMessage = "Por favor introduza a sazonalidade do Trilho")]
-        public string Sazonalidade { get; set; }
 
         public int RestauranteId { get; set; }
         public Restaurante Restaurante { get; set; }
         //public int EstadoId { get; set; }
         //public Estado TipoEstado { get; set; }
 
-        [Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
-        public string EstadoTrilho { get; set; }
+        //[Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
+        //public string EstadoTrilho { get; set; }
 
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
         //public ICollection<EstadoTrilho> EstadosTrilho { get; set; }

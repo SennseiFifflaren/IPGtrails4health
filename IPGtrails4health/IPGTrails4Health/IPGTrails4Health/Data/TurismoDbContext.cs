@@ -11,6 +11,7 @@ namespace IPGTrails4Health.Data
     {
         public TurismoDbContext (DbContextOptions<TurismoDbContext> options) : base(options) { }
         public DbSet<Trilho> Trilhos { get; set; }
+        public DbSet<Dificuldade> Dificuldades { get; set; }
         public DbSet<Restaurante> Restaurantes { get; set; }
         public DbSet<RestauranteTrilho> RestaurantesTrilhos { get; set; }
         public DbSet<Alojamento> Alojamentos { get; set; }
@@ -22,6 +23,8 @@ namespace IPGTrails4Health.Data
         public DbSet<PontoInteresse> PontosInteresse { get; set; }
         public DbSet<PontoInteresseTrilho> PontosInteresseTrilho { get; set; }
         public DbSet<TipoPontoInteresse> TipoPontosInteresse { get; set; }
+        public DbSet<TipoAlojamento> TipoAlojamentos { get; set; }
+        public DbSet<AlojamentoTrilho> AlojamentosTrilhos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

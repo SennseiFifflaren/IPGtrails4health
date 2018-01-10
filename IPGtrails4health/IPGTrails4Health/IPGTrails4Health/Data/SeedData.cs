@@ -49,12 +49,26 @@ namespace IPGTrails4Health.Data
                                Chegada = "Stop",
                                Distancia = 2,
                                Duracao = 30,
-                               Dificuldade = "Alta",
-                               Percurso = "Exemplo",
-                               Sazonalidade = "Neve",
-                               EstadoTrilho = "Aberto"
-
+                               Percurso = "Exemplo"
                            }
+            );
+        }
+        private static void EnsureEstadosPopulated(TurismoDbContext dbContext)
+        {
+            dbContext.Estados.AddRange(
+                           new Estado
+                           {
+                               Nome = "Aberto"
+                           },
+                           new Estado
+                           {
+                               Nome = "Fechado"
+                           },
+                           new Estado
+                           {
+                               Nome = "Temporariamente suspenso"
+                           }
+
             );
         }
     }
