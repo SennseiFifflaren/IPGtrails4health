@@ -32,8 +32,7 @@ namespace IPGTrails4Health.Data
                            new Restaurante
                            {
                                Nome = "Manjar dos Reis",
-                               Descricao = "Simplesmente delicioso",
-                               Local = "Serra"
+                               Descricao = "Simplesmente delicioso"
 
                            }
             );

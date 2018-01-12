@@ -42,6 +42,12 @@ namespace IPGTrails4Health.Models
         //[Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
         //public string EstadoTrilho { get; set; }
 
+        //public int EpocaAnoId { get; set; }
+        //public EpocaAno EpocaAno { get; set; }
+
+        public int LocalidadeId { get; set; }
+        public Localidade Localidade { get; set; }
+
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
         //public ICollection<EstadoTrilho> EstadosTrilho { get; set; }
         //public ICollection<Restaurante> Restaurantes { get; set; }

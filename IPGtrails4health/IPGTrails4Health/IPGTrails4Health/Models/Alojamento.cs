@@ -18,5 +18,7 @@ namespace IPGTrails4Health.Models
         [Required(ErrorMessage = "Por favor introduza o contacto")]
         [RegularExpression(@"(2\d{8})|(9[1236]\d{7})", ErrorMessage = "Telemóvel inválido")]
         public string Contacto { get; set; }
+        public int LocalidadeId { get; set; }
+        public Localidade Localidade { get; set; }
     }
 }

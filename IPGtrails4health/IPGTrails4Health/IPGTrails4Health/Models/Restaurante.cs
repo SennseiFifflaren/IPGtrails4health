@@ -15,6 +15,8 @@ namespace IPGTrails4Health.Models
         [Display(Name = "Descrição")]
         public string Descricao { get; set; }
         // public string Contacto { get; set; }
+        public int LocalidadeId { get; set; }
+        public Localidade Localidade { get; set; }
 
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
     }
