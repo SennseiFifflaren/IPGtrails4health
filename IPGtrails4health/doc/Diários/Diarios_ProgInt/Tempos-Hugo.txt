@@ -24,3 +24,4 @@ Prog. para Internet
 29-11-2017 - 2h - Correção de erros e atualização da relação Restaurante-Trilho - "relationship Restaurante-Trilho" - 10h01m [no branch newscaff]
 30-11-2017 - 2h - Correção de erros e atualização do inicializador de base de dados - "Atualização DbInitializer (novo formato)" - 10h35m [no branch newscaff]
 10-01-2018 - 1h30 - Correção de erros e atualização das classes - "Atualização das classes para corresponder a E.S. II, atualização SeedData, correção de erros" - 10h26min [no branch Leandro]
+12-01-2018 - 1h30 - Correção de classes/atributos, adicionados dados fictícios para inicialização BD - "Adicionados dados ao SeedData, adicionada classe AreaDescansoTrilho" - 12h30min [no branch Leandro]
