@@ -8,5 +8,10 @@ namespace IPGTrails4Health.Models
     public class PontoInteresseTrilho
     {
         public int PontoInteresseTrilhoId { get; set; }
+        public int TrilhoId {get;set;}
+        public Trilho Trilho { get; set; }
+        public int PontoInteresseId { get; set; }
+        public PontoInteresse PontoInteresse { get; set; }
+
     }
 }
