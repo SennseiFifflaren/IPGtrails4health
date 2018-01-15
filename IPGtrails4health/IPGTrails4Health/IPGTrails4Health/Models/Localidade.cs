@@ -9,5 +9,6 @@ namespace IPGTrails4Health.Models
     {
         public int LocalidadeId { get; set; }
         public string Nome { get; set; }
+        public string CodigoPostal { get; set; }
     }
 }

@@ -15,9 +15,9 @@ namespace IPGTrails4Health.Models
         public string Nome { get; set; }
         [Required(ErrorMessage = "Por favor introduza a descrição")]
         public string Descricao { get; set; }
-
-        public int LocalidadeId { get; set; }
-        public Localidade Localidade { get; set; }
+        public decimal DistanciaAteArea { get; set; }
+        //public int LocalidadeId { get; set; }
+        //public Localidade Localidade { get; set; }
         //public ICollection<AreaDescanso> AreasDescanso { get; set; }
     }
 }

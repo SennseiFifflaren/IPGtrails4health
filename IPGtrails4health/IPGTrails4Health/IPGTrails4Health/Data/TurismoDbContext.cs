@@ -15,6 +15,7 @@ namespace IPGTrails4Health.Data
         public DbSet<Restaurante> Restaurantes { get; set; }
         public DbSet<RestauranteTrilho> RestaurantesTrilhos { get; set; }
         public DbSet<Alojamento> Alojamentos { get; set; }
+
         public DbSet<AreaDescanso> AreasDescanso { get; set; }
         public DbSet<EpocaAno> EpocasAno { get; set; }
         public DbSet<Estado> Estados { get; set; }
