@@ -12,7 +12,7 @@ namespace IPGTrails4Health.Models
 
         [Required(ErrorMessage = "Por favor introduza o nome do Trilho")]
         [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Nome Inválido")]
-        public String Nome { get; set; }
+        public string Nome { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um local de partida do Trilho")]
         public string Partida { get; set; }
