@@ -68,14 +68,14 @@ namespace IPGTrails4Health.Data
                                Nome = "Pensão Aliança",
                                Descricao = "O mais em conta.",
                                Contacto = "271011222",
-                               LocalidadeId = localidade1.LocalidadeId
+                               LocalidadeId = localidade2.LocalidadeId
                            },
                            new Alojamento
                            {
                                Nome = "Residencial Apple",
                                Descricao = "Interessante.",
                                Contacto = "271011222",
-                               LocalidadeId = localidade1.LocalidadeId
+                               LocalidadeId = localidade3.LocalidadeId
                            }
 
             );
@@ -244,22 +244,57 @@ namespace IPGTrails4Health.Data
         }
         private static void EnsurePontosInteressePopulated(TurismoDbContext dbContext)
         {
+            TipoPontoInteresse tipoponto1 = dbContext.TipoPontosInteresse.SingleOrDefault(t => t.Nome == "Igreja");
+            TipoPontoInteresse tipoponto2 = dbContext.TipoPontosInteresse.SingleOrDefault(t => t.Nome == "Estátua");
+            TipoPontoInteresse tipoponto3 = dbContext.TipoPontosInteresse.SingleOrDefault(t => t.Nome == "Monumento");
+
+            Localidade localidade1 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Guarda");
+            Localidade localidade2 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Serra da Estrela");
+            Localidade localidade3 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Folgosinho");
+
             dbContext.PontosInteresse.AddRange(
                            new PontoInteresse
                            {
-                               Nome = "Hotel 4 estrelas",
-                               Observacoes = "Acolhedor"
+                               Nome = "Igreja Secular",
+                               Observacoes = "Construída no século XVII a ordem de D. Filipe II",
+                               TipoPontoInteresseId = tipoponto1.TipoPontoInteresseId,
+                               LocalidadeId = localidade1.LocalidadeId
+
                            },
                            new PontoInteresse
                            {
-                               Nome = "Fraco Sono",
-                               Observacoes = "Camas de solteiro"
+                               Nome = "Estátua de Napoleão",
+                               Observacoes = "Esculpida em 1888 ",
+                               TipoPontoInteresseId = tipoponto2.TipoPontoInteresseId,
+                               LocalidadeId = localidade2.LocalidadeId
                            },
                            new PontoInteresse
                            {
-                               Nome = "Hotel Pensionista",
-                               Observacoes = "Castelo em pedra"
+                               Nome = "Mosteiro da Serra",
+                               Observacoes = "Construída por motivos simbólicos",
+                               TipoPontoInteresseId = tipoponto3.TipoPontoInteresseId,
+                               LocalidadeId = localidade3.LocalidadeId
                            }
+
+            );
+        }
+        private static void EnsureTipoPontosInteressePopulated(TurismoDbContext dbContext)
+        {
+
+
+            dbContext.TipoPontosInteresse.AddRange(
+                new TipoPontoInteresse
+                {
+                    Nome = "Igreja"
+                },
+                new TipoPontoInteresse
+                {
+                    Nome = "Estátua"
+                },
+                new TipoPontoInteresse
+                {
+                    Nome = "Monumento"
+                }
 
             );
         }
