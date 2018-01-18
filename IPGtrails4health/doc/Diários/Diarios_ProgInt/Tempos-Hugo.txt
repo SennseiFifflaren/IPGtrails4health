@@ -27,4 +27,5 @@ Prog. para Internet
 12-01-2018 - 1h30 - Correção de classes/atributos, adicionados dados fictícios para inicialização BD - "Adicionados dados ao SeedData, adicionada classe AreaDescansoTrilho" - 12h30min [no branch Leandro]
 15-01-2018 - 3h - Adicionados dados ao SeedData, corrigidas relações com chaves estrangeiras e alteradas várias classes - "Adicionados dados ao SeedData, corrigidas relações com chaves estrangeiras e alteradas várias classes" - 17h35m [no branch Leandro]
 17-01-2018 - 45min - Atualização de classes e SeedData - "Atualização da classe Pontointeresse e criação de dados fictícios no SeedData - 30min" e "Continuação de criação de dados fictícios" - 22h50m e 00h55min [no branch Projetofinal]
-18-01-2018 dados fictícios completos, atualização de classes - "Conclusão do SeedData com dados fictícios completos, atualização de classes e DbContext" - 16h31m [no branch Projetofinal]
+18-01-2018 - 1h - dados fictícios completos, atualização de classes - "Conclusão do SeedData com dados fictícios completos, atualização de classes e DbContext" - 16h31m [no branch Projetofinal]
+18-01-2018 - 1h - Relacionamentos entre classes no DbContext e nas classes - "Relacionamentos entre classes no DbContext e nas classes" - 17h31m [no branch Projetofinal]
