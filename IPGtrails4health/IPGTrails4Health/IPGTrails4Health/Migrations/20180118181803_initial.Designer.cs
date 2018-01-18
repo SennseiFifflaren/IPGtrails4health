@@ -11,9 +11,10 @@ using System;
 namespace IPGTrails4Health.Migrations
 {
     [DbContext(typeof(TurismoDbContext))]
-    partial class TurismoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180118181803_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

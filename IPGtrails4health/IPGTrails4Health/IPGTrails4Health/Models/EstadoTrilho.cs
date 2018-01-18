@@ -7,7 +7,7 @@ namespace IPGTrails4Health.Models
 {
     public class EstadoTrilho
     {
-       // public int EstadoTrilhoId { get; set; }
+        public int EstadoTrilhoId { get; set; }
         public int EstadoId { get; set; }
         public Estado Estado { get; set; }
         public int TrilhoId { get; set; }

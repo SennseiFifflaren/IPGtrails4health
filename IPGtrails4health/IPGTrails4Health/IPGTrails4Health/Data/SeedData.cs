@@ -13,17 +13,87 @@ namespace IPGTrails4Health.Data
         {
             TurismoDbContext dbContext = (TurismoDbContext)appServices.GetService(typeof(TurismoDbContext));
 
+            if (!dbContext.Localidades.Any())
+            {
+                EnsureLocalidadesPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+
+            if (!dbContext.Alojamentos.Any())
+            {
+                EnsureAlojamentosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.Dificuldades.Any())
+            {
+                EnsureDificuldadesPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.EpocasAno.Any())
+            {
+                EnsureEpocasAnoPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
             if (!dbContext.Restaurantes.Any())
             {
                 EnsureRestaurantesPopulated(dbContext);
+                dbContext.SaveChanges();
             }
-
+            if (!dbContext.AreasDescanso.Any())
+            {
+                EnsureAreasDescansoPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
             if (!dbContext.Trilhos.Any())
             {
                 EnsureTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
             }
-
-            dbContext.SaveChanges();
+            if (!dbContext.Estados.Any())
+            {
+                EnsureEstadosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.PontosInteresse.Any())
+            {
+                EnsurePontosInteressePopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.TipoPontosInteresse.Any())
+            {
+                EnsureTipoPontosInteressePopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.TipoAlojamentos.Any())
+            {
+                EnsureTiposAlojamentoPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.RestaurantesTrilhos.Any())
+            {
+                EnsureRestaurantesTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.AlojamentosTrilhos.Any())
+            {
+                EnsureAlojamentosTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.AreasDescansoTrilhos.Any())
+            {
+                EnsureAreasDescansoTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.EstadosTrilho.Any())
+            {
+                EnsureEstadosTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.PontosInteresseTrilho.Any())
+            {
+                EnsurePontosInteresseTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
         }
 
         private static void EnsureLocalidadesPopulated(TurismoDbContext dbContext)

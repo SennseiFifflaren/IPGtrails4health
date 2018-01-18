@@ -1,0 +1,48 @@
+﻿@model IPGTrails4Health.Models.Alojamento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Alojamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contacto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Localidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Localidade.LocalidadeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoAlojamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoAlojamento.TipoAlojamentoId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AlojamentoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

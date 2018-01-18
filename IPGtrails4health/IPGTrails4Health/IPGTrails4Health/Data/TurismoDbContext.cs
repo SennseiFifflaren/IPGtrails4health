@@ -33,6 +33,9 @@ namespace IPGTrails4Health.Data
 
             //restaurante trilho
             modelBuilder.Entity<RestauranteTrilho>()
+                .HasKey(rt => new { rt.TrilhoId, rt.RestauranteId });
+
+            modelBuilder.Entity<RestauranteTrilho>()
                 .HasOne(rt => rt.Trilho)
                 .WithMany(t => t.RestaurantesTrilhos)
                 .HasForeignKey(rt => rt.TrilhoId);
@@ -43,6 +46,9 @@ namespace IPGTrails4Health.Data
                 .HasForeignKey(rt => rt.RestauranteId);
 
             //alojamento trilho
+            modelBuilder.Entity<AlojamentoTrilho>()
+                .HasKey(at => new { at.TrilhoId, at.AlojamentoId });
+
             modelBuilder.Entity<AlojamentoTrilho>()
                 .HasOne(at => at.Trilho)
                 .WithMany(t => t.AlojamentoTrilhos)
@@ -55,6 +61,9 @@ namespace IPGTrails4Health.Data
 
             //ponto interesse trilho
             modelBuilder.Entity<PontoInteresseTrilho>()
+                .HasKey(pit => new { pit.TrilhoId, pit.PontoInteresseId });
+
+            modelBuilder.Entity<PontoInteresseTrilho>()
                 .HasOne(pit => pit.Trilho)
                 .WithMany(t => t.PontosInteresseTrilhos)
                 .HasForeignKey(pit => pit.TrilhoId);
@@ -66,6 +75,9 @@ namespace IPGTrails4Health.Data
 
             //area descanso trilho
             modelBuilder.Entity<AreaDescansoTrilho>()
+                .HasKey(adt => new { adt.TrilhoId, adt.AreaDescansoId });
+
+            modelBuilder.Entity<AreaDescansoTrilho>()
                 .HasOne(adt => adt.Trilho)
                 .WithMany(t => t.AreasDescansoTrilhos)
                 .HasForeignKey(adt => adt.TrilhoId);
@@ -76,6 +88,9 @@ namespace IPGTrails4Health.Data
                 .HasForeignKey(adt => adt.AreaDescansoId);
 
             //estado trilho
+            modelBuilder.Entity<EstadoTrilho>()
+                .HasKey(et => new { et.TrilhoId, et.EstadoId });
+
             modelBuilder.Entity<EstadoTrilho>()
                 .HasOne(et => et.Trilho)
                 .WithMany(t => t.EstadosTrilho)
