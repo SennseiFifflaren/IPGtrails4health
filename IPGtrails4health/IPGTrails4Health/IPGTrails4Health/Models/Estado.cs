@@ -11,6 +11,6 @@ namespace IPGTrails4Health.Models
         public string Nome { get; set; }
 
         //public ICollection<Trilho> Trilhos { get; set; }
-        //public ICollection<EstadoTrilho> EstadosTrilho { get; set; }
+        public ICollection<EstadoTrilho> EstadosTrilho { get; set; }
     }
 }

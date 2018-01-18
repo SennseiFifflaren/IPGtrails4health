@@ -23,5 +23,7 @@ namespace IPGTrails4Health.Models
 
         public TipoAlojamento TipoAlojamento { get; set; }
         public int TipoAlojamentoId { get; set; }
+
+        public ICollection<AlojamentoTrilho> AlojamentoTrilhos { get; set; }
     }
 }

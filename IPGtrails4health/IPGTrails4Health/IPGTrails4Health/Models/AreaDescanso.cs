@@ -19,6 +19,8 @@ namespace IPGTrails4Health.Models
 
         public string Local { get; set; }
 
+        public ICollection<AreaDescansoTrilho> AreasDescansoTrilhos { get; set; }
+
         //public int LocalidadeId { get; set; }
         //public Localidade Localidade { get; set; }
         //public ICollection<AreaDescanso> AreasDescanso { get; set; }

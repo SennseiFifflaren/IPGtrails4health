@@ -30,16 +30,8 @@ namespace IPGTrails4Health.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Alojamento>();
-            modelBuilder.Entity<Restaurante>();
-            //modelBuilder.Entity<AreaDescanso>();
-            modelBuilder.Entity<Trilho>();
-            //modelBuilder.Entity<PontoInteresse>();
-            modelBuilder.Entity<RestauranteTrilho>()
-                .HasKey(rt => new { rt.RestauranteId, rt.TrilhoId });
-            modelBuilder.Entity<EstadoTrilho>()
-                .HasKey(et => new { et.EstadoId, et.TrilhoId });
 
+            //restaurante trilho
             modelBuilder.Entity<RestauranteTrilho>()
                 .HasOne(rt => rt.Trilho)
                 .WithMany(t => t.RestaurantesTrilhos)
@@ -49,6 +41,50 @@ namespace IPGTrails4Health.Data
                 .HasOne(rt => rt.Restaurante)
                 .WithMany(r => r.RestaurantesTrilhos)
                 .HasForeignKey(rt => rt.RestauranteId);
+
+            //alojamento trilho
+            modelBuilder.Entity<AlojamentoTrilho>()
+                .HasOne(at => at.Trilho)
+                .WithMany(t => t.AlojamentoTrilhos)
+                .HasForeignKey(at => at.TrilhoId);
+
+            modelBuilder.Entity<AlojamentoTrilho>()
+                .HasOne(at => at.Alojamento)
+                .WithMany(a => a.AlojamentoTrilhos)
+                .HasForeignKey(at => at.AlojamentoId);
+
+            //ponto interesse trilho
+            modelBuilder.Entity<PontoInteresseTrilho>()
+                .HasOne(pit => pit.Trilho)
+                .WithMany(t => t.PontosInteresseTrilhos)
+                .HasForeignKey(pit => pit.TrilhoId);
+
+            modelBuilder.Entity<PontoInteresseTrilho>()
+                .HasOne(pit => pit.PontoInteresse)
+                .WithMany(pi => pi.PontosInteresseTrilhos)
+                .HasForeignKey(pit => pit.PontoInteresseId);
+
+            //area descanso trilho
+            modelBuilder.Entity<AreaDescansoTrilho>()
+                .HasOne(adt => adt.Trilho)
+                .WithMany(t => t.AreasDescansoTrilhos)
+                .HasForeignKey(adt => adt.TrilhoId);
+
+            modelBuilder.Entity<AreaDescansoTrilho>()
+                .HasOne(adt => adt.AreaDescanso)
+                .WithMany(ad => ad.AreasDescansoTrilhos)
+                .HasForeignKey(adt => adt.AreaDescansoId);
+
+            //estado trilho
+            modelBuilder.Entity<EstadoTrilho>()
+                .HasOne(et => et.Trilho)
+                .WithMany(t => t.EstadosTrilho)
+                .HasForeignKey(et => et.TrilhoId);
+
+            modelBuilder.Entity<EstadoTrilho>()
+                .HasOne(et => et.Estado)
+                .WithMany(e => e.EstadosTrilho)
+                .HasForeignKey(et => et.EstadoId);
         }
 
     }

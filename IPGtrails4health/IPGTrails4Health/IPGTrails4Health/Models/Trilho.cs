@@ -44,8 +44,13 @@ namespace IPGTrails4Health.Models
         public int LocalidadeId { get; set; }
         public Localidade Localidade { get; set; }
 
+        //relacionamentos
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }
-        //public ICollection<EstadoTrilho> EstadosTrilho { get; set; }
+        public ICollection<AlojamentoTrilho> AlojamentoTrilhos { get; set; }
+        public ICollection<PontoInteresseTrilho> PontosInteresseTrilhos { get; set; }
+        public ICollection<AreaDescansoTrilho> AreasDescansoTrilhos { get; set; }
+
+        public ICollection<EstadoTrilho> EstadosTrilho { get; set; }
         //public ICollection<Restaurante> Restaurantes { get; set; }
     }
 }

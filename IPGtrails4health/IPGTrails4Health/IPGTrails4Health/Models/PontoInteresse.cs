@@ -17,5 +17,6 @@ namespace IPGTrails4Health.Models
         
         public TipoPontoInteresse Tipo { get; set; }
         public int TipoPontoInteresseId { get; set; }
+        public ICollection<PontoInteresseTrilho> PontosInteresseTrilhos { get; set; }
     }
 }
