@@ -50,6 +50,9 @@ namespace IPGTrails4Health.Data
 
         private static void EnsureAlojamentosPopulated(TurismoDbContext dbContext)
         {
+            TipoAlojamento tipoaloj1 = dbContext.TipoAlojamentos.SingleOrDefault(ta => ta.Nome == "Hotel");
+            TipoAlojamento tipoaloj2 = dbContext.TipoAlojamentos.SingleOrDefault(ta => ta.Nome == "Pensão");
+            TipoAlojamento tipoaloj3 = dbContext.TipoAlojamentos.SingleOrDefault(ta => ta.Nome == "Residencial");
 
             Localidade localidade1 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Guarda");
             Localidade localidade2 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Serra da Estrela");
@@ -60,22 +63,25 @@ namespace IPGTrails4Health.Data
                            {
                                Nome = "Hotel Reis",
                                Descricao = "O mais completo!",
-                               Contacto = "271011222",
-                               LocalidadeId = localidade1.LocalidadeId
+                               Contacto = "271011111",
+                               LocalidadeId = localidade1.LocalidadeId,
+                               TipoAlojamentoId =  tipoaloj1.TipoAlojamentoId
                            },
                            new Alojamento
                            {
                                Nome = "Pensão Aliança",
                                Descricao = "O mais em conta.",
                                Contacto = "271011222",
-                               LocalidadeId = localidade2.LocalidadeId
+                               LocalidadeId = localidade2.LocalidadeId,
+                               TipoAlojamentoId = tipoaloj2.TipoAlojamentoId
                            },
                            new Alojamento
                            {
                                Nome = "Residencial Apple",
                                Descricao = "Interessante.",
-                               Contacto = "271011222",
-                               LocalidadeId = localidade3.LocalidadeId
+                               Contacto = "271011333",
+                               LocalidadeId = localidade3.LocalidadeId,
+                               TipoAlojamentoId = tipoaloj3.TipoAlojamentoId
                            }
 
             );
@@ -169,7 +175,7 @@ namespace IPGTrails4Health.Data
                                Descricao = "Para aproveitar o exterior",
                                Local = "Coordenadas gps: 41.40338, 2.17403"
                            }
-            );
+            );  
         }
 
         private static void EnsureTrilhosPopulated(TurismoDbContext dbContext)
@@ -294,6 +300,176 @@ namespace IPGTrails4Health.Data
                 new TipoPontoInteresse
                 {
                     Nome = "Monumento"
+                }
+
+            );
+        }
+        private static void EnsureTiposAlojamentoPopulated(TurismoDbContext dbContext)
+        {
+
+
+            dbContext.TipoAlojamentos.AddRange(
+                new TipoAlojamento
+                {
+                    Nome = "Hotel"
+                },
+                new TipoAlojamento
+                {
+                    Nome = "Pensão"
+                },
+                new TipoAlojamento
+                {
+                    Nome = "Residencial"
+                }
+
+            );
+        }
+        private static void EnsureRestaurantesTrilhosPopulated(TurismoDbContext dbContext)
+        {
+            Restaurante restaurante1 = dbContext.Restaurantes.SingleOrDefault(r => r.Contacto == "271011222");
+            Restaurante restaurante2 = dbContext.Restaurantes.SingleOrDefault(r => r.Contacto == "273556652");
+            Restaurante restaurante3 = dbContext.Restaurantes.SingleOrDefault(r => r.Contacto == "271474112");
+
+            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Primeiro Trilho");
+            Trilho trilho2 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Trilho Grande");
+            Trilho trilho3 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Santo Caminho");
+
+            dbContext.RestaurantesTrilhos.AddRange(
+                new RestauranteTrilho
+                {
+                    RestauranteId = restaurante1.RestauranteId,
+                    TrilhoId = trilho1.TrilhoId
+                },
+                new RestauranteTrilho
+                {
+                    RestauranteId = restaurante2.RestauranteId,
+                    TrilhoId = trilho2.TrilhoId
+                },
+                new RestauranteTrilho
+                {
+                    RestauranteId = restaurante3.RestauranteId,
+                    TrilhoId = trilho3.TrilhoId
+                }
+
+            );
+        }
+        private static void EnsureAlojamentosTrilhosPopulated(TurismoDbContext dbContext)
+        {
+            Alojamento aloj1 = dbContext.Alojamentos.SingleOrDefault(a => a.Contacto == "271011111");
+            Alojamento aloj2 = dbContext.Alojamentos.SingleOrDefault(a => a.Contacto == "271011222");
+            Alojamento aloj3 = dbContext.Alojamentos.SingleOrDefault(a => a.Contacto == "271011333");
+
+            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Primeiro Trilho");
+            Trilho trilho2 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Trilho Grande");
+            Trilho trilho3 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Santo Caminho");
+
+            dbContext.AlojamentosTrilhos.AddRange(
+                new AlojamentoTrilho
+                {
+                   AlojamentoId = aloj1.AlojamentoId,
+                    TrilhoId = trilho1.TrilhoId
+                },
+                new AlojamentoTrilho
+                {
+                    AlojamentoId = aloj2.AlojamentoId,
+                    TrilhoId = trilho2.TrilhoId
+                },
+                new AlojamentoTrilho
+                {
+                    AlojamentoId = aloj3.AlojamentoId,
+                    TrilhoId = trilho3.TrilhoId
+                }
+
+            );
+        }
+        private static void EnsureAreasDescansoTrilhosPopulated(TurismoDbContext dbContext)
+        {
+            AreaDescanso area1 = dbContext.AreasDescanso.SingleOrDefault(ar => ar.Nome == "Casa de banho");
+            AreaDescanso area2 = dbContext.AreasDescanso.SingleOrDefault(ar => ar.Nome == "Casa de repouso");
+            AreaDescanso area3 = dbContext.AreasDescanso.SingleOrDefault(ar => ar.Nome == "Parque Campismo");
+
+            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Primeiro Trilho");
+            Trilho trilho2 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Trilho Grande");
+            Trilho trilho3 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Santo Caminho");
+
+            dbContext.AreasDescansoTrilhos.AddRange(
+                new AreaDescansoTrilho
+                {
+                    AreaDescansoId = area1.AreaDescansoId,
+                    TrilhoId = trilho1.TrilhoId
+                },
+                new AreaDescansoTrilho
+                {
+                    AreaDescansoId = area2.AreaDescansoId,
+                    TrilhoId = trilho2.TrilhoId
+                },
+                new AreaDescansoTrilho
+                {
+                    AreaDescansoId = area3.AreaDescansoId,
+                    TrilhoId = trilho3.TrilhoId
+                }
+
+            );
+        }
+
+        private static void EnsureEstadosTrilhosPopulated(TurismoDbContext dbContext)
+        {
+            Estado estado1 = dbContext.Estados.SingleOrDefault(e => e.Nome == "Aberto");
+
+            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Primeiro Trilho");
+            Trilho trilho2 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Trilho Grande");
+            Trilho trilho3 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Santo Caminho");
+
+            dbContext.EstadosTrilho.AddRange(
+                new EstadoTrilho
+                {
+                    EstadoId = estado1.EstadoId,
+                    TrilhoId = trilho1.TrilhoId,
+                    DataInicio = new DateTime(2017, 11, 25),
+                    Causa = "Alteração de sazonalidade"
+                },
+                new EstadoTrilho
+                {
+                    EstadoId = estado1.EstadoId,
+                    TrilhoId = trilho2.TrilhoId,
+                    DataInicio = new DateTime(2017, 11, 26),
+                    Causa = "Mau estado do trilho"
+                },
+                new EstadoTrilho
+                {
+                    EstadoId = estado1.EstadoId,
+                    TrilhoId = trilho3.TrilhoId,
+                    DataInicio = new DateTime(2017, 12, 01),
+                    Causa = "Mau estado do trilho"
+                }
+
+            );
+        }
+        private static void EnsurePontosInteresseTrilhosPopulated(TurismoDbContext dbContext)
+        {
+            PontoInteresse pi1 = dbContext.PontosInteresse.SingleOrDefault(p => p.Nome == "Igreja Secular");
+            PontoInteresse pi2 = dbContext.PontosInteresse.SingleOrDefault(p => p.Nome == "Estátua de Napoleão");
+            PontoInteresse pi3 = dbContext.PontosInteresse.SingleOrDefault(p => p.Nome == "Mosteiro da Serra");
+
+            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Primeiro Trilho");
+            Trilho trilho2 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Trilho Grande");
+            Trilho trilho3 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Santo Caminho");
+
+            dbContext.PontosInteresseTrilho.AddRange(
+                new PontoInteresseTrilho
+                {
+                    PontoInteresseId = pi1.PontoInteresseId,
+                    TrilhoId = trilho1.TrilhoId
+                },
+                new PontoInteresseTrilho
+                {
+                    PontoInteresseId = pi2.PontoInteresseId,
+                    TrilhoId = trilho2.TrilhoId
+                },
+                new PontoInteresseTrilho
+                {
+                    PontoInteresseId = pi3.PontoInteresseId,
+                    TrilhoId = trilho3.TrilhoId
                 }
 
             );

@@ -26,6 +26,7 @@ namespace IPGTrails4Health.Data
         public DbSet<TipoPontoInteresse> TipoPontosInteresse { get; set; }
         public DbSet<TipoAlojamento> TipoAlojamentos { get; set; }
         public DbSet<AlojamentoTrilho> AlojamentosTrilhos { get; set; }
+        public DbSet<AreaDescansoTrilho> AreasDescansoTrilhos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

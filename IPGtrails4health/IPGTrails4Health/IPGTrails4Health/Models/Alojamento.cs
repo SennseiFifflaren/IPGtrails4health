@@ -20,5 +20,8 @@ namespace IPGTrails4Health.Models
         public string Contacto { get; set; }
         public int LocalidadeId { get; set; }
         public Localidade Localidade { get; set; }
+
+        public TipoAlojamento TipoAlojamento { get; set; }
+        public int TipoAlojamentoId { get; set; }
     }
 }
