@@ -15,9 +15,11 @@ namespace IPGTrails4Health.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um local de partida do Trilho")]
+        [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Local de Partida Inválido")]
         public string Partida { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza um local de chegada do Trilho")]
+        [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Local de chegada Inválido")]
         public string Chegada { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza uma distância do Trilho")]
