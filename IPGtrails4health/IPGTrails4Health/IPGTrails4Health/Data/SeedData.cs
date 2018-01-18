@@ -155,19 +155,19 @@ namespace IPGTrails4Health.Data
                            {
                                Nome = "Casa de banho",
                                Descricao = "Para meninos e meninas",
-                               DistanciaAteArea = 300
+                               Local = "Rua xyz, junto à capela de S. Vicente"
                            },
                            new AreaDescanso
                            {
                                Nome = "Casa de repouso",
                                Descricao = "Com lareira e tudo",
-                               DistanciaAteArea = 60
+                               Local = "Rua 343, junto à Estrada Nacional 20"
                            },
                            new AreaDescanso
                            {
-                               Nome = "Krom Pro",
-                               Descricao = "Elegante",
-                               DistanciaAteArea = 50
+                               Nome = "Parque Campismo",
+                               Descricao = "Para aproveitar o exterior",
+                               Local = "Coordenadas gps: 41.40338, 2.17403"
                            }
             );
         }
