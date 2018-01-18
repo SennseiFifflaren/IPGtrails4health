@@ -39,7 +39,7 @@ namespace IPGTrails4Health
 
             services.AddMvc();
 
-            services.AddTransient<ITurismoRepository, EFTurismoRepository>();
+           // services.AddTransient<ITurismoRepository, EFTurismoRepository>();
 
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringIPGTrails4Health"))
