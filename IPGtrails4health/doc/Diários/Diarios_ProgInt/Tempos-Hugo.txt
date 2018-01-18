@@ -1,0 +1,30 @@
+Eng. Software II
+Entrega 4
+
+25-10-2017 22:00 - descrição de caso de uso "Criar Trilho"
+25-10-2017 23:50 - fim de descriçao de caso de uso "Criar Trilho"
+30-10-2017 22:10 - correção de caso de uso "Criar Trilho"
+30-10-2017 22:40 - fim de correção de caso de uso "Criar Trilho"
+10-11-2017 10:23 - adicionadas classes "Trilho" e "HistoricoEstadosTrilho"
+---------//--------
+Prog. para Internet
+(Data, duração, descrição, nome do commit, hora do commit)
+02-10-2017 - 5h - Desenvolvimento website - Página Inicial e Outras Páginas - "pag principal e outras paginas"
+03-10-2017 - 1h - Adicionadas páginas relativas ao trabalho específico do grupo: Inserir Pontos de Interesse, Inserir Alojamento, e uma página do utilizador com acesso a estas funcionalidades; corrigidas outras páginas - commit1-3Nov - 19h40m
+09-11-2017 - 30min - adicionado models relativos a pontos de interesse e alojamento/areas de descanso- commit1-9Nov,commit2-9Nov - 23h50m,23h55m
+10-11-2017 - 2h - criada página e formulário "Inserir Extras" relativo a alojamento, áreas de descanso, restaurantes,... - commit2-10Nov - 12h50m
+11-11-2017 - 3h - Tutorial EF Core (https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro) 3/10
+12-11-2017 - 1h - Removida funcionalidade relativa à inserção de "Extras", sendo esta substituída por três funcionalidades para inserir alojamento ou restaurantes ou áreas de descanso isoladamente, "Criados modelos e views relativos à inserção de Alojamento, Restaurante e Áreas de descanso", 3h32m
+15-11-2017 - 2h - Upgrade do projeto para MVC Core 2.0, "migração para core 2.0", 23h19m
+16-11-2017 - 2h - Atualização das classes; implementação da Entity Framework com criação de um inicializador de base dados (nao terminado), "implementaçao EF", 01h55m
+17-11-2017 - 2h - Alteração das classes e Criação de scaffolded views e controladores para implementar CRUD (incompleto), "Scaffolded Views/Controllers", 12h51m
+23-11-2017 - 
+23-11-2017 - 4h - Criação e formatação de views e controladores "scaffolded" para os Alojamentos, Áreas de Descanso, Restaurantes e pontos de interesse - "scaffolded para areas descanso, restaurantes e alojamentos - feito"/"scaffolded para areasdescanso e pontos interesse - feito" - 12h40min e 12h59m [no branch scaffolded]
+24-11-2017 - 4h - Recuperação e correção de erros no projeto, scaffolding a funcionar novamente (com Criar Trilho) - "progresso" - 05h29min [no branch newscaff]
+29-11-2017 - 2h - Correção de erros e atualização da relação Restaurante-Trilho - "relationship Restaurante-Trilho" - 10h01m [no branch newscaff]
+30-11-2017 - 2h - Correção de erros e atualização do inicializador de base de dados - "Atualização DbInitializer (novo formato)" - 10h35m [no branch newscaff]
+10-01-2018 - 1h30 - Correção de erros e atualização das classes - "Atualização das classes para corresponder a E.S. II, atualização SeedData, correção de erros" - 10h26min [no branch Leandro]
+12-01-2018 - 1h30 - Correção de classes/atributos, adicionados dados fictícios para inicialização BD - "Adicionados dados ao SeedData, adicionada classe AreaDescansoTrilho" - 12h30min [no branch Leandro]
+15-01-2018 - 3h - Adicionados dados ao SeedData, corrigidas relações com chaves estrangeiras e alteradas várias classes - "Adicionados dados ao SeedData, corrigidas relações com chaves estrangeiras e alteradas várias classes" - 17h35m [no branch Leandro]
+17-01-2018 - 45min - Atualização de classes e SeedData - "Atualização da classe Pontointeresse e criação de dados fictícios no SeedData - 30min" e "Continuação de criação de dados fictícios" - 22h50m e 00h55min [no branch Projetofinal]
+18-01-2018 dados fictícios completos, atualização de classes - "Conclusão do SeedData com dados fictícios completos, atualização de classes e DbContext" - 16h31m [no branch Projetofinal]
