@@ -43,11 +43,6 @@ namespace IPGTrails4Health.Data
                 EnsureEstadosPopulated(dbContext);
                 dbContext.SaveChanges();
             }
-            if (!dbContext.EstadosTrilho.Any())
-            {
-                EnsureEstadosTrilhosPopulated(dbContext);
-                dbContext.SaveChanges();
-            }
 
             if (!dbContext.Alojamentos.Any())
             {
@@ -92,6 +87,12 @@ namespace IPGTrails4Health.Data
             if (!dbContext.PontosInteresseTrilho.Any())
             {
                 EnsurePontosInteresseTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+
+            if (!dbContext.EstadosTrilho.Any())
+            {
+                EnsureEstadosTrilhosPopulated(dbContext);
                 dbContext.SaveChanges();
             }
         }
@@ -261,10 +262,7 @@ namespace IPGTrails4Health.Data
             EpocaAno epocaano1 = dbContext.EpocasAno.SingleOrDefault(e => e.Nome == "Todo ano");
             EpocaAno epocaano2 = dbContext.EpocasAno.SingleOrDefault(e => e.Nome == "Só inverno");
             EpocaAno epocaano3 = dbContext.EpocasAno.SingleOrDefault(e => e.Nome == "Só verão");
-
-            Localidade localidade1 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Guarda");
-            Localidade localidade2 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Serra da Estrela");
-            Localidade localidade3 = dbContext.Localidades.SingleOrDefault(l => l.Nome == "Folgosinho");
+            
 
             dbContext.Trilhos.AddRange(
                            new Trilho
@@ -274,7 +272,8 @@ namespace IPGTrails4Health.Data
                                Chegada = "Folgosinho",
                                Distancia = 600,
                                Duracao = 30,
-                               EpocaAnoId=epocaano1.EpocaAnoId
+                               EpocaAnoId=epocaano1.EpocaAnoId,
+                               DificuldadeId=dificuldade1.DificuldadeId
                            },
                            new Trilho
                            {
@@ -283,7 +282,8 @@ namespace IPGTrails4Health.Data
                                Chegada = "Folgosinho",
                                Distancia = 2000,
                                Duracao = 180,
-                               EpocaAnoId = epocaano2.EpocaAnoId
+                               EpocaAnoId = epocaano2.EpocaAnoId,
+                               DificuldadeId = dificuldade2.DificuldadeId
                            },
                            new Trilho
                            {
@@ -292,7 +292,8 @@ namespace IPGTrails4Health.Data
                                Chegada = "Folgosinho",
                                Distancia = 1500,
                                Duracao = 120,
-                               EpocaAnoId = epocaano3.EpocaAnoId
+                               EpocaAnoId = epocaano3.EpocaAnoId,
+                               DificuldadeId = dificuldade3.DificuldadeId
                            }
 
             );
@@ -397,7 +398,7 @@ namespace IPGTrails4Health.Data
             Restaurante restaurante2 = dbContext.Restaurantes.SingleOrDefault(r => r.Contacto == "273556652");
             Restaurante restaurante3 = dbContext.Restaurantes.SingleOrDefault(r => r.Contacto == "271474112");
 
-            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Primeiro Trilho");
+            Trilho trilho1 = dbContext.Trilhos.SingleOrDefault(t => t.Distancia == 600);
             Trilho trilho2 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Trilho Grande");
             Trilho trilho3 = dbContext.Trilhos.SingleOrDefault(t => t.Nome == "Santo Caminho");
 
