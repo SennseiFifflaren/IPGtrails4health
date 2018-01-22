@@ -18,10 +18,19 @@ namespace IPGTrails4Health.Data
                 EnsureLocalidadesPopulated(dbContext);
                 dbContext.SaveChanges();
             }
-
-            if (!dbContext.Alojamentos.Any())
+            if (!dbContext.TipoPontosInteresse.Any())
             {
-                EnsureAlojamentosPopulated(dbContext);
+                EnsureTipoPontosInteressePopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.TipoAlojamentos.Any())
+            {
+                EnsureTiposAlojamentoPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.EpocasAno.Any())
+            {
+                EnsureEpocasAnoPopulated(dbContext);
                 dbContext.SaveChanges();
             }
             if (!dbContext.Dificuldades.Any())
@@ -29,9 +38,20 @@ namespace IPGTrails4Health.Data
                 EnsureDificuldadesPopulated(dbContext);
                 dbContext.SaveChanges();
             }
-            if (!dbContext.EpocasAno.Any())
+            if (!dbContext.Estados.Any())
             {
-                EnsureEpocasAnoPopulated(dbContext);
+                EnsureEstadosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+            if (!dbContext.EstadosTrilho.Any())
+            {
+                EnsureEstadosTrilhosPopulated(dbContext);
+                dbContext.SaveChanges();
+            }
+
+            if (!dbContext.Alojamentos.Any())
+            {
+                EnsureAlojamentosPopulated(dbContext);
                 dbContext.SaveChanges();
             }
             if (!dbContext.Restaurantes.Any())
@@ -44,29 +64,14 @@ namespace IPGTrails4Health.Data
                 EnsureAreasDescansoPopulated(dbContext);
                 dbContext.SaveChanges();
             }
-            if (!dbContext.Trilhos.Any())
-            {
-                EnsureTrilhosPopulated(dbContext);
-                dbContext.SaveChanges();
-            }
-            if (!dbContext.Estados.Any())
-            {
-                EnsureEstadosPopulated(dbContext);
-                dbContext.SaveChanges();
-            }
             if (!dbContext.PontosInteresse.Any())
             {
                 EnsurePontosInteressePopulated(dbContext);
                 dbContext.SaveChanges();
             }
-            if (!dbContext.TipoPontosInteresse.Any())
+            if (!dbContext.Trilhos.Any())
             {
-                EnsureTipoPontosInteressePopulated(dbContext);
-                dbContext.SaveChanges();
-            }
-            if (!dbContext.TipoAlojamentos.Any())
-            {
-                EnsureTiposAlojamentoPopulated(dbContext);
+                EnsureTrilhosPopulated(dbContext);
                 dbContext.SaveChanges();
             }
             if (!dbContext.RestaurantesTrilhos.Any())
@@ -82,11 +87,6 @@ namespace IPGTrails4Health.Data
             if (!dbContext.AreasDescansoTrilhos.Any())
             {
                 EnsureAreasDescansoTrilhosPopulated(dbContext);
-                dbContext.SaveChanges();
-            }
-            if (!dbContext.EstadosTrilho.Any())
-            {
-                EnsureEstadosTrilhosPopulated(dbContext);
                 dbContext.SaveChanges();
             }
             if (!dbContext.PontosInteresseTrilho.Any())
@@ -231,19 +231,19 @@ namespace IPGTrails4Health.Data
                            {
                                Nome = "Casa de banho",
                                Descricao = "Para meninos e meninas",
-                               Local = "Rua xyz, junto à capela de S. Vicente"
+                               Localizacao = "Rua xyz, junto à capela de S. Vicente"
                            },
                            new AreaDescanso
                            {
                                Nome = "Casa de repouso",
                                Descricao = "Com lareira e tudo",
-                               Local = "Rua 343, junto à Estrada Nacional 20"
+                               Localizacao = "Rua 343, junto à Estrada Nacional 20"
                            },
                            new AreaDescanso
                            {
                                Nome = "Parque Campismo",
                                Descricao = "Para aproveitar o exterior",
-                               Local = "Coordenadas gps: 41.40338, 2.17403"
+                               Localizacao = "Coordenadas gps: 41.40338, 2.17403"
                            }
             );  
         }
@@ -274,8 +274,7 @@ namespace IPGTrails4Health.Data
                                Chegada = "Folgosinho",
                                Distancia = 600,
                                Duracao = 30,
-                               EpocaAnoId=epocaano1.EpocaAnoId,
-                               LocalidadeId=localidade1.LocalidadeId
+                               EpocaAnoId=epocaano1.EpocaAnoId
                            },
                            new Trilho
                            {
@@ -284,8 +283,7 @@ namespace IPGTrails4Health.Data
                                Chegada = "Folgosinho",
                                Distancia = 2000,
                                Duracao = 180,
-                               EpocaAnoId = epocaano2.EpocaAnoId,
-                               LocalidadeId = localidade2.LocalidadeId
+                               EpocaAnoId = epocaano2.EpocaAnoId
                            },
                            new Trilho
                            {
@@ -294,8 +292,7 @@ namespace IPGTrails4Health.Data
                                Chegada = "Folgosinho",
                                Distancia = 1500,
                                Duracao = 120,
-                               EpocaAnoId = epocaano3.EpocaAnoId,
-                               LocalidadeId = localidade3.LocalidadeId
+                               EpocaAnoId = epocaano3.EpocaAnoId
                            }
 
             );

@@ -34,8 +34,8 @@ namespace IPGTrails4Health.Models
         public int DificuldadeId { get; set; }
        
 
-        public int RestauranteId { get; set; }
-        public Restaurante Restaurante { get; set; }
+       // public int RestauranteId { get; set; }
+       // public Restaurante Restaurante { get; set; }
 
         //[Required(ErrorMessage = "Por favor introduza o estado do Trilho")]
         //public string EstadoTrilho { get; set; }
@@ -43,8 +43,8 @@ namespace IPGTrails4Health.Models
         public int EpocaAnoId { get; set; }
         public EpocaAno EpocaAno { get; set; }
 
-        public int LocalidadeId { get; set; }
-        public Localidade Localidade { get; set; }
+        //public int LocalidadeId { get; set; }
+        //public Localidade Localidade { get; set; }
 
         //relacionamentos
         public ICollection<RestauranteTrilho> RestaurantesTrilhos { get; set; }

@@ -54,7 +54,7 @@ namespace IPGTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AreaDescansoId,Nome,Descricao,Local")] AreaDescanso areaDescanso)
+        public async Task<IActionResult> Create([Bind("AreaDescansoId,Nome,Descricao,Localizacao")] AreaDescanso areaDescanso)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace IPGTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AreaDescansoId,Nome,Descricao,Local")] AreaDescanso areaDescanso)
+        public async Task<IActionResult> Edit(int id, [Bind("AreaDescansoId,Nome,Descricao,Localizacao")] AreaDescanso areaDescanso)
         {
             if (id != areaDescanso.AreaDescansoId)
             {

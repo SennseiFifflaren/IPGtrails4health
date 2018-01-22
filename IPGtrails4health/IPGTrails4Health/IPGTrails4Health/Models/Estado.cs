@@ -9,8 +9,7 @@ namespace IPGTrails4Health.Models
     {
         public int EstadoId { get; set; }
         public string Nome { get; set; }
-
-        //public ICollection<Trilho> Trilhos { get; set; }
+       
         public ICollection<EstadoTrilho> EstadosTrilho { get; set; }
     }
 }
