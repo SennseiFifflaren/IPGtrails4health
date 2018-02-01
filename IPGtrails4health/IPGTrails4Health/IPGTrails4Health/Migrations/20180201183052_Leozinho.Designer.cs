@@ -11,8 +11,8 @@ using System;
 namespace IPGTrails4Health.Migrations
 {
     [DbContext(typeof(TurismoDbContext))]
-    [Migration("20180128145255_Final7")]
-    partial class Final7
+    [Migration("20180201183052_Leozinho")]
+    partial class Leozinho
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

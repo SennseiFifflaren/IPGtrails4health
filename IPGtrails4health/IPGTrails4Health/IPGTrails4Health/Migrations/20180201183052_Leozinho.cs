@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace IPGTrails4Health.Migrations
 {
-    public partial class Final7 : Migration
+    public partial class Leozinho : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
