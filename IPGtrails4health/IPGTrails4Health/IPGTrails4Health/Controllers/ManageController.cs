@@ -17,7 +17,7 @@ using IPGTrails4Health.Services;
 namespace IPGTrails4Health.Controllers
 {
     [Authorize]
-    [Route("[controller]/[action]")]
+    //[Route("[controller]/[action]")]
     public class ManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
