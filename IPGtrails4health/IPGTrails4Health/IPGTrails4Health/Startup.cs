@@ -30,7 +30,12 @@ namespace IPGTrails4Health
             services.AddDbContext<TurismoDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringIPGTrails4Health")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                //password options
+                options.Password.RequireDigit = false;
+                // ...
+            })
                 .AddEntityFrameworkStores<TurismoDbContext>()
                 .AddDefaultTokenProviders();
 

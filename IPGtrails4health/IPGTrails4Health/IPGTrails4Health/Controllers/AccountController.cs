@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using IPGTrails4Health.Models;
 using IPGTrails4Health.Models.AccountViewModels;
 using IPGTrails4Health.Services;
+using Trail4Healthtest.Controllers;
 
 namespace IPGTrails4Health.Controllers
 {
@@ -35,7 +36,6 @@ namespace IPGTrails4Health.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
-            //UsersSeedData.EnsurePopulatedAsync(userManager).Wait();
         }
 
         [TempData]
@@ -221,19 +221,20 @@ namespace IPGTrails4Health.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email , Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    _userManager.AddToRoleAsync(user, "TURISTA").Wait();
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                     await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction(nameof(TuristasController.Create), "Turistas");
                 }
                 AddErrors(result);
             }

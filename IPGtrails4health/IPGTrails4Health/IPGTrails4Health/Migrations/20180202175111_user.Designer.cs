@@ -11,7 +11,7 @@ using System;
 namespace IPGTrails4Health.Migrations
 {
     [DbContext(typeof(TurismoDbContext))]
-    [Migration("20180202145244_user")]
+    [Migration("20180202175111_user")]
     partial class user
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
