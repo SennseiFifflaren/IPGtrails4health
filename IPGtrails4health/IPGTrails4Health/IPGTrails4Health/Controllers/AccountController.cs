@@ -36,7 +36,7 @@ namespace IPGTrails4Health.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
-            //UsersSeedData.EnsurePopulatedAsync(userManager).Wait();
+            UsersSeedData.EnsurePopulatedAsync(userManager).Wait();
         }
 
         [TempData]

@@ -12,5 +12,7 @@ namespace IPGTrails4Health.Models
         public ApplicationUser()
         {
         }
+
+        public string UserEmail { get; internal set; }
     }
 }

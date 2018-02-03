@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IPGTrails4Health.Data;
 using IPGTrails4Health.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IPGTrails4Health.Controllers
 {
@@ -47,6 +48,7 @@ namespace IPGTrails4Health.Controllers
         }
 
         // GET: PontosInteresse/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId");

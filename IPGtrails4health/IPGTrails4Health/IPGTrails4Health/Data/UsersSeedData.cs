@@ -11,12 +11,12 @@ namespace IPGTrails4Health.Data
     {
         public static async Task EnsurePopulatedAsync(UserManager<ApplicationUser> userManager)
         {
-            const string adminUser = "Admin";
+            const string adminEmail = "admin@admin.com";
             const string adminPassword = "Secret123$";
-            ApplicationUser user = await userManager.FindByNameAsync(adminUser);
+            ApplicationUser user = await userManager.FindByEmailAsync(adminEmail);
             if (user == null)
             {
-                user = new ApplicationUser() { UserName = adminUser };
+                user = new ApplicationUser() { UserEmail = adminEmail };
                 await userManager.CreateAsync(user, adminPassword);
             }
         }
