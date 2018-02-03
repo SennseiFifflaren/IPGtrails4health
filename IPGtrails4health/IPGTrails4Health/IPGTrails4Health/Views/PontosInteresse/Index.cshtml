@@ -1,26 +1,30 @@
 ﻿@model IEnumerable<IPGTrails4Health.Models.PontoInteresse>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pontos de Interesse";
 }
 
-<h2>Index</h2>
-
+<br />
+<h2>Pontos de Interesse</h2>
+<br />
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Criar Novo Ponto de Interesse</a>
 </p>
+
+<br />
+
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Observacoes)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Local)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Local)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Localidade)
             </th>
@@ -31,29 +35,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observacoes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Local)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Localidade.LocalidadeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo.TipoPontoInteresseId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PontoInteresseId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PontoInteresseId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PontoInteresseId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacoes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Local)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localidade.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PontoInteresseId" class="btn btn-outline-info">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.PontoInteresseId" class="btn btn-outline-warning">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.PontoInteresseId" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -49,8 +49,8 @@ namespace IPGTrails4Health.Controllers
         // GET: PontosInteresse/Create
         public IActionResult Create()
         {
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId");
-            ViewData["TipoPontoInteresseId"] = new SelectList(_context.TipoPontosInteresse, "TipoPontoInteresseId", "TipoPontoInteresseId");
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome");
+            ViewData["TipoPontoInteresseId"] = new SelectList(_context.TipoPontosInteresse, "TipoPontoInteresseId", "Nome");
             return View();
         }
 
@@ -85,8 +85,8 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId", pontoInteresse.LocalidadeId);
-            ViewData["TipoPontoInteresseId"] = new SelectList(_context.TipoPontosInteresse, "TipoPontoInteresseId", "TipoPontoInteresseId", pontoInteresse.TipoPontoInteresseId);
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome", pontoInteresse.LocalidadeId);
+            ViewData["TipoPontoInteresseId"] = new SelectList(_context.TipoPontosInteresse, "TipoPontoInteresseId", "Nome", pontoInteresse.TipoPontoInteresseId);
             return View(pontoInteresse);
         }
 

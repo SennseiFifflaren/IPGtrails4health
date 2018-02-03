@@ -1,14 +1,18 @@
 ﻿@model IPGTrails4Health.Models.PontoInteresse
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar";
 }
 
-<h2>Delete</h2>
+<br />
+<div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">Atenção!</h4>
+    <p class="mb-0">Deseja mesmo eliminar o Ponto de Interesse?</p>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>PontoInteresse</h4>
+    <h4>Ponto de Interesse</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -33,19 +37,19 @@
             @Html.DisplayNameFor(model => model.Localidade)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Localidade.LocalidadeId)
+            @Html.DisplayFor(model => model.Localidade.Nome)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tipo.TipoPontoInteresseId)
+            @Html.DisplayFor(model => model.Tipo.Nome)
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="PontoInteresseId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger"/>
+        <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
     </form>
 </div>
