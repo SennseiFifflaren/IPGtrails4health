@@ -49,8 +49,8 @@ namespace IPGTrails4Health.Controllers
         // GET: Trilhos/Create
         public IActionResult Create()
         {
-            ViewData["DificuldadeId"] = new SelectList(_context.Dificuldades, "DificuldadeId", "DificuldadeId");
-            ViewData["EpocaAnoId"] = new SelectList(_context.EpocasAno, "EpocaAnoId", "EpocaAnoId");
+            ViewData["DificuldadeId"] = new SelectList(_context.Dificuldades, "DificuldadeId", "Nome");
+            ViewData["EpocaAnoId"] = new SelectList(_context.EpocasAno, "EpocaAnoId", "Nome");
             return View();
         }
 
