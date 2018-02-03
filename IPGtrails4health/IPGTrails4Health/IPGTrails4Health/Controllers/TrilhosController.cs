@@ -85,8 +85,8 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["DificuldadeId"] = new SelectList(_context.Dificuldades, "DificuldadeId", "DificuldadeId", trilho.DificuldadeId);
-            ViewData["EpocaAnoId"] = new SelectList(_context.EpocasAno, "EpocaAnoId", "EpocaAnoId", trilho.EpocaAnoId);
+            ViewData["DificuldadeId"] = new SelectList(_context.Dificuldades, "DificuldadeId", "Nome", trilho.DificuldadeId);
+            ViewData["EpocaAnoId"] = new SelectList(_context.EpocasAno, "EpocaAnoId", "Nome", trilho.EpocaAnoId);
             return View(trilho);
         }
 

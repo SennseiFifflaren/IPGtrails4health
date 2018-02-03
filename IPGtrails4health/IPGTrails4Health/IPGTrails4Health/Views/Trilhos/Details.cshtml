@@ -43,17 +43,17 @@
             @Html.DisplayNameFor(model => model.Dificuldade)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Dificuldade.DificuldadeId)
+            @Html.DisplayFor(model => model.Dificuldade.Nome)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EpocaAno)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EpocaAno.EpocaAnoId)
+            @Html.DisplayFor(model => model.EpocaAno.Nome)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.TrilhoId">Editar</a> |
-    <a asp-action="Index">Lista de Trilhos</a>
+    <a asp-action="Edit" asp-route-id="@Model.TrilhoId" class="btn btn-outline-warning">Editar</a> 
+    <a asp-action="Index" class="btn btn-outline-info">Lista de Trilhos</a>
 </div>

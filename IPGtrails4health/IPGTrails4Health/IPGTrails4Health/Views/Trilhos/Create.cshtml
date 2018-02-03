@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Dificuldade" class="control-label"></label>
-                <select asp-for="DificuldadeId" class ="form-control" asp-items="ViewBag.dificuldadeId"></select>
+                <select asp-for="DificuldadeId" class ="form-control" asp-items="ViewBag.DificuldadeId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="EpocaAno" class="control-label"></label>
@@ -52,7 +52,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Lista de Trilhos</a>
+    <a asp-action="Index" class="btn btn-outline-info">Lista de Trilhos</a>
 </div>
 
 @section Scripts {
