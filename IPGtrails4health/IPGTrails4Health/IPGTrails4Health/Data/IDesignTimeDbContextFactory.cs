@@ -26,5 +26,21 @@ namespace IPGTrails4Health.Data
 
             return new TurismoDbContext(builder.Options);
         }
+        //public LoginsDbContext CreateDbContext(string[] args)
+        //{
+        //    IConfigurationRoot configuration = new ConfigurationBuilder()
+        //        .SetBasePath(Directory.GetCurrentDirectory())
+        //        .AddJsonFile("appsettings.json")
+        //        .Build();
+
+        //    var builder = new DbContextOptionsBuilder<LoginsDbContext>();
+
+        //    var connectionString = configuration.GetConnectionString("ConnectionStringLogin");
+
+        //    builder.UseSqlServer(connectionString);
+
+        //    return new LoginsDbContext(builder.Options);
+        //}
+
     }
 }

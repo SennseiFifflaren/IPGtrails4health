@@ -27,17 +27,32 @@ namespace IPGTrails4Health
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //SERVIÇO PARA AUTENTICAÇÃO
+            services.AddDbContext<LoginsDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringLogin")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<LoginsDbContext>()
+                .AddDefaultTokenProviders();
+
+           
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                // Lockout settings
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                // Add other lockout settings if needed ...
+                // Add other user settings if needed ...
+                //options.User.RequireUniqueEmail = true;
+            });
+
             services.AddDbContext<TurismoDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringIPGTrails4Health")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-            {
-                //password options
-                options.Password.RequireDigit = false;
-                // ...
-            })
-                .AddEntityFrameworkStores<TurismoDbContext>()
-                .AddDefaultTokenProviders();
+
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();

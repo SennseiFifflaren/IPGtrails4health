@@ -28,6 +28,7 @@ namespace IPGTrails4Health.Controllers
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ILogger<AccountController> logger)
@@ -36,7 +37,7 @@ namespace IPGTrails4Health.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
-            UsersSeedData.EnsurePopulatedAsync(userManager).Wait();
+            UsersSeedData.EnsurePopulatedAsync(userManager, roleManager).Wait();
         }
 
         [TempData]
