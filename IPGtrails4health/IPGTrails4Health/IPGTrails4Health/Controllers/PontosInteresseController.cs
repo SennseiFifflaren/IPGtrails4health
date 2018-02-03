@@ -48,7 +48,7 @@ namespace IPGTrails4Health.Controllers
         }
 
         // GET: PontosInteresse/Create
-        [Authorize]
+        //[Authorize]
         public IActionResult Create()
         {
             ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome");
