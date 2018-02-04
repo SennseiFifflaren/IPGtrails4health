@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
+</p>
 <h2>Criar Dificuldade</h2>
 
 <hr />
@@ -17,14 +18,14 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Lista de Dificuldades</a>
+    <a asp-action="Index" class="btn btn-outline-info">Lista de Dificuldades</a>
 </div>
 
 @section Scripts {

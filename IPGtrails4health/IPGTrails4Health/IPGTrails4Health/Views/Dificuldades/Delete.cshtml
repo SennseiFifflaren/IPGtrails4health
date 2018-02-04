@@ -4,7 +4,12 @@
     ViewData["Title"] = "Delete";
 }
 </br>
-<h2>Eliminar Dificuldade</h2>
+
+<div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">Atenção!</h4>
+    <p class="mb-0">Deseja mesmo eliminar esta Dificuldade?</p>
+</div>
 
 <div>
     <hr />
@@ -19,7 +24,7 @@
     
     <form asp-action="Delet">
         <input type="hidden" asp-for="DificuldadeId" />
-        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
         <a asp-action="Index" class="btn btn-outline-info">Lista de Dificuldades</a>
     </form>
 </div>

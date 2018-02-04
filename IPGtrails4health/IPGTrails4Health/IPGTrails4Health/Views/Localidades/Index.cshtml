@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
+</p>
+<h2>Localidades</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Criar nova Localidade</a>
 </p>
 <table class="table">
     <thead>
@@ -31,9 +31,9 @@
                 @Html.DisplayFor(modelItem => item.CodigoPostal)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.LocalidadeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LocalidadeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LocalidadeId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.LocalidadeId" class="btn btn-outline-info">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.LocalidadeId" class="btn btn-outline-warning">Detalhes</a> 
+                <a asp-action="Delete" asp-route-id="@item.LocalidadeId" class="btn btn-outline-danger">Eliminar</a>
             </td>
         </tr>
 }

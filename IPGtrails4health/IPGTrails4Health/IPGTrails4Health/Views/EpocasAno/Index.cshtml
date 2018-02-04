@@ -3,12 +3,13 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
 </p>
+<h2>Epocas de Ano</h2>
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Criar Nova Epoca do Ano</a>
+</p>
+</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -25,9 +26,9 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EpocaAnoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EpocaAnoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EpocaAnoId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.EpocaAnoId" class="btn btn-outline-info">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.EpocaAnoId" class="btn btn-outline-warning">Detalhes</a> 
+                <a asp-action="Delete" asp-route-id="@item.EpocaAnoId" class="btn btn-outline-danger">Eliminar</a>
             </td>
         </tr>
 }
