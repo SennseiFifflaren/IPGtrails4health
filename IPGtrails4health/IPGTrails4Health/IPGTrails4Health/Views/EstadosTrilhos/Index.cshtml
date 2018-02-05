@@ -1,0 +1,67 @@
+﻿@model IEnumerable<IPGTrails4Health.Models.EstadoTrilho>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Estados</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Alterar estado de um trilho</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Trilho.Nome) do Trilho
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            Data de Início do Estado
+        </th>
+        <th>
+            Data de Fim do Estado
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Causa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trilho.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Causa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.EstadoId)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+            @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+            @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

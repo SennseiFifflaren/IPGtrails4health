@@ -1,12 +1,11 @@
 ﻿@model IPGTrails4Health.Models.Alojamento
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar um novo Alojamento";
 }
+<br/>
+<h2>Criar alojamento</h2>
 
-<h2>Create</h2>
-
-<h4>Alojamento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,15 +27,15 @@
                 <span asp-validation-for="Contacto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LocalidadeId" class="control-label"></label>
+                <label asp-for="LocalidadeId" class="control-label">Localidade</label>
                 <select asp-for="LocalidadeId" class ="form-control" asp-items="ViewBag.LocalidadeId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="TipoAlojamentoId" class="control-label"></label>
+                <label asp-for="TipoAlojamentoId" class="control-label">Tipo de Alojamento</label>
                 <select asp-for="TipoAlojamentoId" class ="form-control" asp-items="ViewBag.TipoAlojamentoId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Adicionar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>

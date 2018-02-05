@@ -10,23 +10,23 @@ using IPGTrails4Health.Models;
 
 namespace IPGTrails4Health.Controllers
 {
-    public class AlojamentosTrilhosController : Controller
+    public class EstadosTrilhosController : Controller
     {
         private readonly TurismoDbContext _context;
 
-        public AlojamentosTrilhosController(TurismoDbContext context)
+        public EstadosTrilhosController(TurismoDbContext context)
         {
             _context = context;
         }
 
-        // GET: AlojamentosTrilhos
+        // GET: EstadosTrilhos
         public async Task<IActionResult> Index()
         {
-            var turismoDbContext = _context.AlojamentosTrilhos.Include(a => a.Alojamento).Include(a => a.Trilho);
+            var turismoDbContext = _context.EstadosTrilho.Include(e => e.Estado).Include(e => e.Trilho);
             return View(await turismoDbContext.ToListAsync());
         }
 
-        // GET: AlojamentosTrilhos/Details/5
+        // GET: EstadosTrilhos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,45 +34,45 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamentoTrilho = await _context.AlojamentosTrilhos
-                .Include(a => a.Alojamento)
-                .Include(a => a.Trilho)
+            var estadoTrilho = await _context.EstadosTrilho
+                .Include(e => e.Estado)
+                .Include(e => e.Trilho)
                 .SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (alojamentoTrilho == null)
+            if (estadoTrilho == null)
             {
                 return NotFound();
             }
 
-            return View(alojamentoTrilho);
+            return View(estadoTrilho);
         }
 
-        // GET: AlojamentosTrilhos/Create
+        // GET: EstadosTrilhos/Create
         public IActionResult Create()
         {
-            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Nome");
+            ViewData["EstadoId"] = new SelectList(_context.Estados, "EstadoId", "Nome");
             ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Nome");
             return View();
         }
 
-        // POST: AlojamentosTrilhos/Create
+        // POST: EstadosTrilhos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlojamentoTrilhoId,AlojamentoId,TrilhoId")] AlojamentoTrilho alojamentoTrilho)
+        public async Task<IActionResult> Create([Bind("EstadoTrilhoId,EstadoId,TrilhoId,DataInicio,DataFim,Causa")] EstadoTrilho estadoTrilho)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(alojamentoTrilho);
+                _context.Add(estadoTrilho);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Contacto", alojamentoTrilho.AlojamentoId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", alojamentoTrilho.TrilhoId);
-            return View(alojamentoTrilho);
+            ViewData["EstadoId"] = new SelectList(_context.Estados, "EstadoId", "EstadoId", estadoTrilho.EstadoId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", estadoTrilho.TrilhoId);
+            return View(estadoTrilho);
         }
 
-        // GET: AlojamentosTrilhos/Edit/5
+        // GET: EstadosTrilhos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,24 +80,24 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamentoTrilho = await _context.AlojamentosTrilhos.SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (alojamentoTrilho == null)
+            var estadoTrilho = await _context.EstadosTrilho.SingleOrDefaultAsync(m => m.TrilhoId == id);
+            if (estadoTrilho == null)
             {
                 return NotFound();
             }
-            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Contacto", alojamentoTrilho.AlojamentoId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", alojamentoTrilho.TrilhoId);
-            return View(alojamentoTrilho);
+            ViewData["EstadoId"] = new SelectList(_context.Estados, "EstadoId", "EstadoId", estadoTrilho.EstadoId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", estadoTrilho.TrilhoId);
+            return View(estadoTrilho);
         }
 
-        // POST: AlojamentosTrilhos/Edit/5
+        // POST: EstadosTrilhos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AlojamentoTrilhoId,AlojamentoId,TrilhoId")] AlojamentoTrilho alojamentoTrilho)
+        public async Task<IActionResult> Edit(int id, [Bind("EstadoTrilhoId,EstadoId,TrilhoId,DataInicio,DataFim,Causa")] EstadoTrilho estadoTrilho)
         {
-            if (id != alojamentoTrilho.TrilhoId)
+            if (id != estadoTrilho.TrilhoId)
             {
                 return NotFound();
             }
@@ -106,12 +106,12 @@ namespace IPGTrails4Health.Controllers
             {
                 try
                 {
-                    _context.Update(alojamentoTrilho);
+                    _context.Update(estadoTrilho);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlojamentoTrilhoExists(alojamentoTrilho.TrilhoId))
+                    if (!EstadoTrilhoExists(estadoTrilho.TrilhoId))
                     {
                         return NotFound();
                     }
@@ -122,12 +122,12 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Contacto", alojamentoTrilho.AlojamentoId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", alojamentoTrilho.TrilhoId);
-            return View(alojamentoTrilho);
+            ViewData["EstadoId"] = new SelectList(_context.Estados, "EstadoId", "EstadoId", estadoTrilho.EstadoId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", estadoTrilho.TrilhoId);
+            return View(estadoTrilho);
         }
 
-        // GET: AlojamentosTrilhos/Delete/5
+        // GET: EstadosTrilhos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,32 +135,32 @@ namespace IPGTrails4Health.Controllers
                 return NotFound();
             }
 
-            var alojamentoTrilho = await _context.AlojamentosTrilhos
-                .Include(a => a.Alojamento)
-                .Include(a => a.Trilho)
+            var estadoTrilho = await _context.EstadosTrilho
+                .Include(e => e.Estado)
+                .Include(e => e.Trilho)
                 .SingleOrDefaultAsync(m => m.TrilhoId == id);
-            if (alojamentoTrilho == null)
+            if (estadoTrilho == null)
             {
                 return NotFound();
             }
 
-            return View(alojamentoTrilho);
+            return View(estadoTrilho);
         }
 
-        // POST: AlojamentosTrilhos/Delete/5
+        // POST: EstadosTrilhos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var alojamentoTrilho = await _context.AlojamentosTrilhos.SingleOrDefaultAsync(m => m.TrilhoId == id);
-            _context.AlojamentosTrilhos.Remove(alojamentoTrilho);
+            var estadoTrilho = await _context.EstadosTrilho.SingleOrDefaultAsync(m => m.TrilhoId == id);
+            _context.EstadosTrilho.Remove(estadoTrilho);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AlojamentoTrilhoExists(int id)
+        private bool EstadoTrilhoExists(int id)
         {
-            return _context.AlojamentosTrilhos.Any(e => e.TrilhoId == id);
+            return _context.EstadosTrilho.Any(e => e.TrilhoId == id);
         }
     }
 }

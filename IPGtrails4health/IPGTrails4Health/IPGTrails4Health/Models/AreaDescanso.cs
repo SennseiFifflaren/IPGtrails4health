@@ -17,7 +17,7 @@ namespace IPGTrails4Health.Models
         [Required(ErrorMessage = "Por favor introduza a descrição")]
         [Display(Name = "Descrição")]
         public string Descricao { get; set; }
-
+        [Display(Name = "Localização")]
         public string Localizacao { get; set; }
 
         public ICollection<AreaDescansoTrilho> AreasDescansoTrilhos { get; set; }

@@ -48,7 +48,7 @@ namespace IPGTrails4Health.Controllers
         // GET: Restaurantes/Create
         public IActionResult Create()
         {
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId");
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome");
             return View();
         }
 

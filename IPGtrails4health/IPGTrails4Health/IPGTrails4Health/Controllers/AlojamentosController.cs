@@ -48,11 +48,11 @@ namespace IPGTrails4Health.Controllers
         }
 
         // GET: Alojamentos/Create
-        [Authorize]
+        //[Authorize]
         public IActionResult Create()
         {
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId");
-            ViewData["TipoAlojamentoId"] = new SelectList(_context.TipoAlojamentos, "TipoAlojamentoId", "TipoAlojamentoId");
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome");
+            ViewData["TipoAlojamentoId"] = new SelectList(_context.TipoAlojamentos, "TipoAlojamentoId", "Nome");
             return View();
         }
 

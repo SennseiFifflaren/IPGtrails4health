@@ -1,14 +1,13 @@
 ﻿@model IPGTrails4Health.Models.PontoInteresse
 
 @{
-    ViewData["Title"] = "Criar";
+    ViewData["Title"] = "Adicionar ponto de interesse";
 }
 
 <br />
-<h2>Criar</h2>
+<h2>Adicionar ponto de interesse</h2>
 <br />
-<h4>Ponto de Interesse</h4>
-<hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -37,7 +36,7 @@
                 <select asp-for="TipoPontoInteresseId" class ="form-control" asp-items="ViewBag.TipoPontoInteresseId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-outline-success" />
+                <input type="submit" value="Adicionar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
