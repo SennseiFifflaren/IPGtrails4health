@@ -14,6 +14,11 @@ namespace IPGTrails4Health.Controllers
         {
             return View();
         }
+		
+		public IActionResult GestaoPaginas()
+        {
+            return View();
+        }
 
         public IActionResult Error()
         {
