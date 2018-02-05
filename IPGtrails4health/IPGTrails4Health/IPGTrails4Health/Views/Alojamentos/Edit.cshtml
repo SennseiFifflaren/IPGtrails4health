@@ -1,10 +1,12 @@
 ﻿@model IPGTrails4Health.Models.Alojamento
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h2>Edit</h2>
+<br />
+<h2>Editar</h2>
+<br />
 
 <h4>Alojamento</h4>
 <hr />
@@ -14,39 +16,39 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AlojamentoId" />
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
+                <label asp-for="Nome" class="control-label">Nome</label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
+                <label asp-for="Descricao" class="control-label">Descrição</label>
                 <input asp-for="Descricao" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Contacto" class="control-label"></label>
+                <label asp-for="Contacto" class="control-label">Contacto</label>
                 <input asp-for="Contacto" class="form-control" />
                 <span asp-validation-for="Contacto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LocalidadeId" class="control-label"></label>
+                <label asp-for="LocalidadeId" class="control-label">Localidade</label>
                 <select asp-for="LocalidadeId" class="form-control" asp-items="ViewBag.LocalidadeId"></select>
                 <span asp-validation-for="LocalidadeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipoAlojamentoId" class="control-label"></label>
+                <label asp-for="TipoAlojamentoId" class="control-label">Tipo de Alojamento</label>
                 <select asp-for="TipoAlojamentoId" class="form-control" asp-items="ViewBag.TipoAlojamentoId"></select>
                 <span asp-validation-for="TipoAlojamentoId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>
 
 @section Scripts {

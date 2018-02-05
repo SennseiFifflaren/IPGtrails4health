@@ -1,13 +1,17 @@
 ﻿@model IPGTrails4Health.Models.AreaDescanso
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h2>Details</h2>
+<br />
+
+<h2>Detalhes</h2>
+
+<br />
 
 <div>
-    <h4>AreaDescanso</h4>
+    <h4>Area de Descanso</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -31,6 +35,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.AreaDescansoId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.AreaDescansoId" class="btn btn-outline-warning">Editar</a> |
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>

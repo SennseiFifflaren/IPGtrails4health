@@ -1,18 +1,18 @@
 ﻿@model LoginWith2faViewModel
 @{
-    ViewData["Title"] = "Two-factor authentication";
+    ViewData["Title"] = "Autenticação em 2 passos";
 }
 
 <h2>@ViewData["Title"]</h2>
 <hr />
-<p>Your login is protected with an authenticator app. Enter your authenticator code below.</p>
+<p>O seu login está protegido com um aplicativo de autenticação. Digite o seu código de autenticação abaixo.</p>
 <div class="row">
     <div class="col-md-4">
         <form method="post" asp-route-returnUrl="@ViewData["ReturnUrl"]">
             <input asp-for="RememberMe" type="hidden" />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="TwoFactorCode"></label>
+                <label asp-for="TwoFactorCode">Autenticação em 2 passos</label>
                 <input asp-for="TwoFactorCode" class="form-control" autocomplete="off" />
                 <span asp-validation-for="TwoFactorCode" class="text-danger"></span>
             </div>
@@ -25,14 +25,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-default">Log in</button>
+                <button type="submit" class="btn btn-outline-success">Entrar</button>
             </div>
         </form>
     </div>
 </div>
 <p>
-    Don't have access to your authenticator device? You can 
-    <a asp-action="LoginWithRecoveryCode" asp-route-returnUrl="@ViewData["ReturnUrl"]">log in with a recovery code</a>.
+    Não tem acesso ao seu dispositivo autenticador? Pode
+    <a asp-action="LoginWithRecoveryCode" asp-route-returnUrl="@ViewData["ReturnUrl"]">entrar com o código de recuperação</a>.
 </p>
 
 @section Scripts {

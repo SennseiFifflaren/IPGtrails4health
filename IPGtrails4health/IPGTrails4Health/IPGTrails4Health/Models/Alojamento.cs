@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IPGTrails4Health.Models
 {
@@ -18,6 +19,12 @@ namespace IPGTrails4Health.Models
         [Required(ErrorMessage = "Por favor introduza o contacto")]
         [RegularExpression(@"(2\d{8})|(9[1236]\d{7})", ErrorMessage = "Telemóvel inválido")]
         public string Contacto { get; set; }
+
+        internal static IActionResult View()
+        {
+            throw new NotImplementedException();
+        }
+
         public int LocalidadeId { get; set; }
         public Localidade Localidade { get; set; }
 
