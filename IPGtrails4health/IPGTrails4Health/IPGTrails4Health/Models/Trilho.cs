@@ -10,18 +10,22 @@ namespace IPGTrails4Health.Models
     {
         public int TrilhoId { get; set; }
 
+        [StringLength(18, MinimumLength = 3, ErrorMessage = "Nome Invalido")]
         [Required(ErrorMessage = "Por favor introduza o nome do Trilho")]
-        [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Nome Inválido")]
+        [RegularExpression(@"[a-zA-Z0-9záàâãéèêíóôõúçÁÀÂÃÉÈÍÏÓÔÕÚ\s\\._\\-]{3,}", ErrorMessage = "Nome contem caracteres inválidos")]
         public string Nome { get; set; }
 
+        [StringLength(18, MinimumLength = 3, ErrorMessage = "Partida Invalida")]
         [Required(ErrorMessage = "Por favor introduza um local de partida do Trilho")]
-        [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Local de Partida Inválido")]
+        [RegularExpression(@"[a-zA-Z0-9záàâãéèêíóôõúçÁÀÂÃÉÈÍÏÓÔÕÚ\s\\._\\-]{3,}", ErrorMessage = "Partida contem caracteres inválidos")]
         public string Partida { get; set; }
 
+        [StringLength(18, MinimumLength = 3, ErrorMessage = "Chegada Invalida")]
         [Required(ErrorMessage = "Por favor introduza um local de chegada do Trilho")]
-        [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Local de Chegada Inválido")]
+        [RegularExpression(@"[a-zA-Z0-9záàâãéèêíóôõúçÁÀÂÃÉÈÍÏÓÔÕÚ\s\\._\\-]{3,}", ErrorMessage = "Chegada contem caracteres inválidos")]
         public string Chegada { get; set; }
 
+        [Range(1, 50, ErrorMessage = "O valor da distancia so pode ser entre 1 e 50")]
         [Required(ErrorMessage = "Por favor introduza uma distância do Trilho")]
         [Display(Name = "Distância")]
         public decimal Distancia { get; set; }
