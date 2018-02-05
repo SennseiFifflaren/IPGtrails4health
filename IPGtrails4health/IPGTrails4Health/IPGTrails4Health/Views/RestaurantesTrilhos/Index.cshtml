@@ -1,0 +1,58 @@
+﻿@model IEnumerable<IPGTrails4Health.Models.RestauranteTrilho>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<h2>Restaurantes em Trilhos</h2>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Adicionar Restaurante a trilho</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RestauranteTrilhoId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurante.Nome) do Restaurante
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurante.Contacto) do Restaurante
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trilho.Nome) do Trilho
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RestauranteTrilhoId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Restaurante.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restaurante.Contacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trilho.Nome)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

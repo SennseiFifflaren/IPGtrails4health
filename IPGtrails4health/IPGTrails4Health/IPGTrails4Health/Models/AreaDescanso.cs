@@ -15,6 +15,7 @@ namespace IPGTrails4Health.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza a descrição")]
+        [Display(Name = "Descrição")]
         public string Descricao { get; set; }
 
         public string Localizacao { get; set; }

@@ -10,6 +10,7 @@ namespace IPGTrails4Health.Models
     {
         public int PontoInteresseId { get; set; }
         public string Nome { get; set; }
+        [Display(Name = "Observações")]
         public string Observacoes { get; set; }
         public string Local { get; set; }
         public int LocalidadeId { get; set; }

@@ -11,24 +11,24 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-                <th>
+    <tr>
+        <th>
                     @Html.DisplayNameFor(model => model.Nome)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Descricao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Contacto)
-                </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Localidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoAlojamento)
-            </th>
-            <th></th>
-        </tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Localidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoAlojamento)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {

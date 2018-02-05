@@ -1,0 +1,46 @@
+﻿@model IPGTrails4Health.Models.Restaurante
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Restaurante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RestauranteId" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalidadeId" class="control-label"></label>
+                <select asp-for="LocalidadeId" class="form-control" asp-items="ViewBag.LocalidadeId"></select>
+                <span asp-validation-for="LocalidadeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacto" class="control-label"></label>
+                <input asp-for="Contacto" class="form-control" />
+                <span asp-validation-for="Contacto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@model IPGTrails4Health.Models.Restaurante
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Restaurante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contacto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Localidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Localidade.LocalidadeId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RestauranteId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
