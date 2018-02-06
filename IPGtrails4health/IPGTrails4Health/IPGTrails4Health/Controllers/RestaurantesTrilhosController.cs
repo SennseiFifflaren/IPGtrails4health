@@ -85,8 +85,8 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", restauranteTrilho.RestauranteId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", restauranteTrilho.TrilhoId);
+            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Nome", restauranteTrilho.RestauranteId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Nome", restauranteTrilho.TrilhoId);
             return View(restauranteTrilho);
         }
 
@@ -122,8 +122,8 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "Descricao", restauranteTrilho.RestauranteId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", restauranteTrilho.TrilhoId);
+            ViewData["RestauranteId"] = new SelectList(_context.Restaurantes, "RestauranteId", "RestauranteId", restauranteTrilho.RestauranteId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "RestauranteId", restauranteTrilho.TrilhoId);
             return View(restauranteTrilho);
         }
 

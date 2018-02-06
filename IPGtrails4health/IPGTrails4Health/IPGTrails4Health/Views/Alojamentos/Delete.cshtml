@@ -11,8 +11,6 @@
     <p class="mb-0">Deseja mesmo eliminar o Alojamento?</p>
 </div>
 <div>
-    <h4>Alojamento</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
@@ -39,7 +37,7 @@
             @Html.DisplayFor(model => model.Localidade.Nome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TipoAlojamento)
+            Tipo de Alojamento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TipoAlojamento.Nome)
@@ -48,7 +46,7 @@
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="AlojamentoId" />
-        <input type="submit" value="Delete" class="btn btn-outline-danger" /> 
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> 
         <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
     </form>
 </div>

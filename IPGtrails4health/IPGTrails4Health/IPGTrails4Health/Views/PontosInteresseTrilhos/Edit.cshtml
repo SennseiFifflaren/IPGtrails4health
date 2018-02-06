@@ -11,13 +11,21 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="PontoInteresseTrilhoId" class="control-label"></label>
                 <input asp-for="PontoInteresseTrilhoId" class="form-control" />
                 <span asp-validation-for="PontoInteresseTrilhoId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="PontoInteresseId" class="control-label">Ponto Interesse</label>
+                <select asp-for="PontoInteresseId" class="form-control" asp-items="ViewBag.PontoInteresseId"></select>
+                <span asp-validation-for="PontoInteresseId" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="TrilhoId" />
-            <input type="hidden" asp-for="PontoInteresseId" />
+            <div class="form-group">
+                <label asp-for="TrilhoId" class="control-label">Trilho</label>
+                <select asp-for="TrilhoId" class="form-control" asp-items="ViewBag.TrilhoId"></select>
+                <span asp-validation-for="TrilhoId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-outline-success" />
             </div>

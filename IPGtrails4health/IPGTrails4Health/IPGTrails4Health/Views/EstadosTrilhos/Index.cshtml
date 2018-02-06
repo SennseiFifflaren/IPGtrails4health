@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<IPGTrails4Health.Models.EstadoTrilho>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Alterar estados";
 }
-
+<br/>
 <h2>Estados</h2>
-
+<br/>
 <p>
     <a asp-action="Create" class="btn btn-outline-primary">Alterar estado de um trilho</a>
 </p>
@@ -22,13 +22,7 @@
             Data de Início do Estado
         </th>
         <th>
-            Data de Fim do Estado
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Causa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
         </th>
 
         <th></th>
@@ -47,19 +41,13 @@
             @Html.DisplayFor(modelItem => item.DataInicio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataFim)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Causa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado.EstadoId)
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
-            @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
-            @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            @*<a asp-action="Edit" asp-route-id="@item.EstadoTrilhoId" class="btn btn-outline-warning">Editar</a>*@
+            <a asp-action="Details" asp-route-id="@item.EstadoTrilhoId" class="btn btn-outline-info">Detalhes</a>
+            @*<a asp-action="Delete" asp-route-id="@item.EstadoTrilhoId" class="btn btn-outline-danger">Eliminar</a>*@
         </td>
     </tr>
 }

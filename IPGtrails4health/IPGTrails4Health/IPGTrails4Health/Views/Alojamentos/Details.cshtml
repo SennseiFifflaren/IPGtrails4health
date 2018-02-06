@@ -39,7 +39,7 @@
             @Html.DisplayFor(model => model.Localidade.Nome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TipoAlojamento)
+            Tipo de Alojamento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TipoAlojamento.Nome)
@@ -47,6 +47,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.AlojamentoId" class="btn btn-outline-warning">Editar</a> |
+    <a asp-action="Edit" asp-route-id="@Model.AlojamentoId" class="btn btn-outline-warning">Editar</a> 
     <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>

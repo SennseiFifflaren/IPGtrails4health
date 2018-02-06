@@ -1,14 +1,13 @@
 ﻿@model IPGTrails4Health.Models.RestauranteTrilho
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes de restaurante/trilho";
 }
-
-<h2>Details</h2>
-
+<br/>
+<h2>Detalhes de restaurante associado a um trilho</h2>
+<br/>
 <div>
-    <h4>RestauranteTrilho</h4>
-    <hr />
+
     <dl class="dl-horizontal">
         @*<dt>
             @Html.DisplayNameFor(model => model.RestauranteTrilhoId)
@@ -31,6 +30,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.RestauranteTrilhoId" class="btn btn-outline-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>

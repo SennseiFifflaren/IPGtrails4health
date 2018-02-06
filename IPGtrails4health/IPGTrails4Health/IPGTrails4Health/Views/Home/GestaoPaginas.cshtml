@@ -5,12 +5,24 @@
 <br/>
 <h2>Página de professor</h2>
 <br/><br />
-
 <div class="row">
     <div class="col-md-3" align="center">
         <img src="~/images/trilho.jpg" class="img-thumbnail" />
-        <h2>Trilhos</h2>
+        <h2>Gestão Trilhos</h2>
         <a class="btn btn-primary" asp-controller="Trilhos" asp-action="Index"> Gerir </a>
+    </div>
+    <div class="col-md-3" align="center">
+        <img src="~/images/abertofechado.jpg" class="img-thumbnail" />
+        <h2>Alterar estado de trilhos</h2>
+        <a class="btn btn-primary" asp-controller="EstadosTrilhos" asp-action="Index"> Alterar</a>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-3" align="center">
+        <img src="~/images/areadescanso.jpg" class="img-thumbnail" />
+        <h2>Áreas de Descanso</h2>
+        <a class="btn btn-primary" asp-controller="AreasDescanso" asp-action="Index"> Gerir </a>
 
     </div>
 
@@ -35,7 +47,12 @@
 </div>
 <hr/>
 <div class="row">
+    <div class="col-md-3" align="center">
+        <img src="~/images/areadescanso.jpg" class="img-thumbnail" />
+        <h2>Adicionar áreas de descanso a trilhos</h2>
+        <a class="btn btn-primary" asp-controller="AreasDescansoTrilhos" asp-action="Index"> Adicionar </a>
 
+    </div>
     <div class="col-md-3" align="center">
         <img src="~/images/pontointeresse.jpg" class="img-thumbnail" />
         <h3>Adicionar pontos de interessse a trilhos</h3>
