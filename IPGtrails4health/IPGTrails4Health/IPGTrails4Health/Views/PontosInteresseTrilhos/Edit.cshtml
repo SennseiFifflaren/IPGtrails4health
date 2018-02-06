@@ -1,13 +1,12 @@
 ﻿@model IPGTrails4Health.Models.PontoInteresseTrilho
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar pontosinteresse/trilhos";
 }
+<br/>
+<h2>Editar pontos de interesse associados a trilhos</h2>
+<br/>
 
-<h2>Edit</h2>
-
-<h4>PontoInteresseTrilho</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -20,13 +19,13 @@
             <input type="hidden" asp-for="TrilhoId" />
             <input type="hidden" asp-for="PontoInteresseId" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>
 

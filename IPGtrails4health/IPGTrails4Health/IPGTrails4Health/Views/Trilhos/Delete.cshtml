@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
-</p>
+
 <div class="alert alert-dismissible alert-warning">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4 class="alert-heading">Atenção!</h4>
@@ -59,7 +59,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="TrilhoId" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <input type="submit" value="Desativar" class="btn btn-danger" /> 
         <a asp-action="Index" class="btn btn-outline-info">Lista de Trilhos</a>
     </form>
 </div>

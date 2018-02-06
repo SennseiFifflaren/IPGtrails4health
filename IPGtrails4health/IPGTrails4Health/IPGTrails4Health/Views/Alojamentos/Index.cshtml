@@ -19,16 +19,13 @@
                     @Html.DisplayNameFor(model => model.Nome)
                 </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Contacto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Localidade)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TipoAlojamento)
+           Tipo de alojamento
         </th>
         <th></th>
     </tr>
@@ -40,20 +37,17 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Contacto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Localidade.LocalidadeId)
+                @Html.DisplayFor(modelItem => item.Localidade.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoAlojamento.TipoAlojamentoId)
+                @Html.DisplayFor(modelItem => item.TipoAlojamento.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AlojamentoId" class="btn btn-outline-warning">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.AlojamentoId" class="btn btn-outline-info">Detalhes</a> |
+                <a asp-action="Edit" asp-route-id="@item.AlojamentoId" class="btn btn-outline-warning">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.AlojamentoId" class="btn btn-outline-info">Detalhes</a> 
                 <a asp-action="Delete" asp-route-id="@item.AlojamentoId" class="btn btn-outline-danger">Eliminar</a>
             </td>
         </tr>

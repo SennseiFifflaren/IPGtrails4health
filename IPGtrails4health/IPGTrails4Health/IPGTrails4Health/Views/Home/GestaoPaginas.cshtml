@@ -2,31 +2,56 @@
 @{
     ViewData["Title"] = "GestaoPaginas";
 }
-<h2>Gestão de Administrador</h2>
+<br/>
+<h2>Página de professor</h2>
 <br/><br />
 
 <div class="row">
     <div class="col-md-3" align="center">
         <img src="~/images/trilho.jpg" class="img-thumbnail" />
         <h2>Trilhos</h2>
-        <a class="btn btn-primary" asp-controller="Home" asp-action="HowToStart"> Gerir </a>
+        <a class="btn btn-primary" asp-controller="Trilhos" asp-action="Index"> Gerir </a>
 
     </div>
 
     <div class="col-md-3" align="center">
         <img src="~/images/pontointeresse.jpg" class="img-thumbnail" />
         <h3>Pontos de Interessse</h3>
-        <a class="btn btn-primary" asp-controller="Home" asp-action="HowToStart"> Gerir </a>
+        <a class="btn btn-primary" asp-controller="PontosInteresse" asp-action="Index"> Gerir </a>
     </div>
 
     <div class="col-md-3" align="center">
         <img src="~/images/alojamento.jpg" class="img-thumbnail" />
         <h2>Alojamentos</h2>
-        <a class="btn btn-primary" asp-controller="Home" asp-action="HowToStart"> Gerir </a>
+        <a class="btn btn-primary" asp-controller="Alojamentos" asp-action="Index"> Gerir </a>
     </div>
 
-<div class="col-md-3" align="center">
-    <img src="~/images/restaurante.jpg" class="img-thumbnail" />
-    <h2>Restaurantes</h2>
-    <a class="btn btn-primary" asp-controller="Home" asp-action="HowToStart"> Gerir </a>
+
+    <div class="col-md-3" align="center">
+        <img src="~/images/restaurante.jpg" class="img-thumbnail" />
+        <h2>Restaurantes</h2>
+        <a class="btn btn-primary" asp-controller="Restaurantes" asp-action="Index"> Gerir </a>
+    </div>
+</div>
+<hr/>
+<div class="row">
+
+    <div class="col-md-3" align="center">
+        <img src="~/images/pontointeresse.jpg" class="img-thumbnail" />
+        <h3>Adicionar pontos de interessse a trilhos</h3>
+        <a class="btn btn-primary" asp-controller="PontosInteresseTrilhos" asp-action="Index"> Adicionar</a>
+    </div>
+
+    <div class="col-md-3" align="center">
+        <img src="~/images/alojamento.jpg" class="img-thumbnail" />
+        <h2>Adicionar alojamentos a trilhos</h2>
+        <a class="btn btn-primary" asp-controller="AlojamentosTrilhos" asp-action="Index"> Adicionar</a>
+    </div>
+
+
+    <div class="col-md-3" align="center">
+        <img src="~/images/restaurante.jpg" class="img-thumbnail" />
+        <h2>Adicionar restaurantes a trilhos</h2>
+        <a class="btn btn-primary" asp-controller="RestaurantesTrilhos" asp-action="Index">Adicionar</a>
+    </div>
 </div>

@@ -65,7 +65,7 @@ namespace IPGTrails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId", restaurante.LocalidadeId);
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome", restaurante.LocalidadeId);
             return View(restaurante);
         }
 
@@ -82,7 +82,7 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId", restaurante.LocalidadeId);
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome", restaurante.LocalidadeId);
             return View(restaurante);
         }
 

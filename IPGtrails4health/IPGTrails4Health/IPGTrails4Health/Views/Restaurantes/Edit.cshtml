@@ -1,13 +1,13 @@
 ﻿@model IPGTrails4Health.Models.Restaurante
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar restaurante";
 }
 
-<h2>Edit</h2>
+<br />
+<h2>Editar restaurante</h2>
+<br />
 
-<h4>Restaurante</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -24,7 +24,7 @@
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LocalidadeId" class="control-label"></label>
+                <label asp-for="LocalidadeId" class="control-label">Localidade</label>
                 <select asp-for="LocalidadeId" class="form-control" asp-items="ViewBag.LocalidadeId"></select>
                 <span asp-validation-for="LocalidadeId" class="text-danger"></span>
             </div>
@@ -34,13 +34,13 @@
                 <span asp-validation-for="Contacto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>
 

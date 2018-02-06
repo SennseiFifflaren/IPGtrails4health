@@ -1,32 +1,39 @@
 ﻿@model IPGTrails4Health.Models.AlojamentoTrilho
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar alojamentos/trilhos";
 }
+<br/>
+<h2>Editar alojamentos associados a um trilho</h2>
+<br/>
 
-<h2>Edit</h2>
-
-<h4>AlojamentoTrilho</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="AlojamentoTrilhoId" class="control-label"></label>
                 <input asp-for="AlojamentoTrilhoId" class="form-control" />
                 <span asp-validation-for="AlojamentoTrilhoId" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="AlojamentoId" />
-            <input type="hidden" asp-for="TrilhoId" />
+            </div>*@
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <label asp-for="AlojamentoId" class="control-label">Alojamento</label>
+                <select asp-for="AlojamentoId" class="form-control" asp-items="ViewBag.AlojamentoId"></select>
+                <span asp-validation-for="AlojamentoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrilhoId" class="control-label">Trilho</label>
+                <select asp-for="TrilhoId" class="form-control" asp-items="ViewBag.TrilhoId"></select>
+                <span asp-validation-for="TrilhoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>
 

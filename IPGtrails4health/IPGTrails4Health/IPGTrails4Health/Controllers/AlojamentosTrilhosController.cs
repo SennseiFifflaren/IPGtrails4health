@@ -85,8 +85,8 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Contacto", alojamentoTrilho.AlojamentoId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", alojamentoTrilho.TrilhoId);
+            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Nome", alojamentoTrilho.AlojamentoId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Nome", alojamentoTrilho.TrilhoId);
             return View(alojamentoTrilho);
         }
 
@@ -122,8 +122,8 @@ namespace IPGTrails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Contacto", alojamentoTrilho.AlojamentoId);
-            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Chegada", alojamentoTrilho.TrilhoId);
+            ViewData["AlojamentoId"] = new SelectList(_context.Alojamentos, "AlojamentoId", "Nome", alojamentoTrilho.AlojamentoId);
+            ViewData["TrilhoId"] = new SelectList(_context.Trilhos, "TrilhoId", "Nome", alojamentoTrilho.TrilhoId);
             return View(alojamentoTrilho);
         }
 

@@ -87,8 +87,8 @@ namespace IPGTrails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "LocalidadeId", alojamento.LocalidadeId);
-            ViewData["TipoAlojamentoId"] = new SelectList(_context.TipoAlojamentos, "TipoAlojamentoId", "TipoAlojamentoId", alojamento.TipoAlojamentoId);
+            ViewData["LocalidadeId"] = new SelectList(_context.Localidades, "LocalidadeId", "Nome", alojamento.LocalidadeId);
+            ViewData["TipoAlojamentoId"] = new SelectList(_context.TipoAlojamentos, "TipoAlojamentoId", "Nome", alojamento.TipoAlojamentoId);
             return View(alojamento);
         }
 

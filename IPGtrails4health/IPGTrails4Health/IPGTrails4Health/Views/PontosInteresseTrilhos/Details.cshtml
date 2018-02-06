@@ -3,30 +3,29 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h2>Details</h2>
-
+<br/>
+<h2>Detalhes do ponto de interesse associado ao trilho</h2>
+<br/>
 <div>
-    <h4>PontoInteresseTrilho</h4>
-    <hr />
+
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.PontoInteresseTrilhoId)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.PontoInteresseTrilhoId)
-        </dd>
+        </dd>*@
         <dt>
-            @Html.DisplayNameFor(model => model.PontoInteresse)
+            Ponto de Interesse
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PontoInteresse.PontoInteresseId)
+            @Html.DisplayFor(model => model.PontoInteresse.Nome)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Trilho)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Trilho.Chegada)
+            @Html.DisplayFor(model => model.Trilho.Nome)
         </dd>
     </dl>
 </div>

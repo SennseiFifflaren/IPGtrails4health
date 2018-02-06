@@ -1,14 +1,13 @@
 ﻿@model IPGTrails4Health.Models.Restaurante
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do restaurante";
 }
-
-<h2>Details</h2>
-
+<br/>
+<h2>Detalhes do restaurante</h2>
+<br />
 <div>
-    <h4>Restaurante</h4>
-    <hr />
+  
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
@@ -32,11 +31,11 @@
             @Html.DisplayNameFor(model => model.Localidade)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Localidade.LocalidadeId)
+            @Html.DisplayFor(model => model.Localidade.Nome)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.RestauranteId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.RestauranteId" class="btn btn-outline-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-outline-info">Voltar à Lista</a>
 </div>
